@@ -710,22 +710,28 @@
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="content-wrapper">
-            <!-- Main Visualization -->
-            <div class="main-viz fade-in delay-1">
-                <h2 class="section-title">
-                    <i class="fas fa-play-circle"></i>
-                    Election Results Animation
-                </h2>
-                <div class="viz-container">
-                    <img src="R-programming-Portfolio/Personal-Works/US-Map-animation/election_map.gif" alt="US Presidential Election Results Animation 1960-2020">
-                    <p class="viz-caption">US Presidential Election Results by State (1960-2020) • Democrat (Blue) • Republican (Red) • Independent (Green)</p>
+<!-- Main Content -->
+<main class="main-content">
+    <div class="content-wrapper">
+        <!-- Main Visualization -->
+        <div class="main-viz fade-in delay-1">
+            <h2 class="section-title">
+                <i class="fas fa-play-circle"></i>
+                Election Results Animation
+            </h2>
+            <div class="viz-container" style="display: flex; gap: 20px; align-items: flex-start; text-align: left;">
+                <!-- Left side: Election Map Animation -->
+                <div style="flex: 2;">
+                    <img src="R-programming-Portfolio/Personal-Works/US-Map-animation/election_map.gif" alt="US Presidential Election Results Animation 1960-2020" style="width: 100%;">
+                    <p class="viz-caption" style="text-align: center;">US Presidential Election Results by State (1960-2020) • Democrat (Blue) • Republican (Red) • Independent (Green)</p>
                 </div>
-        <div class="gallery-item" onclick="openModal('assets/projects/us-election-map/Rplotabbreviations.jpeg')">
-        <img src="assets/projects/us-election-map/Rplotabbreviations.jpeg" alt="US States Abbreviations Reference">
-        <p class="gallery-item-title">US States Abbreviations Reference</p>
+                
+                <!-- Right side: State Abbreviations Reference -->
+                <div style="flex: 1; cursor: pointer;" onclick="openModal('assets/projects/us-election-map/Rplotabbreviations.jpeg')">
+                    <img src="assets/projects/us-election-map/Rplotabbreviations.jpeg" alt="US States Abbreviations Reference" style="width: 100%;">
+                    <p class="viz-caption" style="text-align:  center;">US States Abbreviations Reference</p>
+                </div>
+            </div>
         </div>
             <!-- Project Overview -->
             <div class="section fade-in delay-2">
