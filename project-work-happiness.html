@@ -392,9 +392,11 @@
         }
 
         .image-frame img {
-            width: 100%;
-            height: auto;
-            display: block;
+        width: 100%;
+        height: auto;
+        display: block;
+        max-height: 400px;    /* Prevents the image from being too tall */
+        object-fit: contain;  /* Ensures the whole image is visible */
         }
 
         /* Placeholder for images */
