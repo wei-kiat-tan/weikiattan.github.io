@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Sales Analysis | Wei Kiat Tan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --pixel-dark: #0d0d1a;
+            --pixel-deep: #1a1a3e;
+            --pixel-purple: #4a3d6b;
+            --pixel-mid: #6b5b8c;
+            --pixel-pink: #e8a4b8;
+            --pixel-sunset: #ffd4b8;
+            --pixel-star: #ffffff;
+            --pixel-glow: rgba(232, 164, 184, 0.6);
+            
+            --card-bg: rgba(13, 13, 26, 0.85);
+            --text-primary: #ffffff;
+            --text-secondary: #c4b8d4;
+            --text-muted: #8a7f9e;
+            
+            --accent-green: #4ade80;
+            --accent-red: #f87171;
+            --accent-blue: #60a5fa;
+            --accent-yellow: #fbbf24;
+            --accent-orange: #fb923c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            background-color: var(--pixel-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 20px;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--pixel-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--pixel-purple);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--pixel-pink);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--pixel-pink), var(--pixel-sunset));
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--card-bg);
+            border: 3px solid var(--pixel-pink);
+            color: var(--pixel-pink);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+            clip-path: polygon(
+                0 6px, 6px 6px, 6px 0,
+                calc(100% - 6px) 0, calc(100% - 6px) 6px, 100% 6px,
+                100% calc(100% - 6px), calc(100% - 6px) calc(100% - 6px),
+                calc(100% - 6px) 100%, 6px 100%, 6px calc(100% - 6px),
+                0 calc(100% - 6px)
+            );
+        }
+
+        .back-button:hover {
+            background: var(--pixel-pink);
+            color: var(--pixel-dark);
+        }
+
+        .sidebar-nav {
+            position: fixed;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 900;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .sidebar-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 12px;
+            background: transparent;
+            color: var(--pixel-mid);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.35rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .sidebar-nav-item:hover {
+            color: var(--pixel-pink);
+        }
+
+        .sidebar-nav-item.active {
+            color: var(--pixel-pink);
+        }
+
+        .sidebar-nav-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--pixel-mid);
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-nav-item:hover .sidebar-nav-dot {
+            background: var(--pixel-pink);
+            box-shadow: 0 0 10px var(--pixel-glow);
+        }
+
+        .sidebar-nav-item.active .sidebar-nav-dot {
+            background: var(--pixel-pink);
+            box-shadow: 0 0 15px var(--pixel-glow);
+        }
+
+        .sidebar-nav-label {
+            opacity: 0;
+            max-width: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav:hover .sidebar-nav-label {
+            opacity: 1;
+            max-width: 150px;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 1100px) {
+            .sidebar-nav {
+                display: none;
+            }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 40px;
+            background-color: var(--pixel-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(13, 13, 26, 0.9) 0%,
+                rgba(26, 26, 62, 0.7) 50%,
+                rgba(74, 61, 107, 0.5) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse at 50% 40%,
+                rgba(232, 164, 184, 0.08) 0%,
+                transparent 50%
+            );
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pixel-pink);
+            margin-bottom: 30px;
+            padding: 12px 20px;
+            background: var(--pixel-purple);
+            border: 2px solid var(--pixel-pink);
+        }
+
+        .hero-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            text-shadow: 4px 4px 0 var(--pixel-purple);
+        }
+
+        .hero-title span {
+            color: var(--pixel-sunset);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        .stats-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .pixel-alien {
+            font-size: 2.5rem;
+            color: var(--pixel-pink);
+            text-shadow: 0 0 20px var(--pixel-glow);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .pixel-alien.left {
+            animation-delay: 0s;
+        }
+
+        .pixel-alien.right {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px 30px;
+            background: var(--card-bg);
+            border: 3px solid var(--pixel-mid);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            border-color: var(--pixel-pink);
+            box-shadow: 0 0 20px var(--pixel-glow);
+        }
+
+        .stat-number {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.6rem;
+            color: var(--pixel-pink);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            color: var(--pixel-mid);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            color: var(--pixel-mid);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 60px;
+        }
+
+        .scroll-indicator i {
+            font-size: 1.2rem;
+            color: var(--pixel-pink);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--pixel-dark);
+        }
+
+        .section-deep {
+            background: linear-gradient(180deg, var(--pixel-dark) 0%, var(--pixel-deep) 100%);
+        }
+
+        .section-purple {
+            background: var(--pixel-deep);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .container-narrow {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-eyebrow {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pixel-pink);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.3rem;
+            color: var(--pixel-sunset);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            text-shadow: 3px 3px 0 var(--pixel-purple);
+        }
+
+        .section-intro {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 50px;
+        }
+
+        .text-content {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .text-content:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: var(--pixel-sunset);
+            font-weight: normal;
+        }
+
+        .highlight-pink {
+            color: var(--pixel-pink);
+        }
+
+        .highlight-green {
+            color: var(--accent-green);
+        }
+
+        .highlight-red {
+            color: var(--accent-red);
+        }
+
+        .subsection-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: var(--pixel-sunset);
+            margin: 50px 0 25px;
+        }
+
+        .scrolly-section {
+            padding: 100px 0;
+        }
+
+        .scrolly-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            gap: 80px;
+        }
+
+        .scrolly-sticky {
+            flex: 1;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+            max-width: 500px;
+        }
+
+        .scrolly-content {
+            flex: 1;
+            padding-left: 40px;
+            border-left: 3px solid var(--pixel-mid);
+        }
+
+        .scrolly-content-right {
+            flex: 1;
+            padding-right: 40px;
+            border-right: 3px solid var(--pixel-mid);
+        }
+
+        .scrolly-sticky-right {
+            flex: 1;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+            max-width: 500px;
+        }
+
+        .text-step {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 0;
+        }
+
+        .text-step:first-child {
+            padding-top: 0;
+        }
+
+        .text-step:last-child {
+            min-height: 50vh;
+        }
+
+        .step-number {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pixel-sunset);
+            margin-bottom: 18px;
+        }
+
+        .step-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            text-shadow: 2px 2px 0 var(--pixel-purple);
+        }
+
+        .step-text {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .step-text strong {
+            color: var(--pixel-sunset);
+            font-weight: normal;
+        }
+
+        /* Image Styles */
+        .image-frame {
+            background: var(--card-bg);
+            border: 4px solid var(--pixel-mid);
+            padding: 15px;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .image-frame:hover {
+            border-color: var(--pixel-pink);
+            box-shadow: 0 0 30px var(--pixel-glow);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            min-height: 200px;
+            background: var(--pixel-deep);
+        }
+
+        .image-caption {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            color: var(--pixel-mid);
+            margin-top: 15px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .image-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .image-grid-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-full {
+            margin: 50px 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            gap: 25px;
+            margin: 35px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            flex: 1;
+            min-width: 150px;
+            padding: 25px;
+            background: var(--card-bg);
+            border: 3px solid var(--pixel-mid);
+            border-left-width: 6px;
+            border-left-color: var(--pixel-pink);
+        }
+
+        .stat-card.green {
+            border-left-color: var(--accent-green);
+        }
+
+        .stat-card.red {
+            border-left-color: var(--accent-red);
+        }
+
+        .stat-card.blue {
+            border-left-color: var(--accent-blue);
+        }
+
+        .stat-card.orange {
+            border-left-color: var(--accent-orange);
+        }
+
+        .stat-card-number {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.5rem;
+            color: var(--pixel-pink);
+            margin-bottom: 10px;
+        }
+
+        .stat-card.green .stat-card-number {
+            color: var(--accent-green);
+        }
+
+        .stat-card.red .stat-card-number {
+            color: var(--accent-red);
+        }
+
+        .stat-card.blue .stat-card-number {
+            color: var(--accent-blue);
+        }
+
+        .stat-card.orange .stat-card-number {
+            color: var(--accent-orange);
+        }
+
+        .stat-card-label {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            color: var(--pixel-mid);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        .big-stat {
+            text-align: center;
+            padding: 50px 40px;
+            background: var(--card-bg);
+            border: 4px solid var(--pixel-mid);
+            margin: 50px 0;
+        }
+
+        .big-stat-number {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 3rem;
+            color: var(--pixel-pink);
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px var(--pixel-glow);
+        }
+
+        .big-stat-label {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+            color: var(--pixel-mid);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .insight-box {
+            background: rgba(74, 222, 128, 0.1);
+            border: 3px solid var(--accent-green);
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .insight-box.warning {
+            background: rgba(248, 113, 113, 0.1);
+            border-color: var(--accent-red);
+        }
+
+        .insight-box.info {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .insight-box.neutral {
+            background: rgba(232, 164, 184, 0.1);
+            border-color: var(--pixel-pink);
+        }
+
+        .insight-label {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            margin-bottom: 12px;
+        }
+
+        .insight-box.warning .insight-label {
+            color: var(--accent-red);
+        }
+
+        .insight-box.info .insight-label {
+            color: var(--accent-blue);
+        }
+
+        .insight-box.neutral .insight-label {
+            color: var(--pixel-pink);
+        }
+
+        .insight-text {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .pull-quote {
+            padding: 40px 0;
+            margin: 50px 0;
+            border-top: 3px solid var(--pixel-mid);
+            border-bottom: 3px solid var(--pixel-mid);
+            text-align: center;
+        }
+
+        .pull-quote-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9rem;
+            color: var(--pixel-sunset);
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .category-cards {
+            display: flex;
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .category-card {
+            flex: 1;
+            padding: 30px 25px;
+            background: var(--card-bg);
+            border: 3px solid var(--pixel-mid);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            border-color: var(--pixel-pink);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(232, 164, 184, 0.2);
+        }
+
+        .category-card.beauty {
+            border-color: var(--accent-red);
+        }
+
+        .category-card.clothing {
+            border-color: var(--accent-blue);
+        }
+
+        .category-card.electronics {
+            border-color: var(--accent-yellow);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .category-card.beauty .category-icon {
+            color: var(--accent-red);
+        }
+
+        .category-card.clothing .category-icon {
+            color: var(--accent-blue);
+        }
+
+        .category-card.electronics .category-icon {
+            color: var(--accent-yellow);
+        }
+
+        .category-name {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+            color: var(--pixel-sunset);
+            margin-bottom: 15px;
+        }
+
+        .category-percent {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.8rem;
+            color: var(--pixel-pink);
+            margin-bottom: 10px;
+        }
+
+        .category-count {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .hypothesis-box {
+            background: var(--card-bg);
+            border: 3px solid var(--pixel-mid);
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .hypothesis-label {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.45rem;
+            color: var(--pixel-pink);
+            margin-bottom: 15px;
+        }
+
+        .hypothesis-text {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .hypothesis-text.null {
+            color: var(--text-muted);
+        }
+
+        .hypothesis-text.alt {
+            color: var(--accent-green);
+        }
+
+        .hypothesis-result {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--pixel-mid);
+        }
+
+        .result-badge {
+            display: inline-block;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            padding: 8px 15px;
+            margin-bottom: 15px;
+        }
+
+        .result-badge.reject {
+            background: var(--accent-green);
+            color: var(--pixel-dark);
+        }
+
+        .result-badge.accept {
+            background: var(--accent-red);
+            color: var(--pixel-dark);
+        }
+
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .finding-card {
+            padding: 35px;
+            background: var(--card-bg);
+            border: 3px solid var(--pixel-mid);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .finding-card:hover {
+            border-color: var(--pixel-pink);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--pixel-glow);
+        }
+
+        .finding-icon {
+            font-size: 2.5rem;
+            color: var(--pixel-pink);
+            margin-bottom: 25px;
+        }
+
+        .finding-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.55rem;
+            color: var(--pixel-sunset);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .finding-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .code-block {
+            background: var(--pixel-deep);
+            border: 3px solid var(--pixel-mid);
+            padding: 20px;
+            margin: 25px 0;
+            overflow-x: auto;
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--accent-green);
+            line-height: 1.6;
+        }
+
+        .code-block code {
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .code-comment {
+            color: var(--pixel-mid);
+        }
+
+        .methodology {
+            background: var(--pixel-deep);
+            border: 4px solid var(--pixel-mid);
+            padding: 50px;
+            margin-top: 60px;
+        }
+
+        .methodology-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            color: var(--pixel-sunset);
+            margin-bottom: 30px;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .methodology-item h4 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            color: var(--pixel-pink);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .methodology-item p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .methodology-item ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .methodology-item li {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--pixel-mid);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .methodology-item li:last-child {
+            border-bottom: none;
+        }
+
+        .methodology-item li i {
+            color: var(--pixel-pink);
+            font-size: 0.9rem;
+        }
+
+        .divider {
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--pixel-pink) 0,
+                var(--pixel-pink) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            margin: 80px 0;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: transparent;
+            border: 3px solid var(--pixel-pink);
+            color: var(--pixel-pink);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .project-link:hover {
+            background: var(--pixel-pink);
+            color: var(--pixel-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 0 var(--pixel-purple);
+        }
+
+        .project-link.primary {
+            background: var(--pixel-pink);
+            color: var(--pixel-dark);
+        }
+
+        .project-link.primary:hover {
+            background: var(--pixel-sunset);
+            border-color: var(--pixel-sunset);
+        }
+
+        footer {
+            background: var(--pixel-dark);
+            border-top: 4px solid var(--pixel-pink);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            color: var(--pixel-mid);
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: var(--pixel-pink);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--pixel-sunset);
+        }
+
+        @media (max-width: 1024px) {
+            .scrolly-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .scrolly-sticky,
+            .scrolly-sticky-right {
+                position: relative;
+                top: 0;
+                max-width: 100%;
+            }
+
+            .scrolly-content,
+            .scrolly-content-right {
+                padding-left: 0;
+                padding-right: 0;
+                border-left: none;
+                border-right: none;
+            }
+
+            .text-step {
+                min-height: auto;
+                padding: 40px 0;
+            }
+
+            .category-cards {
+                flex-direction: column;
+            }
+
+            .findings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-grid,
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 25px 80px;
+            }
+
+            .hero-title {
+                font-size: 1.3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .container,
+            .container-narrow {
+                padding: 0 25px;
+            }
+
+            .section-title {
+                font-size: 1rem;
+            }
+
+            .back-button {
+                top: 15px;
+                left: 15px;
+                padding: 10px 15px;
+                font-size: 0.4rem;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .pixel-alien {
+                display: none;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stats-grid {
+                flex-direction: column;
+            }
+
+            .big-stat-number {
+                font-size: 2rem;
+            }
+
+            .methodology {
+                padding: 30px 20px;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .project-link {
+                justify-content: center;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Back Button -->
+    <a href="projects.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Projects</span>
+    </a>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar-nav" id="sidebarNav">
+        <a href="#hero" class="sidebar-nav-item active" data-section="hero">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">Introduction</span>
+        </a>
+        <a href="#data" class="sidebar-nav-item" data-section="data">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">The Data</span>
+        </a>
+        <a href="#insights" class="sidebar-nav-item" data-section="insights">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">Key Insights</span>
+        </a>
+        <a href="#modeling" class="sidebar-nav-item" data-section="modeling">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">Modeling</span>
+        </a>
+        <a href="#results" class="sidebar-nav-item" data-section="results">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">Results</span>
+        </a>
+        <a href="#conclusion" class="sidebar-nav-item" data-section="conclusion">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">Conclusion</span>
+        </a>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <span class="hero-eyebrow"><i class="fab fa-python"></i> Python • Personal Project</span>
+            <h1 class="hero-title">What Drives <span>Retail Sales?</span></h1>
+            <p class="hero-subtitle">
+                A deep dive into retail transaction data using Python. 
+                Exploring customer demographics, product categories, and building 
+                statistical models to understand what factors influence total sales.
+            </p>
+            
+            <div class="stats-container">
+                <div class="pixel-alien left">🛒</div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-number">1,000</div>
+                        <div class="stat-label">Transactions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">Variables</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                </div>
+                <div class="pixel-alien right">🛒</div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DATA OVERVIEW ==================== -->
+    <section class="section section-dark" id="data">
+        <div class="container fade-in">
+            <span class="section-eyebrow">The Dataset</span>
+            <h2 class="section-title">Understanding Retail Transactions</h2>
+            <p class="section-intro">
+                This dataset from <span class="highlight">Kaggle</span> contains retail sales transactions 
+                with customer demographics, product information, and purchase details. 
+                The main objective is to demonstrate competency in Python programming for 
+                exploratory data analysis and basic statistical modeling.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-number">1,000</div>
+                    <div class="stat-card-label">Total Transactions</div>
+                </div>
+                <div class="stat-card blue">
+                    <div class="stat-card-number">9</div>
+                    <div class="stat-card-label">Columns</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-card-number">0</div>
+                    <div class="stat-card-label">Missing Values</div>
+                </div>
+                <div class="stat-card orange">
+                    <div class="stat-card-number">0</div>
+                    <div class="stat-card-label">Duplicates</div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Data Structure</h3>
+
+            <p class="text-content">
+                The dataset contains 9 columns: <span class="highlight">transaction id</span>, <span class="highlight">date</span>, 
+                <span class="highlight">customer id</span>, <span class="highlight">gender</span>, <span class="highlight">age</span>, 
+                <span class="highlight">product category</span>, <span class="highlight">quantity</span>, 
+                <span class="highlight">price per unit</span>, and <span class="highlight">total amount</span>.
+            </p>
+
+            <p class="text-content">
+                Data types: 5 columns are <span class="highlight">int64</span> (transaction id, age, quantity, price per unit, total amount) 
+                and 4 columns are <span class="highlight">object</span> (date, customer id, gender, product category).
+            </p>
+
+            <div class="code-block">
+                <code><span class="code-comment"># Data examination</span>
+print(df.head())        <span class="code-comment"># View first 5 rows</span>
+print(df.info())        <span class="code-comment"># Get DataFrame info</span>
+print(df.describe())    <span class="code-comment"># Summary statistics</span>
+print(df.isnull().sum()) <span class="code-comment"># Check missing values</span></code>
+            </div>
+
+            <h3 class="subsection-title">Summary Statistics</h3>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-number">$456</div>
+                    <div class="stat-card-label">Mean Total Amount</div>
+                </div>
+                <div class="stat-card blue">
+                    <div class="stat-card-number">$179.89</div>
+                    <div class="stat-card-label">Mean Price/Unit</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-card-number">2.51</div>
+                    <div class="stat-card-label">Mean Quantity</div>
+                </div>
+                <div class="stat-card orange">
+                    <div class="stat-card-number">41.39</div>
+                    <div class="stat-card-label">Mean Age</div>
+                </div>
+            </div>
+
+            <div class="insight-box warning">
+                <span class="insight-label">Potential Anomaly Detected</span>
+                <p class="insight-text">
+                    From the data description, there are possible anomalies in <strong>price per unit</strong>. 
+                    The max value ($500) and 75th percentile ($300) are exceptionally high compared to the median ($50). 
+                    Furthermore, the mean ($179.89) is notably high, indicating possible outliers influencing the mean value.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider" style="max-width: 200px; margin: 0 auto;"></div>
+
+    <!-- ==================== KEY INSIGHTS ==================== -->
+    <section class="section section-dark scrolly-section" id="insights">
+        <div class="container-narrow fade-in" style="margin-bottom: 60px;">
+            <span class="section-eyebrow">Exploratory Analysis</span>
+            <h2 class="section-title">Visual Insights from the Data</h2>
+        </div>
+
+        <div class="scrolly-container">
+            <div class="scrolly-sticky">
+                <div class="image-frame">
+                    <img src="retail-sales-python/retailsales_output1.png" alt="Correlation heat map matrix for age, quantity, price per unit and total amount">
+                </div>
+                <p class="image-caption">Correlation Matrix Heatmap</p>
+            </div>
+            <div class="scrolly-content">
+                <div class="text-step">
+                    <span class="step-number">Insight 01</span>
+                    <h3 class="step-title">Strong Correlations Revealed</h3>
+                    <p class="step-text">
+                        The correlation heat map matrix provides a broad overview of which variables have 
+                        strong relationships with each other, regardless of whether they are positively or negatively related.
+                    </p>
+                    <p class="step-text">
+                        <strong>Price per unit and total amount</strong> exhibit a <strong>very strong positive relationship</strong>. 
+                        <strong>Quantity and total amount</strong> also exhibit a positive but weaker relationship.
+                    </p>
+                    <p class="step-text">
+                        The rest of the variables (including age) are <strong>not correlated</strong> to each other, 
+                        suggesting that customer age doesn't significantly impact purchasing behavior in this dataset.
+                    </p>
+                    <div class="insight-box">
+                        <span class="insight-label">Key Finding</span>
+                        <p class="insight-text">
+                            Price per unit is the strongest predictor of total sales amount, 
+                            followed by quantity purchased. Age has minimal influence.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-step">
+                    <span class="step-number">Insight 02</span>
+                    <h3 class="step-title">Balanced Gender Distribution</h3>
+                    <p class="step-text">
+                        From the doughnut chart analysis, <strong>51%</strong> of the 1,000 customers 
+                        are female while the remaining <strong>49%</strong> are male.
+                    </p>
+                    <p class="step-text">
+                        This indicates a relatively balanced distribution of customers between the two genders, 
+                        meaning the retail store appeals equally to both demographics.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-number">51%</div>
+                            <div class="stat-card-label">Female</div>
+                        </div>
+                        <div class="stat-card blue">
+                            <div class="stat-card-number">49%</div>
+                            <div class="stat-card-label">Male</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-step">
+                    <span class="step-number">Insight 03</span>
+                    <h3 class="step-title">Age Distribution Patterns</h3>
+                    <p class="step-text">
+                        The mirrored histogram showcases the age distribution between male and female customers. 
+                        Customer ages range from <strong>18 to 64 years</strong> with a mean of <strong>41.39</strong> 
+                        and standard deviation of approximately <strong>13.68 years</strong>.
+                    </p>
+                    <p class="step-text">
+                        Both genders exhibit an <strong>uneven age distribution</strong> with notable higher frequency 
+                        in certain age groups like <strong>41-43</strong> and <strong>61-64</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Visualizations -->
+        <div class="container" style="margin-top: 60px;">
+            <div class="image-grid">
+                <div class="image-grid-item">
+                    <div class="image-frame">
+                        <img src="retail-sales-python/retailsales_output2.png" alt="Doughnut chart showing 51% female, 49% male customer distribution">
+                    </div>
+                    <p class="image-caption">Gender Distribution (51% Female, 49% Male)</p>
+                </div>
+                <div class="image-grid-item">
+                    <div class="image-frame">
+                        <img src="retail-sales-python/retailsales_output5.png" alt="Mirrored histogram of customer age by gender">
+                    </div>
+                    <p class="image-caption">Age Distribution by Gender (Mirrored Histogram)</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Product Categories</h3>
+
+            <p class="text-content">
+                There are 3 product categories in the retail sales data: <span class="highlight">Beauty</span>, 
+                <span class="highlight">Clothing</span>, and <span class="highlight">Electronics</span>.
+            </p>
+
+            <div class="category-cards">
+                <div class="category-card beauty">
+                    <div class="category-icon"><i class="fas fa-spa"></i></div>
+                    <div class="category-name">Beauty</div>
+                    <div class="category-percent">30.7%</div>
+                    <div class="category-count">307 transactions</div>
+                </div>
+                <div class="category-card clothing">
+                    <div class="category-icon"><i class="fas fa-tshirt"></i></div>
+                    <div class="category-name">Clothing</div>
+                    <div class="category-percent">35.1%</div>
+                    <div class="category-count">351 transactions</div>
+                </div>
+                <div class="category-card electronics">
+                    <div class="category-icon"><i class="fas fa-laptop"></i></div>
+                    <div class="category-name">Electronics</div>
+                    <div class="category-percent">34.2%</div>
+                    <div class="category-count">342 transactions</div>
+                </div>
+            </div>
+
+            <p class="text-content">
+                <span class="highlight">Clothing</span> is the most popular product category among customers at 35.1%, 
+                followed closely by <span class="highlight">Electronics</span> at 34.2%, 
+                and lastly <span class="highlight">Beauty</span> at 30.7%.
+            </p>
+
+            <div class="image-grid">
+                <div class="image-grid-item">
+                    <div class="image-frame">
+                        <img src="retail-sales-python/retailsales_output3.png" alt="Bar chart of number of customers per product category">
+                    </div>
+                    <p class="image-caption">Product Category Distribution (Count)</p>
+                </div>
+                <div class="image-grid-item">
+                    <div class="image-frame">
+                        <img src="retail-sales-python/retailsales_output4.png" alt="Bar chart of product category distribution in percentage">
+                    </div>
+                    <p class="image-caption">Product Category Distribution (Percentage)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider" style="max-width: 200px; margin: 0 auto;"></div>
+
+    <!-- ==================== STATISTICAL MODELING ==================== -->
+    <section class="section section-deep" id="modeling">
+        <div class="container fade-in">
+            <span class="section-eyebrow">Statistical Modeling</span>
+            <h2 class="section-title">OLS Multiple Linear Regression</h2>
+            <p class="section-intro">
+                The main question: how is the dependent variable <span class="highlight">total amount</span> 
+                affected by independent variables like <span class="highlight">price per unit</span> and 
+                <span class="highlight">quantity</span>? Using Ordinary Least Squares (OLS) regression, 
+                we can assess whether observed relationships are statistically significant.
+            </p>
+
+            <h3 class="subsection-title">Model Setup</h3>
+
+            <p class="text-content">
+                <strong>Independent Variables (X):</strong> price per unit, quantity<br>
+                <strong>Dependent Variable (Y):</strong> total amount
+            </p>
+
+            <div class="code-block">
+                <code><span class="code-comment"># Step 1: Define features (X) and target (y)</span>
+X = df[['price per unit', 'quantity']]
+y = df['total amount']
+
+<span class="code-comment"># Step 2: Split data into training and testing sets (80/20)</span>
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+<span class="code-comment"># Step 3: Add constant for intercept</span>
+X_train_df = add_constant(X_train)
+
+<span class="code-comment"># Step 4: Fit the regression model using statsmodels</span>
+model = OLS(y_train, X_train_df).fit()</code>
+            </div>
+
+            <h3 class="subsection-title">Robustness Checks</h3>
+
+            <div class="stats-grid">
+                <div class="stat-card green">
+                    <div class="stat-card-number">~1.0</div>
+                    <div class="stat-card-label">VIF (No Multicollinearity)</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-card-number">1.99</div>
+                    <div class="stat-card-label">Durbin-Watson (No Autocorrelation)</div>
+                </div>
+                <div class="stat-card red">
+                    <div class="stat-card-number">~0</div>
+                    <div class="stat-card-label">Breusch-Pagan p-value</div>
+                </div>
+            </div>
+
+            <p class="text-content">
+                <strong>Multicollinearity Test (VIF):</strong> VIF values for price per unit and quantity are approximately 
+                <span class="highlight-green">1.001528</span>, indicating no significant multicollinearity — 
+                independent variables are not correlated with each other.
+            </p>
+
+            <p class="text-content">
+                <strong>Durbin-Watson Test:</strong> Statistic of <span class="highlight-green">1.989</span> 
+                (close to 2.0) indicates no significant autocorrelation in residuals.
+            </p>
+
+            <div class="insight-box warning">
+                <span class="insight-label">Heteroscedasticity Detected</span>
+                <p class="insight-text">
+                    The Breusch-Pagan test p-value is <strong>1.97e-50</strong> (extremely small), 
+                    indicating presence of unequal variance of residuals over the range of measured values. 
+                    This is mainly due to varying price per unit, resulting in unequal variance. 
+                    <strong>Robust standard errors (HC3)</strong> were applied to mitigate this issue.
+                </p>
+            </div>
+
+            <div class="code-block">
+                <code><span class="code-comment"># Using robust standard errors to address heteroscedasticity</span>
+model_robust = OLS(y_train, X_train_df).fit(cov_type='HC3')</code>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider" style="max-width: 200px; margin: 0 auto;"></div>
+
+    <!-- ==================== RESULTS ==================== -->
+    <section class="section section-dark" id="results">
+        <div class="container fade-in">
+            <span class="section-eyebrow">Hypothesis Testing</span>
+            <h2 class="section-title">Model Results & Interpretation</h2>
+            
+            <div class="big-stat">
+                <div class="big-stat-number">85.4%</div>
+                <div class="big-stat-label">R-Squared (Variance Explained)</div>
+            </div>
+
+            <p class="text-content">
+                The model explains <span class="highlight">85.4%</span> of the variance in total amount, 
+                with an F-statistic of <span class="highlight">2328</span> (highly significant). 
+                The adjusted R-squared is <span class="highlight">85.3%</span>.
+            </p>
+
+            <h3 class="subsection-title">Coefficient Estimates</h3>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-number">-439.27</div>
+                    <div class="stat-card-label">Intercept (const)</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-card-number">+2.49</div>
+                    <div class="stat-card-label">Price Per Unit</div>
+                </div>
+                <div class="stat-card blue">
+                    <div class="stat-card-number">+179.78</div>
+                    <div class="stat-card-label">Quantity</div>
+                </div>
+            </div>
+
+            <!-- Hypothesis Test 1: Price Per Unit -->
+            <div class="hypothesis-box">
+                <div class="hypothesis-label">Hypothesis Test: Price Per Unit</div>
+                <p class="hypothesis-text null">H₀: The coefficient for price per unit = 0</p>
+                <p class="hypothesis-text alt">H₁: The coefficient for price per unit ≠ 0</p>
+                <div class="hypothesis-result">
+                    <span class="result-badge reject">NULL REJECTED</span>
+                    <p class="step-text">
+                        <strong>Estimate:</strong> 2.4898 | <strong>Std Error:</strong> 0.056 | <strong>z:</strong> 44.527 | <strong>p-value:</strong> < 0.001
+                    </p>
+                    <p class="step-text">
+                        At 5% significance level, the null hypothesis is rejected. The estimate is <strong>statistically significant</strong>, 
+                        indicating that price per unit has a meaningful effect on total amount. 
+                        For every $1 increase in price per unit, total amount increases by approximately <strong>$2.49</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hypothesis Test 2: Quantity -->
+            <div class="hypothesis-box">
+                <div class="hypothesis-label">Hypothesis Test: Quantity</div>
+                <p class="hypothesis-text null">H₀: The coefficient for quantity = 0</p>
+                <p class="hypothesis-text alt">H₁: The coefficient for quantity ≠ 0</p>
+                <div class="hypothesis-result">
+                    <span class="result-badge reject">NULL REJECTED</span>
+                    <p class="step-text">
+                        <strong>Estimate:</strong> 179.7758 | <strong>Std Error:</strong> 8.683 | <strong>z:</strong> 20.704 | <strong>p-value:</strong> < 0.001
+                    </p>
+                    <p class="step-text">
+                        At 5% significance level, the null hypothesis is rejected. The estimate is <strong>statistically significant</strong>, 
+                        indicating that quantity has a meaningful effect on total amount. 
+                        For every 1 unit increase in quantity, total amount increases by approximately <strong>$179.78</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hypothesis Test 3: Intercept -->
+            <div class="hypothesis-box">
+                <div class="hypothesis-label">Hypothesis Test: Intercept</div>
+                <p class="hypothesis-text null">H₀: The coefficient for intercept = 0</p>
+                <p class="hypothesis-text alt">H₁: The coefficient for intercept ≠ 0</p>
+                <div class="hypothesis-result">
+                    <span class="result-badge reject">NULL REJECTED</span>
+                    <p class="step-text">
+                        <strong>Estimate:</strong> -439.2661 | <strong>Std Error:</strong> 22.422 | <strong>z:</strong> -19.591 | <strong>p-value:</strong> < 0.001
+                    </p>
+                    <p class="step-text">
+                        The intercept is statistically significant but <strong>not realistic</strong> — 
+                        it's impossible for total amount to be negative (-$439.27). 
+                        This is a mathematical derivation representing the expected value when both price per unit and quantity are zero.
+                    </p>
+                </div>
+            </div>
+
+            <div class="insight-box info">
+                <span class="insight-label">Model Equation</span>
+                <p class="insight-text">
+                    <strong>Total Amount = -439.27 + 2.49(Price Per Unit) + 179.78(Quantity)</strong><br><br>
+                    Both independent variables are statistically significant predictors of total sales amount.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider" style="max-width: 200px; margin: 0 auto;"></div>
+
+    <!-- ==================== CONCLUSION ==================== -->
+    <section class="section section-dark" id="conclusion">
+        <div class="container-narrow fade-in">
+            <span class="section-eyebrow">Conclusion</span>
+            <h2 class="section-title">Key Takeaways</h2>
+            <p class="section-intro">
+                The analysis reveals clear patterns in retail sales data, with strong statistical evidence 
+                supporting the relationships between price, quantity, and total sales amount.
+            </p>
+
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h4 class="finding-title">Price Drives Sales</h4>
+                    <p class="finding-text">
+                        Price per unit is strongly positively related to total amount. 
+                        Higher-priced items contribute more to revenue.
+                    </p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h4 class="finding-title">Quantity Matters</h4>
+                    <p class="finding-text">
+                        Each additional unit purchased adds ~$180 to total sales. 
+                        Volume is a significant driver.
+                    </p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="finding-title">85.4% Explained</h4>
+                    <p class="finding-text">
+                        The model explains most variance in sales. 
+                        Both variables are statistically significant.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pull-quote">
+                <p class="pull-quote-text">
+                    "The relationship between price per unit, quantity and total amount 
+                    is strongly positive and statistically significant."
+                </p>
+            </div>
+
+            <p class="text-content">
+                This analysis demonstrates competency in Python programming for exploratory data analysis 
+                and statistical modeling. The OLS regression model shows that both <span class="highlight">price per unit</span> 
+                and <span class="highlight">quantity</span> are meaningful predictors of total sales amount.
+            </p>
+
+            <p class="text-content">
+                <span class="highlight-red">Heteroscedasticity</span> was detected in the model due to varying price per unit amounts. 
+                While robust standard errors were applied to mitigate this, the issue is accepted as inherent to the data structure. 
+                F-statistic interpretation should be made with caution due to this presence.
+            </p>
+
+            <!-- Methodology -->
+            <div class="methodology">
+                <h3 class="methodology-title">Methodology & Tools</h3>
+                <div class="methodology-grid">
+                    <div class="methodology-item">
+                        <h4>Python Libraries</h4>
+                        <ul>
+                            <li><i class="fab fa-python"></i> pandas (data manipulation)</li>
+                            <li><i class="fab fa-python"></i> matplotlib & seaborn (visualization)</li>
+                            <li><i class="fab fa-python"></i> numpy (numerical operations)</li>
+                            <li><i class="fab fa-python"></i> statsmodels (OLS regression)</li>
+                            <li><i class="fab fa-python"></i> sklearn (train/test split)</li>
+                        </ul>
+                    </div>
+                    <div class="methodology-item">
+                        <h4>Statistical Tests</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Variance Inflation Factor (VIF)</li>
+                            <li><i class="fas fa-check"></i> Durbin-Watson Test</li>
+                            <li><i class="fas fa-check"></i> Breusch-Pagan Test</li>
+                            <li><i class="fas fa-check"></i> Robust Standard Errors (HC3)</li>
+                            <li><i class="fas fa-check"></i> Hypothesis Testing (p-values)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Links -->
+            <div class="project-links">
+                <a href="https://github.com/weikiat98/Python-Programming" target="_blank" class="project-link primary">
+                    <i class="fab fa-github"></i>
+                    <span>View on GitHub</span>
+                </a>
+                <a href="https://www.kaggle.com/datasets/mohammadtalib786/retail-sales-dataset/" target="_blank" class="project-link">
+                    <i class="fab fa-kaggle"></i>
+                    <span>Kaggle Dataset</span>
+                </a>
+                <a href="projects.html" class="project-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to All Projects</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>© 2025 Wei Kiat Tan | Built with passion for data</p>
+        <p>
+            <a href="https://github.com/weikiat98" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/wei-kiat-tan/" target="_blank">LinkedIn</a>
+            <a href="https://public.tableau.com/app/profile/wei.kiat/vizzes/" target="_blank">Tableau</a>
+        </p>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            updateSidebarActive();
+        });
+
+        // Sidebar Active State
+        function updateSidebarActive() {
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.sidebar-nav-item');
+            
+            let currentSection = 'hero';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                const sectionHeight = section.offsetHeight;
+                const scrollPosition = window.scrollY;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-section') === currentSection) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Smooth scroll for sidebar links
+        document.querySelectorAll('.sidebar-nav-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade in on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    </script>
+</body>
+</html>

@@ -29,9 +29,6 @@
             --accent-blue: #60a5fa;
             --accent-yellow: #fbbf24;
             --accent-orange: #fb923c;
-
-            /* Background image - uncomment and set path to enable */
-            /* --hero-bg-image: url('assets/your-background.png'); */
         }
 
         * {
@@ -66,7 +63,6 @@
             background: var(--pixel-pink);
         }
 
-        /* Progress Bar */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -78,7 +74,6 @@
             transition: width 0.1s ease;
         }
 
-        /* Back Button */
         .back-button {
             position: fixed;
             top: 25px;
@@ -110,7 +105,6 @@
             color: var(--pixel-dark);
         }
 
-        /* Sidebar Navigation */
         .sidebar-nav {
             position: fixed;
             left: 25px;
@@ -181,7 +175,6 @@
             }
         }
 
-        /* ==================== HERO SECTION ==================== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -191,10 +184,6 @@
             text-align: center;
             padding: 80px 40px;
             background-color: var(--pixel-dark);
-            background-image: var(--hero-bg-image, none);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             position: relative;
             overflow: hidden;
         }
@@ -273,7 +262,6 @@
             line-height: 1.8;
         }
 
-        /* Collaboration Credit */
         .collaboration {
             display: flex;
             align-items: center;
@@ -303,7 +291,6 @@
             border-bottom-color: var(--pixel-sunset);
         }
 
-        /* Stats Row with Aliens */
         .stats-container {
             display: flex;
             align-items: center;
@@ -391,7 +378,6 @@
             50% { transform: translateY(10px); }
         }
 
-        /* ==================== SECTION STYLES ==================== */
         .section {
             padding: 100px 0;
             position: relative;
@@ -421,7 +407,6 @@
             padding: 0 40px;
         }
 
-        /* Section Headers */
         .section-eyebrow {
             font-family: 'Press Start 2P', cursive;
             font-size: 0.5rem;
@@ -447,7 +432,6 @@
             margin-bottom: 50px;
         }
 
-        /* Text Styling */
         .text-content {
             font-size: 1.25rem;
             color: var(--text-secondary);
@@ -472,7 +456,13 @@
             color: var(--accent-red);
         }
 
-        /* ==================== SCROLLYTELLING LAYOUT ==================== */
+        .subsection-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: var(--pixel-sunset);
+            margin: 50px 0 25px;
+        }
+
         .scrolly-section {
             padding: 100px 0;
         }
@@ -513,7 +503,6 @@
             max-width: 500px;
         }
 
-        /* Text Steps */
         .text-step {
             min-height: 70vh;
             display: flex;
@@ -560,60 +549,13 @@
             font-weight: normal;
         }
 
-        /* ==================== IMAGE COMPONENTS ==================== */
-        .image-placeholder {
-            background: var(--card-bg);
-            border: 4px solid var(--pixel-mid);
-            aspect-ratio: 4/3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--pixel-mid);
-            transition: all 0.3s ease;
-        }
-
-        .image-placeholder:hover {
-            border-color: var(--pixel-pink);
-            box-shadow: 0 0 30px var(--pixel-glow);
-        }
-
-        .image-placeholder i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--pixel-pink);
-            opacity: 0.5;
-        }
-
-        .image-placeholder-label {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.5rem;
-            letter-spacing: 1px;
-            color: var(--pixel-pink);
-            opacity: 0.7;
-        }
-
-        .image-placeholder-desc {
-            font-size: 1rem;
-            color: var(--pixel-mid);
-            margin-top: 8px;
-        }
-
-        .image-caption {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.4rem;
-            color: var(--pixel-mid);
-            margin-top: 15px;
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        /* Image Frame */
+        /* Image Styles */
         .image-frame {
             background: var(--card-bg);
             border: 4px solid var(--pixel-mid);
             padding: 15px;
             transition: all 0.3s ease;
+            margin: 20px 0;
         }
 
         .image-frame:hover {
@@ -625,9 +567,10 @@
             width: 100%;
             height: auto;
             display: block;
+            min-height: 200px;
+            background: var(--pixel-deep);
         }
 
-        /* Image Grid */
         .image-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -644,12 +587,19 @@
             flex-direction: column;
         }
 
-        /* Full width image */
         .image-full {
             margin: 50px 0;
         }
 
-        /* ==================== STATS & DATA COMPONENTS ==================== */
+        .image-caption {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            color: var(--pixel-mid);
+            margin-top: 15px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
         .stats-grid {
             display: flex;
             gap: 25px;
@@ -715,7 +665,6 @@
             line-height: 1.6;
         }
 
-        /* Big Stats */
         .big-stat {
             text-align: center;
             padding: 50px 40px;
@@ -740,7 +689,6 @@
             letter-spacing: 2px;
         }
 
-        /* ==================== INSIGHT & QUOTE BOXES ==================== */
         .insight-box {
             background: rgba(74, 222, 128, 0.1);
             border: 3px solid var(--accent-green);
@@ -790,7 +738,6 @@
             line-height: 1.8;
         }
 
-        /* Pull Quote */
         .pull-quote {
             padding: 40px 0;
             margin: 50px 0;
@@ -808,7 +755,6 @@
             margin: 0 auto;
         }
 
-        /* ==================== DISCOUNT TIER CARDS ==================== */
         .discount-cards {
             display: flex;
             gap: 25px;
@@ -881,43 +827,6 @@
             line-height: 1.7;
         }
 
-        /* ==================== CORRELATION MATRIX ==================== */
-        .correlation-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3px;
-            margin: 40px 0;
-            background: var(--pixel-mid);
-            padding: 3px;
-        }
-
-        .corr-cell {
-            padding: 20px 15px;
-            text-align: center;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.5rem;
-        }
-
-        .corr-cell.header {
-            background: var(--pixel-purple);
-            color: var(--pixel-pink);
-        }
-
-        .corr-cell.value {
-            background: var(--card-bg);
-            color: var(--text-secondary);
-        }
-
-        .corr-cell.positive {
-            color: var(--accent-green);
-        }
-
-        .corr-cell.highlight {
-            background: rgba(74, 222, 128, 0.15);
-            color: var(--accent-green);
-        }
-
-        /* ==================== HYPOTHESIS TESTING ==================== */
         .hypothesis-box {
             background: var(--card-bg);
             border: 3px solid var(--pixel-mid);
@@ -971,7 +880,6 @@
             color: var(--pixel-dark);
         }
 
-        /* ==================== FINDINGS CARDS ==================== */
         .findings-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1013,7 +921,6 @@
             line-height: 1.7;
         }
 
-        /* ==================== METHODOLOGY ==================== */
         .methodology {
             background: var(--pixel-deep);
             border: 4px solid var(--pixel-mid);
@@ -1072,7 +979,38 @@
             font-size: 0.9rem;
         }
 
-        /* ==================== DIVIDERS ==================== */
+        .strata-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1rem;
+        }
+
+        .strata-table th,
+        .strata-table td {
+            padding: 15px;
+            text-align: center;
+            border: 2px solid var(--pixel-mid);
+        }
+
+        .strata-table th {
+            background: var(--pixel-purple);
+            color: var(--pixel-pink);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+        }
+
+        .strata-table td {
+            background: var(--card-bg);
+            color: var(--text-secondary);
+        }
+
+        .strata-table tr:last-child td {
+            background: var(--pixel-purple);
+            color: var(--pixel-sunset);
+            font-weight: bold;
+        }
+
         .divider {
             height: 3px;
             background: repeating-linear-gradient(
@@ -1085,7 +1023,6 @@
             margin: 80px 0;
         }
 
-        /* ==================== PROJECT LINKS ==================== */
         .project-links {
             display: flex;
             gap: 20px;
@@ -1124,7 +1061,6 @@
             border-color: var(--pixel-sunset);
         }
 
-        /* ==================== FOOTER ==================== */
         footer {
             background: var(--pixel-dark);
             border-top: 4px solid var(--pixel-pink);
@@ -1150,7 +1086,6 @@
             color: var(--pixel-sunset);
         }
 
-        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 1024px) {
             .scrolly-container {
                 flex-direction: column;
@@ -1192,10 +1127,6 @@
             .image-grid,
             .image-grid-3 {
                 grid-template-columns: 1fr;
-            }
-
-            .correlation-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1272,7 +1203,6 @@
             }
         }
 
-        /* ==================== ANIMATIONS ==================== */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -1338,17 +1268,15 @@
                 and which discount tier is most effective.
             </p>
             
-            <!-- Collaboration Credit -->
             <div class="collaboration">
                 <span>In collaboration with</span>
-                <a href="https://www.linkedin.com/" target="_blank" class="collab-link">Jackson</a>
+                <a href="https://www.linkedin.com/" target="_blank" class="collab-link">Jackson Chai</a>
                 <span>,</span>
-                <a href="https://www.linkedin.com/" target="_blank" class="collab-link">Hailey</a>
+                <a href="https://www.linkedin.com/" target="_blank" class="collab-link">Hailey Phyu</a>
                 <span>&</span>
-                <a href="https://www.linkedin.com/" target="_blank" class="collab-link">Liqin</a>
+                <a href="https://www.linkedin.com/" target="_blank" class="collab-link">Koh Liqin</a>
             </div>
             
-            <!-- Stats with Pixel Aliens -->
             <div class="stats-container">
                 <div class="pixel-alien left">👾</div>
                 <div class="stats-row">
@@ -1381,9 +1309,16 @@
             <span class="section-eyebrow">The Data</span>
             <h2 class="section-title">Understanding the Dataset</h2>
             <p class="section-intro">
-                Yummy earns revenue from restaurant commissions and app advertisements. 
-                To boost revenue, they launched a paid membership program with tiered discounts 
-                to convert free users into paying subscribers.
+                Yummy is an online restaurant booking platform where users can sign up for free to make reservations via its app. 
+                Yummy earns revenue from restaurant commissions on bookings and advertisements displayed on the app. 
+                The dataset contains <span class="highlight">1,000 rows</span> with 4 key variables.
+            </p>
+
+            <p class="text-content">
+                The variables are: <span class="highlight">expn</span> (average dining expenses per diner per reservation in 1 month prior to launching the paid membership program), 
+                <span class="highlight">rsvn</span> (reservations made in 1 month prior to launch), 
+                <span class="highlight">disc</span> (discount amount: 0 = no discount, 1 = 10%, 2 = 20%), and 
+                <span class="highlight">convert</span> (whether users converted to paid membership: 0 = never, 1 = within 2 weeks, 2 = after 2 weeks).
             </p>
 
             <div class="discount-cards">
@@ -1391,44 +1326,36 @@
                     <div class="discount-label">Control Group</div>
                     <div class="discount-tier">0%</div>
                     <div class="discount-rate">12.81%</div>
-                    <div class="discount-desc">No discount offered — baseline conversion</div>
+                    <div class="discount-desc">320 users — No discount offered (baseline conversion)</div>
                 </div>
                 <div class="discount-card">
                     <div class="discount-label">Tier 1</div>
                     <div class="discount-tier">10%</div>
                     <div class="discount-rate">27.58%</div>
-                    <div class="discount-desc">Moderate discount — 330 users</div>
+                    <div class="discount-desc">330 users — Moderate discount tier</div>
                 </div>
                 <div class="discount-card best">
                     <div class="discount-label">Tier 2</div>
                     <div class="discount-tier">20%</div>
                     <div class="discount-rate">35.71%</div>
-                    <div class="discount-desc">Highest discount — 350 users</div>
+                    <div class="discount-desc">350 users — Highest discount tier</div>
                 </div>
             </div>
-
-            <div class="image-full">
-                <div class="image-frame">
-                    <div class="image-placeholder" style="aspect-ratio: 16/9;">
-                        <i class="fas fa-chart-bar"></i>
-                        <span class="image-placeholder-label">[IMAGE_01]</span>
-                        <span class="image-placeholder-desc">Breakdown of Numbers by Discount Group</span>
-                    </div>
-                </div>
-                <p class="image-caption">Figure 1: Distribution of users across discount groups</p>
-            </div>
-
-            <!-- Correlation Matrix -->
-            <h3 style="font-family: 'Press Start 2P', cursive; font-size: 0.7rem; color: var(--pixel-sunset); margin: 50px 0 25px;">
-                Correlation Matrix
-            </h3>
 
             <div class="image-frame">
-                <div class="image-placeholder" style="aspect-ratio: 1/1; max-width: 600px; margin: 0 auto;">
-                    <i class="fas fa-th"></i>
-                    <span class="image-placeholder-label">[IMAGE_02]</span>
-                    <span class="image-placeholder-desc">Correlation Matrix Heatmap</span>
-                </div>
+                <img src="" alt="Figure 1: Breakdown of numbers by discount group">
+            </div>
+            <p class="image-caption">Figure 1: Distribution of users across discount groups</p>
+
+            <h3 class="subsection-title">Correlation Matrix Analysis</h3>
+
+            <p class="text-content">
+                The correlation matrix provides an overview of relationships between the variables. 
+                The variables include expenditure spending (expn), number of reservations (rsvn), discount (disc), and conversion status.
+            </p>
+
+            <div class="image-frame">
+                <img src="" alt="Figure 2: Correlation matrix heatmap">
             </div>
             <p class="image-caption">Figure 2: Correlation matrix showing relationships between variables</p>
 
@@ -1447,12 +1374,22 @@
                 </div>
             </div>
 
+            <p class="text-content">
+                Three distinct observations were noted from the coefficients. First, there is a <span class="highlight">moderately positive correlation (0.44)</span> between average dining expense and membership conversions — as dining expense increases, conversion rate to paid membership increases.
+            </p>
+            <p class="text-content">
+                Second, there is a <span class="highlight">moderately positive correlation (0.33)</span> between reservations and conversion — users who make more reservations have higher likelihood of converting.
+            </p>
+            <p class="text-content">
+                Third, there is a <span class="highlight">moderately positive correlation (0.21)</span> between discount and conversion — higher discount rates lead to higher conversion rates.
+            </p>
+
             <div class="insight-box info">
                 <span class="insight-label">Interesting Finding</span>
                 <p class="insight-text">
                     The correlation between discounts and conversion (0.21) is <strong>lower</strong> 
-                    than expenses (0.44) or reservations (0.33). This suggests discounts help conversion, 
-                    but aren't the main driver — user behavior matters more.
+                    than expenses (0.44) or reservations (0.33). This indicates that although discounts assist in converting users to paid membership, 
+                    discounts are not the main factor — there may be other factors affecting users' decisions to convert.
                 </p>
             </div>
         </div>
@@ -1469,10 +1406,8 @@
 
         <div class="scrolly-container">
             <div class="scrolly-sticky">
-                <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                    <i class="fas fa-chart-pie"></i>
-                    <span class="image-placeholder-label">[IMAGE_03]</span>
-                    <span class="image-placeholder-desc">Conversion by Discount Group</span>
+                <div class="image-frame">
+                    <img src="" alt="Figure 3: Percentage breakdown of membership converted by discount group">
                 </div>
                 <p class="image-caption">Figure 3: Percentage breakdown of conversions by discount level</p>
             </div>
@@ -1481,18 +1416,18 @@
                     <span class="step-number">Trend 01</span>
                     <h3 class="step-title">Higher Discounts = Higher Conversions</h3>
                     <p class="step-text">
-                        The data shows a clear pattern: <strong>12.81%</strong> converted with no discount, 
-                        <strong>27.58%</strong> with 10%, and <strong>35.71%</strong> with 20%.
+                        The data shows a clear pattern: <strong>12.81%</strong> converted with no discount (out of 320 people), 
+                        <strong>27.58%</strong> with 10% discount, and <strong>35.71%</strong> with 20% discount.
                     </p>
                     <p class="step-text">
                         The jump from 0% to 10% discount increased conversions by <strong>14.77%</strong>. 
-                        Going from 10% to 20% added another <strong>8.13%</strong>.
+                        Going from no discount to 20% increased by <strong>22.91%</strong>.
+                        The difference between 10% and 20% discount groups is <strong>8.13%</strong>.
                     </p>
                     <div class="insight-box">
                         <span class="insight-label">Key Takeaway</span>
                         <p class="insight-text">
-                            Offering any discount dramatically outperforms no discount. 
-                            But diminishing returns suggest the first discount tier provides the biggest impact.
+                            Discounts entice existing users to convert to permanent membership. This is supported by the correlation matrix value of 0.21 between membership conversion and discounts.
                         </p>
                     </div>
                 </div>
@@ -1501,14 +1436,16 @@
                     <span class="step-number">Trend 02</span>
                     <h3 class="step-title">Target Low-to-Medium Reservation Users</h3>
                     <p class="step-text">
-                        Most users make <strong>1-8 reservations</strong> per month. 
-                        These are the sweet spot for marketing — frequent enough to see value, 
-                        but not yet loyal.
+                        Based on the data, there is a higher number of customers in the lower range of reservations. 
+                        Most users make <strong>1-8 reservations</strong> per month.
                     </p>
                     <p class="step-text">
-                        Low (1-3): First-time or infrequent users — offer <strong>attractive limited-time incentives</strong><br>
-                        Moderate (4-6): Some experience — focus on <strong>retention incentives</strong><br>
-                        High (7+): Regular users — consider <strong>loyalty & referral programs</strong>
+                        <strong>Low (1-3):</strong> First-time or infrequent users — offer attractive limited-time incentives to get them to reserve more often.<br><br>
+                        <strong>Moderate (4-6):</strong> Some experience but not frequent — focus on retention incentives to keep them using the app.<br><br>
+                        <strong>High (7+):</strong> Regular users — consider loyalty programmes and referral incentives to friends or family members who haven't used Yummy.
+                    </p>
+                    <p class="step-text">
+                        This strategy not only allows Yummy to retain regular users but expand their app user numbers through referrals.
                     </p>
                 </div>
 
@@ -1520,14 +1457,18 @@
                         The median reservation count is <strong>7 across all discount groups</strong>.
                     </p>
                     <p class="step-text">
-                        Discounts influence <strong>conversion decisions</strong>, not booking behavior. 
-                        Users who don't reserve often won't suddenly become power users just because of discounts.
+                        Discount group 2 (20%) and no discount group both have the smallest Interquartile Range (IQR) of 8, indicating lower variability in reservation numbers than the 10% discount group. 
+                        All groups have minimum reservations of 1.
+                    </p>
+                    <p class="step-text">
+                        The IQR ranges across all discount groups are very similar, reinforcing the idea that customers feel indifferent about making more reservations even with discounts offered.
                     </p>
                     <div class="insight-box warning">
                         <span class="insight-label">Important</span>
                         <p class="insight-text">
-                            Discounts are effective for conversion, but won't change user engagement patterns. 
-                            Other strategies are needed to increase reservation frequency.
+                            Discounts are not an influential factor on customer behaviour in encouraging them to make more reservations on Yummy. 
+                            When customers don't use the app often, they are less inclined to take up paid membership. 
+                            Discounts influence <strong>conversion decisions</strong>, not booking behavior.
                         </p>
                     </div>
                 </div>
@@ -1539,46 +1480,55 @@
             <div class="image-grid">
                 <div class="image-grid-item">
                     <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-users"></i>
-                            <span class="image-placeholder-label">[IMAGE_04]</span>
-                            <span class="image-placeholder-desc">Customers by Reservation Group</span>
-                        </div>
+                        <img src="" alt="Figure 4: Bar chart of number of customers by distinct reservation groups">
                     </div>
                     <p class="image-caption">Figure 4: Number of customers by reservation groups</p>
                 </div>
                 <div class="image-grid-item">
                     <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-dollar-sign"></i>
-                            <span class="image-placeholder-label">[IMAGE_05]</span>
-                            <span class="image-placeholder-desc">Total Dining Expenses by Group</span>
-                        </div>
+                        <img src="" alt="Figure 5: Bar chart of total dining expenses by distinct reservation groups">
                     </div>
                     <p class="image-caption">Figure 5: Total dining expenses by reservation groups</p>
+                </div>
+            </div>
+
+            <p class="text-content">
+                Figure 6 shows the distribution of average dining expenses is <span class="highlight">right-skewed</span> — most diners have relatively low average dining expense and spend mostly within $200. 
+                Only a few diners have significantly high expenses in the $300-$400 range. This could be a potential group for marketing to increase their spending.
+            </p>
+
+            <p class="text-content">
+                Figure 7 shows the distribution of reservations is also <span class="highlight">right-skewed</span> — higher number of users within the 0-10 reservations range, 
+                with the number of reservations with highest occurrences being 6 reservations per month (over 150 users).
+            </p>
+
+            <div class="image-grid">
+                <div class="image-grid-item">
+                    <div class="image-frame">
+                        <img src="" alt="Figure 6: Distribution of average dining expenses">
+                    </div>
+                    <p class="image-caption">Figure 6: Distribution of average dining expenses</p>
+                </div>
+                <div class="image-grid-item">
+                    <div class="image-frame">
+                        <img src="" alt="Figure 7: Distribution of the number of reservations">
+                    </div>
+                    <p class="image-caption">Figure 7: Distribution of reservation numbers</p>
                 </div>
             </div>
 
             <div class="image-grid">
                 <div class="image-grid-item">
                     <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-area"></i>
-                            <span class="image-placeholder-label">[IMAGE_06]</span>
-                            <span class="image-placeholder-desc">Expense Distribution</span>
-                        </div>
+                        <img src="" alt="Figure 8: Table of values for key components of box plot">
                     </div>
-                    <p class="image-caption">Figure 6: Distribution of average dining expenses</p>
+                    <p class="image-caption">Figure 8: Box plot statistics table</p>
                 </div>
                 <div class="image-grid-item">
                     <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-area"></i>
-                            <span class="image-placeholder-label">[IMAGE_07]</span>
-                            <span class="image-placeholder-desc">Reservation Distribution</span>
-                        </div>
+                        <img src="" alt="Figure 9: Box-and-whisker graph of average dining expense by discount groups">
                     </div>
-                    <p class="image-caption">Figure 7: Distribution of reservation numbers</p>
+                    <p class="image-caption">Figure 9: Box plot of expenses by discount group</p>
                 </div>
             </div>
         </div>
@@ -1601,21 +1551,25 @@
                 <div class="big-stat-label">Conversion rate with 20% discount within 2 weeks</div>
             </div>
 
-            <div class="image-full">
-                <div class="image-frame">
-                    <div class="image-placeholder" style="aspect-ratio: 16/9;">
-                        <i class="fas fa-chart-bar"></i>
-                        <span class="image-placeholder-label">[IMAGE_08]</span>
-                        <span class="image-placeholder-desc">Stacked Bar: Conversion Timing</span>
-                    </div>
-                </div>
-                <p class="image-caption">Figure 8: Conversion timing by discount level (within 2 weeks vs after)</p>
+            <div class="image-frame">
+                <img src="" alt="Figure 10: Stacked bar graph of percentage vs conversion time">
             </div>
+            <p class="image-caption">Figure 10: Conversion timing by discount level (within 2 weeks vs after)</p>
+
+            <p class="text-content">
+                Figure 10 illustrates the relationship between the 3 discount rates and conversion timing using a stacked bar chart. 
+                The x-axis contains the 3 discount rates, while the y-axis shows percentages normalized to 100%.
+            </p>
+
+            <p class="text-content">
+                In the "No conversions" category, a high percentage of <span class="highlight-red">37.6%</span> of non-conversion users did not receive any discount. 
+                This means this group did not receive any discount prompts from Yummy to entice them for conversion.
+            </p>
 
             <div class="stats-grid">
                 <div class="stat-card green">
                     <div class="stat-card-number">51.0%</div>
-                    <div class="stat-card-label">20% Discount (2 weeks)</div>
+                    <div class="stat-card-label">20% Discount (within 2 weeks)</div>
                 </div>
                 <div class="stat-card blue">
                     <div class="stat-card-number">40.7%</div>
@@ -1627,54 +1581,101 @@
                 </div>
             </div>
 
+            <p class="text-content">
+                Interestingly, after 2 weeks of promotion, the <span class="highlight">10% discount has the highest conversion rate of 37.3%</span> compared to 32.2% with no discount and 34.8% with 20% discount. 
+                This shows that when the promotion extends beyond 2 weeks, 10% discount would be more ideal.
+            </p>
+
+            <p class="text-content">
+                There is a <span class="highlight-green">20.7% increase</span> in conversions in the 2-week period compared to the no-conversion category. 
+                When discounts are given, more than 50% of users will convert, with the highest conversion of <span class="highlight">85.8%</span> occurring within the 2-week period.
+            </p>
+
             <div class="insight-box neutral">
                 <span class="insight-label">Strategic Insight</span>
                 <p class="insight-text">
                     The 2-week window creates <strong>psychological urgency</strong>. 
-                    After 2 weeks, the 10% discount actually outperforms 20% (37.3% vs 34.8%) — 
-                    suggesting time pressure matters more than discount size for late converters.
+                    This creates a marketing psychological obligation and anchoring effect on users to convert when attractive discounts are given within a short timeframe.
                 </p>
             </div>
+
+            <h3 class="subsection-title">Trend 5: Higher Reservations = Higher Conversions with Discounts</h3>
+
+            <p class="text-content">
+                There is an increasing trend of conversions within 2 weeks and after 2 weeks for users with higher reservations. 
+                The conversion within 2 weeks shows a larger increase over increasing reservations than after 2 weeks.
+            </p>
 
             <div class="image-grid">
                 <div class="image-grid-item">
                     <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                            <span class="image-placeholder-label">[IMAGE_09]</span>
-                            <span class="image-placeholder-desc">Conversions vs Reservations</span>
-                        </div>
+                        <img src="" alt="Figure 11: Graph of percentage of conversions against number of reservations">
                     </div>
-                    <p class="image-caption">Figure 9: Conversion percentage by reservation count</p>
+                    <p class="image-caption">Figure 11: Conversion percentage by reservation count</p>
                 </div>
                 <div class="image-grid-item">
                     <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                            <span class="image-placeholder-label">[IMAGE_10]</span>
-                            <span class="image-placeholder-desc">Cumulative Conversions</span>
-                        </div>
+                        <img src="" alt="Figure 12: Graph of cumulative proportion of conversions vs reservations with different discount tiers">
                     </div>
-                    <p class="image-caption">Figure 10: Cumulative conversion by reservations & discount</p>
+                    <p class="image-caption">Figure 12: Cumulative conversion by reservations & discount tier</p>
                 </div>
             </div>
 
-            <div class="image-full">
-                <div class="image-frame">
-                    <div class="image-placeholder" style="aspect-ratio: 16/9;">
-                        <i class="fas fa-chart-bar"></i>
-                        <span class="image-placeholder-label">[IMAGE_11]</span>
-                        <span class="image-placeholder-desc">Conversions by Expense Group</span>
-                    </div>
-                </div>
-                <p class="image-caption">Figure 11: Number of conversions by average dining expense group</p>
+            <p class="text-content">
+                Figure 12 shows that when discounts are given to users with higher reservations, there is a higher proportion of conversion. 
+                A <span class="highlight">20% discount targeted to higher reservation users</span> results in a higher proportion of conversions compared to 10% discount.
+            </p>
+
+            <h3 class="subsection-title">Trend 6: Target $100-$300 Spending Group</h3>
+
+            <div class="image-frame">
+                <img src="" alt="Figure 13: Conversions by average dining expense group">
             </div>
+            <p class="image-caption">Figure 13: Number of conversions by average dining expense group</p>
 
             <div class="insight-box">
                 <span class="insight-label">Target Segment</span>
                 <p class="insight-text">
-                    Users with <strong>$100-$300</strong> average dining expenses show the highest conversions (127 + 81). 
-                    This mid-range spending group is the ideal target for premium membership offers.
+                    Users with <strong>$100-$300</strong> average dining expenses show the highest conversions. 
+                    When spending is low, conversion likelihood is also low as users may not be frequent users of the app. 
+                    Yummy could target higher discounts at this mid-range spending group to entice paid membership conversion, 
+                    which would also relate to higher revenue through commissions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider" style="max-width: 200px; margin: 0 auto;"></div>
+
+    <!-- ==================== BUSINESS OBJECTIVE ==================== -->
+    <section class="section section-dark" id="business">
+        <div class="container fade-in">
+            <span class="section-eyebrow">Part B</span>
+            <h2 class="section-title">Business Objective & Marketing Strategy</h2>
+            
+            <p class="text-content">
+                Based on Yummy's tiered membership discount promotion targeting existing app users, the business objective is to 
+                <span class="highlight">convert existing users to paid membership users</span> and increase platform usage for more reservations through a timed sales tiered discount scheme.
+            </p>
+
+            <p class="text-content">
+                The tiered membership discount model aims to convert existing users by providing better customer experience through enhanced dining experiences. 
+                This promotes <span class="highlight">customer loyalty</span> and enhances engagement through premium features for paid users. 
+                Since Yummy earns revenue from restaurant commissions, higher spending coupled with higher reservations will increase revenues.
+            </p>
+
+            <p class="text-content">
+                A <span class="highlight">2-week timeline</span> is optimal for higher conversions as shown in Figure 10. 
+                The discounts were targeted to users who have made spending at restaurants to convert them to paid users.
+            </p>
+
+            <div class="insight-box info">
+                <span class="insight-label">Marketing Strategy Effects</span>
+                <p class="insight-text">
+                    The effects can be identified through: (1) higher conversion rates when higher discounts are offered, 
+                    (2) existing users with higher reservations having higher probability to convert when given discounts, 
+                    (3) average dining expenses between $100-$300 showing highest conversions. 
+                    However, there could be other factors affecting users' decisions to convert not reflected in the data.
                 </p>
             </div>
         </div>
@@ -1685,119 +1686,215 @@
     <!-- ==================== HYPOTHESIS TESTING ==================== -->
     <section class="section section-dark scrolly-section" id="hypothesis">
         <div class="container-narrow fade-in" style="margin-bottom: 60px;">
-            <span class="section-eyebrow">Statistical Analysis</span>
+            <span class="section-eyebrow">Part C: Statistical Analysis</span>
             <h2 class="section-title">Testing the Hypotheses</h2>
             <p class="section-intro">
-                We used multiple statistical tests to validate our findings: 
-                Multiple Linear Regression, Chi-Squared Test, and Two-Proportion Z-Test.
+                Based on the correlation matrix, all three predictor variables (average dining expenses, reservations, and discount) 
+                are correlated with conversion to paid membership. We use Multiple Linear Regression to investigate these relationships statistically.
             </p>
         </div>
 
-        <div class="scrolly-container">
-            <div class="scrolly-content-right">
-                <div class="text-step">
-                    <span class="step-number">Test 01</span>
-                    <h3 class="step-title">Multiple Linear Regression</h3>
-                    <p class="step-text">
-                        We tested whether <strong>expenses</strong>, <strong>reservations</strong>, and 
-                        <strong>discount levels</strong> significantly impact membership conversion.
-                    </p>
-                    <div class="hypothesis-box">
-                        <div class="hypothesis-label">Hypotheses</div>
-                        <p class="hypothesis-text null">H₀: Variables have no impact on conversion</p>
-                        <p class="hypothesis-text alt">H₁: Variables have an impact on conversion</p>
-                        <div class="hypothesis-result">
-                            <span class="result-badge reject">NULL REJECTED</span>
-                            <p class="step-text">
-                                All p-values < 0.05. F-statistic = 169.90. 
-                                <strong>Strong evidence</strong> that all three variables impact conversion.
-                            </p>
-                        </div>
+        <div class="container">
+            <!-- Multiple Linear Regression -->
+            <div class="text-step" style="min-height: auto; padding: 40px 0;">
+                <span class="step-number">Test 01</span>
+                <h3 class="step-title">Multiple Linear Regression</h3>
+                <p class="step-text">
+                    We use the Multiple Linear Regression model to examine the relationship of average dining expenses, 
+                    reservations, and discounts to explain and predict conversion to paid membership.
+                </p>
+                <p class="step-text">
+                    <strong>Model Equation:</strong> Y = β₀ + β₁(expn) + β₂(rsvn) + β₃(disc) + ε
+                </p>
+                <p class="step-text">
+                    Where Y = conversion rate, β₀ = intercept, β₁ = coefficient for average dining expenses, 
+                    β₂ = coefficient for reservations, β₃ = coefficient for discounts, ε = error term.
+                </p>
+
+                <div class="image-frame">
+                    <img src="" alt="Figure 14: Multicollinearity check for multiple regression model">
+                </div>
+                <p class="image-caption">Figure 14: VIF multicollinearity check results</p>
+
+                <p class="step-text">
+                    The VIF values obtained are: <span class="highlight">1.003725</span> for expenses, 
+                    <span class="highlight">1.003503</span> for reservations, and <span class="highlight">1.000299</span> for discounts. 
+                    VIF values around 1 indicate no multicollinearity — each predictor provides sufficient unique information.
+                </p>
+
+                <div class="image-frame">
+                    <img src="" alt="Figure 15: Results from multiple regression model">
+                </div>
+                <p class="image-caption">Figure 15: Multiple regression model summary</p>
+
+                <div class="image-frame">
+                    <img src="" alt="Figure 16: p-value from multiple regression model">
+                </div>
+                <p class="image-caption">Figure 16: P-values from multiple regression</p>
+
+                <p class="step-text">
+                    <strong>Equation Output:</strong> Conversion = -0.420 + 0.00284(expn) + 0.0227(rsvn) + 0.117(disc)
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-number">-0.420</div>
+                        <div class="stat-card-label">Intercept (β₀)</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-card-number">0.00284</div>
+                        <div class="stat-card-label">Expense Coefficient (β₁)</div>
+                    </div>
+                    <div class="stat-card blue">
+                        <div class="stat-card-number">0.0227</div>
+                        <div class="stat-card-label">Reservation Coefficient (β₂)</div>
+                    </div>
+                    <div class="stat-card orange">
+                        <div class="stat-card-number">0.117</div>
+                        <div class="stat-card-label">Discount Coefficient (β₃)</div>
                     </div>
                 </div>
 
-                <div class="text-step">
-                    <span class="step-number">Test 02</span>
-                    <h3 class="step-title">Chi-Squared Test</h3>
-                    <p class="step-text">
-                        Is there a <strong>relationship</strong> between discount levels and conversion rates?
-                    </p>
-                    <div class="hypothesis-box">
-                        <div class="hypothesis-label">Hypotheses</div>
-                        <p class="hypothesis-text null">H₀: No relationship between discount & conversion</p>
-                        <p class="hypothesis-text alt">H₁: There is a relationship</p>
-                        <div class="hypothesis-result">
-                            <span class="result-badge reject">NULL REJECTED</span>
-                            <p class="step-text">
-                                χ² = 46.823, df = 2, p-value = 6.8e-11. 
-                                <strong>Highly significant</strong> relationship confirmed.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <p class="step-text">
+                    Among three beta values, <span class="highlight">β₃ (discount)</span> has the largest coefficient value (0.117), 
+                    meaning it has the strongest association with membership conversion.
+                </p>
 
-                <div class="text-step">
-                    <span class="step-number">Test 03</span>
-                    <h3 class="step-title">Two-Proportion Z-Test</h3>
-                    <p class="step-text">
-                        Is the 20% discount <strong>more effective</strong> than 10%?
-                    </p>
-                    <div class="hypothesis-box">
-                        <div class="hypothesis-label">Hypotheses</div>
-                        <p class="hypothesis-text null">H₀: 10% and 20% conversion rates are equal</p>
-                        <p class="hypothesis-text alt">H₁: 20% conversion rate > 10% conversion rate</p>
-                        <div class="hypothesis-result">
-                            <span class="result-badge reject">NULL REJECTED</span>
-                            <p class="step-text">
-                                Z = 2.28, p-value = 0.0114. 
-                                <strong>20% discount significantly outperforms 10%</strong> at 5% level.
-                            </p>
-                        </div>
+                <div class="hypothesis-box">
+                    <div class="hypothesis-label">Hypotheses</div>
+                    <p class="hypothesis-text null">H₀: Variables have no impact on conversion</p>
+                    <p class="hypothesis-text alt">H₁: Variables have an impact on conversion</p>
+                    <div class="hypothesis-result">
+                        <span class="result-badge reject">NULL REJECTED</span>
+                        <p class="step-text">
+                            All p-values < 0.05 and 0.01. F-statistic = 169.90 (high, indicating strong explanation of variance). 
+                            Multiple R² = 0.3385 (33.85% of variance explained). 
+                            <strong>Strong evidence to reject null hypothesis.</strong>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="scrolly-sticky-right">
-                <div class="image-placeholder" style="aspect-ratio: 3/4;">
-                    <i class="fas fa-chart-line"></i>
-                    <span class="image-placeholder-label">[IMAGE_12]</span>
-                    <span class="image-placeholder-desc">Regression Results</span>
-                </div>
-                <p class="image-caption">Figure 12: Multiple linear regression output</p>
-            </div>
-        </div>
 
-        <!-- Additional Test Images -->
-        <div class="container" style="margin-top: 60px;">
-            <div class="image-grid image-grid-3">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-code"></i>
-                            <span class="image-placeholder-label">[IMAGE_13]</span>
-                            <span class="image-placeholder-desc">VIF Check</span>
+            <!-- Chi-Squared Test -->
+            <div class="text-step" style="min-height: auto; padding: 40px 0;">
+                <span class="step-number">Test 02</span>
+                <h3 class="step-title">Chi-Squared Test</h3>
+                <p class="step-text">
+                    To identify if there is a <strong>relationship</strong> between discounts and membership conversion rates, 
+                    we use the Chi-Squared test. This helps us understand if giving discounts serves as an effective incentive.
+                </p>
+
+                <div class="image-grid">
+                    <div class="image-grid-item">
+                        <div class="image-frame">
+                            <img src="" alt="Figure 17: Creating a table to perform chi-squared test">
                         </div>
+                        <p class="image-caption">Figure 17: Chi-squared contingency table</p>
                     </div>
-                    <p class="image-caption">Figure 13: Multicollinearity check (VIF)</p>
+                    <div class="image-grid-item">
+                        <div class="image-frame">
+                            <img src="" alt="Figure 18: Chi-squared test result">
+                        </div>
+                        <p class="image-caption">Figure 18: Chi-squared test result</p>
+                    </div>
                 </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-code"></i>
-                            <span class="image-placeholder-label">[IMAGE_14]</span>
-                            <span class="image-placeholder-desc">Chi-Squared Code</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 14: Chi-squared test implementation</p>
+
+                <div class="image-frame">
+                    <img src="" alt="Figure 19: Rejecting null hypothesis at 5% and 1% significance level">
                 </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-code"></i>
-                            <span class="image-placeholder-label">[IMAGE_15]</span>
-                            <span class="image-placeholder-desc">Z-Test Code</span>
-                        </div>
+                <p class="image-caption">Figure 19: Hypothesis rejection confirmation</p>
+
+                <div class="hypothesis-box">
+                    <div class="hypothesis-label">Hypotheses</div>
+                    <p class="hypothesis-text null">H₀: No relationship between discount & conversion</p>
+                    <p class="hypothesis-text alt">H₁: There is a relationship between discount & conversion</p>
+                    <div class="hypothesis-result">
+                        <span class="result-badge reject">NULL REJECTED</span>
+                        <p class="step-text">
+                            χ² = 46.823, df = 2, p-value = 6.8e-11. 
+                            P-value < 0.05 and 0.01. <strong>Highly significant relationship confirmed.</strong> 
+                            Giving discounts serves as a highly effective incentive to convert users to members.
+                        </p>
                     </div>
-                    <p class="image-caption">Figure 15: Two-proportion Z-test implementation</p>
+                </div>
+            </div>
+
+            <!-- Two-Proportion Z-Test -->
+            <div class="text-step" style="min-height: auto; padding: 40px 0;">
+                <span class="step-number">Test 03</span>
+                <h3 class="step-title">Two-Proportion Z-Test</h3>
+                <p class="step-text">
+                    To determine the <strong>extent</strong> of the relationship — specifically whether 20% discount 
+                    is more effective than 10% — we use the Two-Proportion Z-Test. 
+                    This test is appropriate because we are comparing two independent groups with a large enough sample size.
+                </p>
+
+                <div class="image-grid">
+                    <div class="image-grid-item">
+                        <div class="image-frame">
+                            <img src="" alt="Figure 20: Create new variable to filter discount groups">
+                        </div>
+                        <p class="image-caption">Figure 20: Filtering discount groups</p>
+                    </div>
+                    <div class="image-grid-item">
+                        <div class="image-frame">
+                            <img src="" alt="Figure 21: Summary of conversion rates for two discount groups">
+                        </div>
+                        <p class="image-caption">Figure 21: Conversion rate summary</p>
+                    </div>
+                </div>
+
+                <div class="image-frame">
+                    <img src="" alt="Figure 22: Calculating Z-value and p-value from two-proportion Z-test">
+                </div>
+                <p class="image-caption">Figure 22: Z-test calculations</p>
+
+                <div class="image-frame">
+                    <img src="" alt="Figure 23: Discount group membership conversion rate table, Z-value and p-value">
+                </div>
+                <p class="image-caption">Figure 23: Z-test results summary</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card blue">
+                        <div class="stat-card-number">27.58%</div>
+                        <div class="stat-card-label">10% Discount Conversion</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-card-number">35.71%</div>
+                        <div class="stat-card-label">20% Discount Conversion</div>
+                    </div>
+                    <div class="stat-card orange">
+                        <div class="stat-card-number">2.28</div>
+                        <div class="stat-card-label">Z-value</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-number">0.0114</div>
+                        <div class="stat-card-label">P-value</div>
+                    </div>
+                </div>
+
+                <div class="hypothesis-box">
+                    <div class="hypothesis-label">Hypotheses</div>
+                    <p class="hypothesis-text null">H₀: 10% and 20% conversion rates are equal</p>
+                    <p class="hypothesis-text alt">H₁: 20% conversion rate > 10% conversion rate</p>
+                    <div class="hypothesis-result">
+                        <span class="result-badge reject">NULL REJECTED AT 5%</span>
+                        <p class="step-text">
+                            Z = 2.278, p-value = 0.0114. <strong>Null rejected at 5% significance level.</strong> 
+                            However, at a more stringent 1% level, the p-value (0.0114) is slightly higher than 0.01, 
+                            so we don't have strong evidence to reject at 1% level.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="insight-box neutral">
+                    <span class="insight-label">Hypothesis Testing Summary</span>
+                    <p class="insight-text">
+                        There is a moderately strong relationship between providing discounts as incentives for paid membership. 
+                        There is moderately strong evidence that offering better discounts attracts better membership conversion at 5% significance level. 
+                        To increase conversion likelihood, strategies like <strong>"attractive discounts within limited time offers"</strong> and 
+                        <strong>"exclusive offers"</strong> (e.g., free merchandise, access to premium content) can create urgency and a sense of exclusiveness.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1808,102 +1905,229 @@
     <!-- ==================== EXPERIMENT DESIGN ==================== -->
     <section class="section section-deep" id="experiment">
         <div class="container fade-in">
-            <span class="section-eyebrow">Experiment Design</span>
+            <span class="section-eyebrow">Part D: Experiment Design</span>
             <h2 class="section-title">RCT with Stratification</h2>
             <p class="section-intro">
-                We designed a Randomized Controlled Trial (RCT) to measure the causal impact 
-                of different discount rates on conversion. Users were stratified by spending 
-                and reservation patterns for balanced group representation.
+                To maximize conversions to paid membership by offering discounts, we designed a <span class="highlight">Randomized Controlled Trial (RCT) with Stratification</span>. 
+                This allows analysis of the relationship between conversion rates and discount rates while controlling other variables.
             </p>
 
-            <div class="image-full">
-                <div class="image-frame">
-                    <div class="image-placeholder" style="aspect-ratio: 16/9;">
-                        <i class="fas fa-project-diagram"></i>
-                        <span class="image-placeholder-label">[IMAGE_16]</span>
-                        <span class="image-placeholder-desc">Experiment Design Diagram</span>
-                    </div>
-                </div>
-                <p class="image-caption">Figure 16: RCT experiment structure with stratification</p>
-            </div>
+            <p class="text-content">
+                We test with <span class="highlight">999 users</span> (chosen for even 3-way splitting) across three discount rates: 
+                0% (control group), 10%, and 20%. The total discount budget is equivalent to <span class="highlight">103 membership fees</span>, 
+                with maximum 20% discount per user offered at most once.
+            </p>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-card-number">333</div>
-                    <div class="stat-card-label">Control (0%)</div>
-                </div>
-                <div class="stat-card blue">
-                    <div class="stat-card-number">333</div>
-                    <div class="stat-card-label">Treatment 1 (10%)</div>
-                </div>
-                <div class="stat-card green">
-                    <div class="stat-card-number">333</div>
-                    <div class="stat-card-label">Treatment 2 (20%)</div>
-                </div>
-            </div>
+            <h3 class="subsection-title">Stratification Process</h3>
+
+            <p class="text-content">
+                To ensure balanced representation, we group users based on two key variables: 
+                <span class="highlight">average dining expenses (expn)</span> and <span class="highlight">number of reservations (rsvn)</span>.
+            </p>
+
+            <p class="text-content">
+                We create <span class="highlight">tertiles</span> for each variable:
+            </p>
+            <p class="text-content">
+                <strong>Average Dining Expense Tertiles:</strong><br>
+                • 1st Tertile: Low spenders (bottom 33%) — less than $100<br>
+                • 2nd Tertile: Medium spenders (middle 33%) — $100 to $200<br>
+                • 3rd Tertile: High spenders (top 33%) — above $200
+            </p>
+            <p class="text-content">
+                <strong>Reservation Tertiles:</strong><br>
+                • 1st Tertile: Infrequent users (bottom 33%) — less than 10<br>
+                • 2nd Tertile: Moderate users (middle 33%) — 10 to 20<br>
+                • 3rd Tertile: Frequent users (top 33%) — greater than 20
+            </p>
+
+            <p class="text-content">
+                Combining these creates a <span class="highlight">3×3 matrix of 9 strata</span>, each representing unique user segments 
+                (e.g., low expense/low reservations, medium expense/high reservations, etc.).
+            </p>
+
+            <table class="strata-table">
+                <thead>
+                    <tr>
+                        <th>Stratum</th>
+                        <th>Total Users</th>
+                        <th>Control (0%)</th>
+                        <th>10% Discount</th>
+                        <th>20% Discount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. Low expenses, Low reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td>2. Low expenses, Moderate reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td>3. Low expenses, High reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td>4. Medium expenses, Low reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td>5. Medium expenses, Moderate reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td>6. Medium expenses, High reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td>7. High expenses, Low reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td>8. High expenses, Moderate reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td>9. High expenses, High reservations</td>
+                        <td>111</td>
+                        <td>37</td>
+                        <td>37</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>999</strong></td>
+                        <td><strong>333</strong></td>
+                        <td><strong>333</strong></td>
+                        <td><strong>333</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Linear Regression Model for Experiment</h3>
+
+            <p class="text-text">
+                The linear regression model to measure the effect of discounts while considering user characteristics:
+            </p>
+            <p class="text-content">
+                <strong>convert_i = β₀ + β₁(discount_10_i) + β₂(discount_20_i) + β₃(expn_i) + β₄(rsvn_i) + ε_i</strong>
+            </p>
+            <p class="text-content">
+                Where: <span class="highlight">convert</span> = probability of conversion (0 to 1), 
+                <span class="highlight">discount_10</span> and <span class="highlight">discount_20</span> = binary variables for discount offered, 
+                <span class="highlight">expn</span> = average dining expense, <span class="highlight">rsvn</span> = number of reservations, 
+                <span class="highlight">ε</span> = error term.
+            </p>
 
             <div class="insight-box info">
                 <span class="insight-label">Budget Constraint</span>
                 <p class="insight-text">
-                    Total discount budget = 103 membership fees. Our experiment uses ~100 fees 
-                    (33.3M + 66.6M = 99.9M), staying within budget while maximizing learning.
+                    <strong>Budget Calculation:</strong><br>
+                    • 10% Discount Group: 333 × 0.1M = 33.3M<br>
+                    • 20% Discount Group: 333 × 0.2M = 66.6M<br>
+                    • <strong>Total: 33.3M + 66.6M = 99.9M</strong> (within the 103M budget limit)
                 </p>
             </div>
 
-            <div class="image-grid">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-table"></i>
-                            <span class="image-placeholder-label">[IMAGE_17]</span>
-                            <span class="image-placeholder-desc">Experiment Results Summary</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 17: Linear regression results from experiment</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-check-circle"></i>
-                            <span class="image-placeholder-label">[IMAGE_18]</span>
-                            <span class="image-placeholder-desc">Multicollinearity Check</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 18: VIF results confirming no multicollinearity</p>
-                </div>
+            <h3 class="subsection-title">Experiment Considerations</h3>
+
+            <div class="insight-box warning">
+                <span class="insight-label">Limitation: Out of Bounds</span>
+                <p class="insight-text">
+                    Linear regression can give results outside 0-1 range (e.g., "1.2" or "-0.5"). 
+                    A conversion of 1.2 implies 120% probability, which is impossible. 
+                    These out-of-bounds results may complicate interpretation and limit model reliability.
+                </p>
             </div>
 
-            <!-- Experiment Results -->
-            <h3 style="font-family: 'Press Start 2P', cursive; font-size: 0.7rem; color: var(--pixel-sunset); margin: 50px 0 25px;">
-                Experiment Coefficients
-            </h3>
+            <div class="image-frame">
+                <img src="" alt="Figure 24: Multicollinearity results">
+            </div>
+            <p class="image-caption">Figure 24: Multicollinearity check (VIF) for experiment model</p>
+
+            <p class="text-content">
+                From Figure 24, multicollinearity results are all <span class="highlight">less than 2</span> (threshold = 5), 
+                suggesting low multicollinearity and the linear regression model is acceptable.
+            </p>
+
+            <h3 class="subsection-title">Experiment Results</h3>
+
+            <div class="image-frame">
+                <img src="" alt="Figure 25: Summary result of linear regression model">
+            </div>
+            <p class="image-caption">Figure 25: Linear regression results from experiment</p>
+
+            <p class="text-content">
+                The experiment used 999 randomly selected rows using set.seed function. Results from Figure 25:
+            </p>
 
             <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-number">-0.423</div>
+                    <div class="stat-card-label">Intercept</div>
+                </div>
                 <div class="stat-card green">
                     <div class="stat-card-number">+12.6%</div>
-                    <div class="stat-card-label">10% Discount Effect</div>
+                    <div class="stat-card-label">10% Discount Effect (p < 0.001)</div>
                 </div>
                 <div class="stat-card green">
                     <div class="stat-card-number">+23.4%</div>
-                    <div class="stat-card-label">20% Discount Effect</div>
-                </div>
-                <div class="stat-card blue">
-                    <div class="stat-card-number">+0.28%</div>
-                    <div class="stat-card-label">Per $1 Expense</div>
-                </div>
-                <div class="stat-card orange">
-                    <div class="stat-card-number">+2.27%</div>
-                    <div class="stat-card-label">Per Reservation</div>
+                    <div class="stat-card-label">20% Discount Effect (p < 2e-16)</div>
                 </div>
             </div>
 
-            <div class="insight-box warning">
-                <span class="insight-label">Limitation</span>
-                <p class="insight-text">
-                    Linear regression can produce out-of-bounds results (>100% or <0% probability). 
-                    R² of 33.87% indicates moderate fit — additional variables would improve the model.
-                </p>
+            <div class="stats-grid">
+                <div class="stat-card blue">
+                    <div class="stat-card-number">+0.28%</div>
+                    <div class="stat-card-label">Per $1 Expense (p < 2e-16)</div>
+                </div>
+                <div class="stat-card orange">
+                    <div class="stat-card-number">+2.27%</div>
+                    <div class="stat-card-label">Per Reservation (p < 2e-16)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-number">33.87%</div>
+                    <div class="stat-card-label">R² (Variance Explained)</div>
+                </div>
             </div>
+
+            <p class="text-content">
+                The coefficient for <span class="highlight-green">20% discount (0.234)</span> is larger than for 10% discount (0.126), 
+                implying 20% discount has a better influence on paid membership conversion. 
+                The F-statistic is large at <span class="highlight">127.3</span>, suggesting at least one independent variable has a significant relationship with conversion. 
+                All p-values are highly significant (< 0.05 and < 0.01).
+            </p>
+
+            <p class="text-content">
+                While R² of 33.87% might not seem high, it is good enough to suggest a substantial amount of variance is explained, 
+                though additional variables would improve the score.
+            </p>
         </div>
     </section>
 
@@ -1915,8 +2139,9 @@
             <span class="section-eyebrow">Conclusion</span>
             <h2 class="section-title">Yes, Discounts Drive Conversions</h2>
             <p class="section-intro">
-                Our analysis provides strong statistical evidence that discount promotions 
-                significantly increase paid membership conversion rates for Yummy.
+                The experiment using RCT with stratification measures the impact of different discount rates on conversion. 
+                By stratifying users according to their average dining expenses and reservations, the experiment ensures balanced group representation 
+                and controls for variables that may interfere with results.
             </p>
 
             <div class="findings-grid">
@@ -1926,7 +2151,8 @@
                     </div>
                     <h4 class="finding-title">20% Discount Wins</h4>
                     <p class="finding-text">
-                        35.71% conversion rate — nearly 3x the no-discount baseline of 12.81%.
+                        35.71% conversion rate — nearly 3x the no-discount baseline of 12.81%. 
+                        20% discount increases conversion by 23.4%.
                     </p>
                 </div>
                 <div class="finding-card">
@@ -1935,7 +2161,8 @@
                     </div>
                     <h4 class="finding-title">2-Week Urgency</h4>
                     <p class="finding-text">
-                        51% of conversions happen within 2 weeks. Time-limited offers work.
+                        51% of conversions with 20% discount happen within 2 weeks. 
+                        Time-limited offers create psychological urgency.
                     </p>
                 </div>
                 <div class="finding-card">
@@ -1944,15 +2171,22 @@
                     </div>
                     <h4 class="finding-title">Target $100-$300</h4>
                     <p class="finding-text">
-                        Mid-range spenders show highest conversion potential.
+                        Mid-range spenders show highest conversion potential. 
+                        Focus discount strategies on this segment.
                     </p>
                 </div>
             </div>
 
+            <p class="text-content">
+                By splitting into three experimental groups (control, 10%, 20%), this allows for meaningful comparison of conversion probability. 
+                The linear regression model allows for easy interpretation of results and evaluation of each variable's effect. 
+                The budget allocation analysis proves the experiment adheres to budget limits and is financially feasible.
+            </p>
+
             <div class="pull-quote">
                 <p class="pull-quote-text">
-                    "Discounts create psychological urgency. The 2-week window 
-                    combined with 20% discount maximizes conversion probability."
+                    "The key insights from significant coefficients for discount rates and user characteristics 
+                    will allow Yummy to refine future promotions based on these findings."
                 </p>
             </div>
 
@@ -1967,15 +2201,17 @@
                             <li><i class="fas fa-chart-line"></i> Chi-Squared Test</li>
                             <li><i class="fas fa-chart-line"></i> Two-Proportion Z-Test</li>
                             <li><i class="fas fa-chart-line"></i> RCT with Stratification</li>
+                            <li><i class="fas fa-chart-line"></i> VIF Multicollinearity Check</li>
                         </ul>
                     </div>
                     <div class="methodology-item">
-                        <h4>R Packages Used</h4>
+                        <h4>AI Assistance</h4>
                         <ul>
-                            <li><i class="fab fa-r-project"></i> ggplot2</li>
-                            <li><i class="fab fa-r-project"></i> dplyr</li>
-                            <li><i class="fab fa-r-project"></i> corrplot</li>
-                            <li><i class="fab fa-r-project"></i> car (VIF)</li>
+                            <li><i class="fas fa-robot"></i> Correlation matrix generation</li>
+                            <li><i class="fas fa-robot"></i> Matrix formatting</li>
+                            <li><i class="fas fa-robot"></i> Multicollinearity test code</li>
+                            <li><i class="fas fa-robot"></i> Chi-squared test implementation</li>
+                            <li><i class="fas fa-robot"></i> F-statistic explanation</li>
                         </ul>
                     </div>
                 </div>
