@@ -336,176 +336,6 @@
             font-weight: 600;
         }
 
-        /* ==================== SCROLLYTELLING LAYOUT ==================== */
-        .scrolly-section {
-            padding: 100px 0;
-        }
-
-        .scrolly-container {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            gap: 80px;
-        }
-
-        .scrolly-sticky {
-            flex: 1;
-            position: sticky;
-            top: 80px;
-            height: fit-content;
-            max-width: 500px;
-        }
-
-        .scrolly-content {
-            flex: 1;
-            padding-left: 40px;
-            border-left: 1px solid var(--border-subtle);
-        }
-
-        .scrolly-content-right {
-            flex: 1;
-            padding-right: 40px;
-            border-right: 1px solid var(--border-subtle);
-        }
-
-        .scrolly-sticky-right {
-            flex: 1;
-            position: sticky;
-            top: 80px;
-            height: fit-content;
-            max-width: 500px;
-        }
-
-        /* Text Steps */
-        .text-step {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 60px 0;
-        }
-
-        .text-step:first-child {
-            padding-top: 0;
-        }
-
-        .text-step:last-child {
-            min-height: 50vh;
-        }
-
-        .step-number {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--accent-earth);
-            margin-bottom: 18px;
-        }
-
-        .step-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.9rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 25px;
-            line-height: 1.35;
-        }
-
-        .step-text {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            line-height: 1.85;
-            margin-bottom: 20px;
-        }
-
-        /* ==================== IMAGE COMPONENTS ==================== */
-        .image-placeholder {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            aspect-ratio: 4/3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            transition: all 0.3s ease;
-        }
-
-        .image-placeholder:hover {
-            border-color: var(--accent-earth);
-        }
-
-        .image-placeholder i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--accent-earth);
-            opacity: 0.4;
-        }
-
-        .image-placeholder-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: var(--accent-earth);
-            opacity: 0.7;
-        }
-
-        .image-placeholder-desc {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-top: 8px;
-        }
-
-        .image-caption {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 15px;
-            text-align: center;
-            font-style: italic;
-        }
-
-        /* Image in frame */
-        .image-frame {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .image-frame:hover {
-            border-color: var(--accent-earth);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .image-frame img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Image Grid */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .image-grid-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .image-grid-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Full width image */
-        .image-full {
-            margin: 50px 0;
-        }
-
         /* ==================== STATS & DATA COMPONENTS ==================== */
         .stats-row {
             display: flex;
@@ -551,30 +381,6 @@
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        /* Large stats for impact */
-        .big-stat {
-            text-align: center;
-            padding: 60px 40px;
-            background: var(--bg-card);
-            margin: 50px 0;
-        }
-
-        .big-stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 700;
-            color: var(--accent-danger);
-            line-height: 1;
-            margin-bottom: 15px;
-        }
-
-        .big-stat-label {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         /* ==================== INSIGHT & QUOTE BOXES ==================== */
@@ -635,12 +441,6 @@
             line-height: 1.5;
             max-width: 700px;
             margin: 0 auto;
-        }
-
-        .pull-quote-source {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 20px;
         }
 
         /* ==================== TIMELINE ==================== */
@@ -739,12 +539,6 @@
             color: var(--accent-earth);
         }
 
-        .comparison-text {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
         /* ==================== FINDINGS CARDS ==================== */
         .findings-grid {
             display: grid;
@@ -787,18 +581,6 @@
             line-height: 1.7;
         }
 
-        /* ==================== DIVIDERS ==================== */
-        .divider {
-            height: 1px;
-            background: var(--border-subtle);
-            margin: 80px auto;
-            max-width: 200px;
-        }
-
-        .divider-full {
-            max-width: 100%;
-        }
-
         /* ==================== METHODOLOGY SECTION ==================== */
         .methodology {
             background: var(--bg-surface);
@@ -827,12 +609,6 @@
             text-transform: uppercase;
             color: var(--accent-earth);
             margin-bottom: 15px;
-        }
-
-        .methodology-item p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
         }
 
         .methodology-item ul {
@@ -896,6 +672,69 @@
             border-color: var(--text-primary);
         }
 
+        /* ==================== CONTENT CARDS ==================== */
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .content-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .content-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==================== ANALYSIS BLOCKS ==================== */
+        .analysis-block {
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent-earth);
+        }
+
+        .analysis-block-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .analysis-block p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .analysis-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==================== SUBSECTION HEADERS ==================== */
+        .subsection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 50px 0 25px;
+        }
+
         /* ==================== FOOTER ==================== */
         footer {
             background: #1e1a12;
@@ -923,45 +762,12 @@
 
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 1024px) {
-            .scrolly-container {
-                flex-direction: column;
-                gap: 40px;
-            }
-
-            .scrolly-sticky,
-            .scrolly-sticky-right {
-                position: relative;
-                top: 0;
-                max-width: 100%;
-            }
-
-            .scrolly-content,
-            .scrolly-content-right {
-                padding-left: 0;
-                padding-right: 0;
-                border-left: none;
-                border-right: none;
-            }
-
-            .text-step {
-                min-height: auto;
-                padding: 40px 0;
-            }
-
             .comparison-grid,
             .methodology-grid {
                 grid-template-columns: 1fr;
             }
 
             .findings-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .image-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .image-grid-3 {
                 grid-template-columns: 1fr;
             }
         }
@@ -1001,10 +807,6 @@
 
             .stats-row {
                 flex-direction: column;
-            }
-
-            .big-stat-number {
-                font-size: 3.5rem;
             }
 
             .pull-quote-text {
@@ -1057,6 +859,10 @@
             <span class="sidebar-nav-dot"></span>
             <span class="sidebar-nav-label">Context</span>
         </a>
+        <a href="#data-overview" class="sidebar-nav-item" data-section="data-overview">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">Data Overview</span>
+        </a>
         <a href="#the-map" class="sidebar-nav-item" data-section="the-map">
             <span class="sidebar-nav-dot"></span>
             <span class="sidebar-nav-label">The Map</span>
@@ -1065,13 +871,21 @@
             <span class="sidebar-nav-dot"></span>
             <span class="sidebar-nav-label">Human Cost</span>
         </a>
+        <a href="#k5-plan" class="sidebar-nav-item" data-section="k5-plan">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">The K5 Plan</span>
+        </a>
         <a href="#rural-urban" class="sidebar-nav-item" data-section="rural-urban">
             <span class="sidebar-nav-dot"></span>
             <span class="sidebar-nav-label">Rural vs Urban</span>
         </a>
         <a href="#fear" class="sidebar-nav-item" data-section="fear">
             <span class="sidebar-nav-dot"></span>
-            <span class="sidebar-nav-label">Living with Fear</span>
+            <span class="sidebar-nav-label">Fear Analysis</span>
+        </a>
+        <a href="#proximity" class="sidebar-nav-item" data-section="proximity">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">Proximity Impact</span>
         </a>
         <a href="#conclusion" class="sidebar-nav-item" data-section="conclusion">
             <span class="sidebar-nav-dot"></span>
@@ -1096,6 +910,35 @@
         </div>
     </section>
 
+    <!-- ==================== EXECUTIVE SUMMARY ==================== -->
+    <section class="section section-surface" id="summary">
+        <div class="container-narrow fade-in">
+            <span class="section-eyebrow">Executive Summary</span>
+            <h2 class="section-title">Understanding the Legacy</h2>
+            <p class="text-content">
+                The Cambodian Civil War was a major conflict between Khmer Rouge, Kingdom of Cambodia and subsequently 
+                the Khmer Republic after 1970. The aftermath resulted in establishment of Khmer Rouge, its brutal genocide 
+                on the people and major refugee crisis in South-East-Asia. Eventually, it led to the Khmer Rouge insurgency, 
+                lasting from late 1978 to 1998 which saw the overthrow of Khmer Rouge by Vietnam.
+            </p>
+            <p class="text-content">
+                The painful legacy of these multiple wars is shouldered by the Cambodians, who continue to suffer and fall 
+                victim from unexploded landmines and Explosive-Remnants-of-War (ERW). Many continue to litter in Cambodia, 
+                close to communities, resulting in fear among people, especially in the countryside.
+            </p>
+            
+            <div class="insight-box neutral">
+                <span class="insight-label">Key Thesis</span>
+                <p class="insight-text">
+                    The Cambodian Civil war legacy of landmines and ERW continue to impact on Cambodian Communities to a large extent. 
+                    This is based on 2 reasons: First, the legacy of the Khmer Rouge insurgency continue to impact Cambodian communities 
+                    in provinces facing Thailand. Second, landmines and ERW scattered across Cambodia have greater impact on rural than 
+                    urban areas where the majority of Cambodia's economic and daily activities take place.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== HISTORICAL CONTEXT ==================== -->
     <section class="section section-dark" id="context">
         <div class="container-narrow fade-in">
@@ -1105,6 +948,22 @@
                 The Cambodian Civil War (1967-1975) and its aftermath left deep scars on the nation. 
                 What followed was decades of insurgency, foreign intervention, and a landscape 
                 permanently altered by millions of unexploded ordnances.
+            </p>
+
+            <p class="text-content">
+                The Cambodian Civil War was also a proxy war fought indirectly by the US and Soviet Union as the US was 
+                controlling the spread of communism and battling heavily in the Vietnam war. As a precursor to the civil war, 
+                Cambodia declared a state of neutrality but it was bombed by the US. The most intense was in a covert operation 
+                known as <span class="highlight">Operation Menu</span> in 1970, part of an ultimatum to get Vietnam to negotiate peace terms.
+            </p>
+
+            <p class="text-content">
+                However, it did not stop the spread of communism for it led to rise of Khmer Rouge under Pol Pot's leadership. 
+                Under his leadership, Cambodia under the name Khmer Rouge underwent turbulent times with major humanitarian crisis 
+                from lack of food, mass killings, and mass forced killings accumulating to the Cambodian Genocide. The genocide ended 
+                during the Khmer Rouge insurgency where Vietnam invaded and removed Pol Pot's government from power. While the civil 
+                war conflict ended in 1975, only following the death of its founder Pol Pot did the Khmer Rouge resistance movement 
+                end and peace arrived to Cambodia.
             </p>
 
             <div class="timeline">
@@ -1154,74 +1013,134 @@
         </div>
     </section>
 
-    <!-- ==================== THE MAP - SCROLLYTELLING ==================== -->
-    <section class="section section-darker scrolly-section" id="the-map">
-        <div class="scrolly-container">
-            <div class="scrolly-sticky">
-                <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <span class="image-placeholder-label">[IMAGE_01]</span>
-                    <span class="image-placeholder-desc">Cambodia Map - Mine & ERW Incidents</span>
+    <!-- ==================== DATA OVERVIEW ==================== -->
+    <section class="section section-surface" id="data-overview">
+        <div class="container fade-in">
+            <span class="section-eyebrow">Data Overview</span>
+            <h2 class="section-title">Survey & Incident Numbers</h2>
+            <p class="section-intro">
+                Data sources for this analysis are mine and fear datasets from the Open Development Cambodia (ODC). 
+                Mine data is collected from 2005 to 2013 while fear data is collected from 2009 to 2014.
+            </p>
+
+            <div class="stats-row">
+                <div class="stat-item earth">
+                    <div class="stat-number">15,928</div>
+                    <div class="stat-label">Survey Records (2009-2014)</div>
                 </div>
-                <p class="image-caption">Figure 1: Mine and ERW incidents across Cambodia (2005-2013)</p>
+                <div class="stat-item">
+                    <div class="stat-number">567</div>
+                    <div class="stat-label">Mine & ERW Incidents (2005-2013)</div>
+                </div>
+                <div class="stat-item hope">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Survey Organizations</div>
+                </div>
             </div>
-            <div class="scrolly-content">
-                <div class="text-step">
-                    <span class="step-number">The Geography of Danger</span>
-                    <h3 class="step-title">Why Are Mines Concentrated Along the Thai Border?</h3>
-                    <p class="step-text">
-                        The map reveals a striking pattern: mine incidents cluster heavily in provinces 
-                        facing <span class="highlight">Thailand</span>, not Vietnam. This is the direct legacy 
-                        of the <span class="highlight">K5 defense plan</span>.
-                    </p>
-                    <p class="step-text">
-                        During the Vietnamese occupation, Cambodian civilians were forced to construct 
-                        a "bamboo wall" of landmines stretching 700km along the Thai border — designed 
-                        to prevent Khmer Rouge forces from launching attacks from their Thai sanctuaries.
+
+            <p class="text-content">
+                Survey records were conducted by 4 organisations: <span class="highlight">The Halo Trust</span>, 
+                <span class="highlight">Cambodian Mine Action Centre (CMAC)</span>, <span class="highlight">Mine Advisory Group (MAG)</span>, 
+                and <span class="highlight">Norwegian People Aid (NPA)</span>.
+            </p>
+
+            <img src="ANL501-ECA/Picture1.jpg" alt="Figure 1: Survey numbers by Operator from 2009-2014">
+            <img src="ANL501-ECA/Picture2.jpg" alt="Figure 2: Incidents Numbers by Device Type from 2005 to 2013">
+
+            <h3 class="subsection-title">Incident Trends Over Time</h3>
+            <p class="text-content">
+                Mine incidents peaked at <span class="highlight-danger">503 in 2005</span> but have been making considerable decrease overtime. 
+                Numbers are in a decreasing trend with the most significant drop came in 2006 when incident numbers registered 
+                was <span class="highlight">272</span> from 503 in 2005. The lowest incident recorded was in 2013 at <span class="highlight-hope">71</span>.
+            </p>
+
+            <div class="analysis-block">
+                <h4 class="analysis-block-title">Mine vs ERW Incidents</h4>
+                <p>
+                    Mine and ERW incidents registered the highest in 2005, peaking at 264 and 239 respectively. 
+                    Their lowest numbers are in 2013 with incidents registered at 36 and 35 respectively.
+                </p>
+                <p>
+                    One observation is mine incidents registered are <span class="highlight">lower than ERW</span> across the time span 
+                    from 2006 to 2009. In 2005, 2010 to 2013, ERW incidents registered are higher than mine incidents.
+                </p>
+            </div>
+
+            <img src="ANL501-ECA/Picture4.jpg" alt="Figure 4: Mine & ERW Incidents Over Time">
+            <img src="ANL501-ECA/Picture5.jpg" alt="Figure 5: Mine Incidents Over Time">
+            <img src="ANL501-ECA/Picture6.jpg" alt="Figure 6: Number of ERW Incidents Over Time">
+        </div>
+    </section>
+
+    <!-- ==================== THE MAP - GEOGRAPHIC ANALYSIS ==================== -->
+    <section class="section section-darker" id="the-map">
+        <div class="container fade-in">
+            <span class="section-eyebrow">Geographic Analysis</span>
+            <h2 class="section-title">Mapping the Danger</h2>
+            <p class="section-intro">
+                ERW are scattered across the country from urban sites like Phnom Penh, Cambodia's capital, to rural areas 
+                like Batdâmbâng. For mines, a significant number of them are located at Cambodia's border facing Thailand 
+                from the West and North direction.
+            </p>
+
+            <img src="ANL501-ECA/Picture3.jpg" alt="Figure 3: Mine & ERW Incidents in Cambodia">
+
+            <div class="insight-box warning">
+                <span class="insight-label">Key Pattern</span>
+                <p class="insight-text">
+                    This border with significant mine incidents starts from <span class="highlight">Kaôh Kong</span> to 
+                    <span class="highlight">Preah Vihéar</span>. The map reveals a striking pattern: mine incidents cluster 
+                    heavily in provinces facing Thailand, not Vietnam. This is the direct legacy of the K5 defense plan.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Three Geographic Clusters</h3>
+            <p class="text-content">
+                The points where ERW and mines are located can be divided into <span class="highlight">3 clusters</span>:
+            </p>
+
+            <div class="comparison-grid">
+                <div class="comparison-item danger">
+                    <h4 class="comparison-title"><i class="fas fa-map-marker-alt"></i> Cluster 1: Northwest</h4>
+                    <p class="text-content">
+                        The biggest cluster covers <span class="highlight">Kaôh Kong</span>, stretching to 
+                        <span class="highlight">Preah Vihéar</span> and <span class="highlight">Kâmpóng Thum</span> 
+                        in North and West Cambodia. This region was most heavily affected by the K5 defense line.
                     </p>
                 </div>
-
-                <div class="text-step">
-                    <span class="step-number">The Scattered Legacy</span>
-                    <h3 class="step-title">ERW: The Invisible Threat Across the Nation</h3>
-                    <p class="step-text">
-                        Unlike landmines, Explosive Remnants of War (ERW) are scattered across 
-                        the <span class="highlight">entire country</span>. This pattern reflects the 
-                        extensive U.S. bombing campaigns of the 1970s.
+                <div class="comparison-item hope">
+                    <h4 class="comparison-title"><i class="fas fa-map-marker-alt"></i> Cluster 2: Central & South</h4>
+                    <p class="text-content">
+                        Covers Central and South Cambodia which includes provinces from <span class="highlight">Krong Preah Sihanouk</span> 
+                        to <span class="highlight">Phnom Penh</span> to <span class="highlight">Tbong Khmum</span>.
                     </p>
-                    <p class="step-text">
-                        <span class="highlight">Operation Freedom Deal</span> targeted eastern provinces, 
-                        while <span class="highlight">Operation Menu</span> focused on border areas. 
-                        Decades later, unexploded bombs continue to surface in farmers' fields 
-                        and children's playgrounds.
-                    </p>
-                    <div class="insight-box warning">
-                        <span class="insight-label">Critical Finding</span>
-                        <p class="insight-text">
-                            The eastern province of Kampong Cham shows particularly high ERW incidents — 
-                            a direct result of the relentless bombing campaigns that targeted this region.
-                        </p>
-                    </div>
                 </div>
+            </div>
 
-                <div class="text-step">
-                    <span class="step-number">The Trend Over Time</span>
-                    <h3 class="step-title">Incidents from 2005 to 2013</h3>
-                    <p class="step-text">
-                        While demining efforts have made progress, incidents continue to occur. 
-                        The data reveals fluctuations in mine and ERW incidents across the years, 
-                        with certain provinces consistently reporting higher numbers.
-                    </p>
+            <div class="content-card">
+                <h4 class="content-card-title"><i class="fas fa-map-marker-alt"></i> Cluster 3: Eastern Cambodia</h4>
+                <p>
+                    Covers East Cambodia which consists of 4 provinces: <span class="highlight">Stœng Trêng</span>, 
+                    <span class="highlight">Rôtânôkiri</span>, <span class="highlight">Môndól Kiri</span>, and 
+                    <span class="highlight">Krâchéh</span>. This region was heavily bombed during U.S. Operation Freedom Deal.
+                </p>
+            </div>
 
-                    <div class="image-frame" style="margin-top: 30px;">
-                        <div class="image-placeholder" style="aspect-ratio: 16/9;">
-                            <i class="fas fa-chart-area"></i>
-                            <span class="image-placeholder-label">[IMAGE_02]</span>
-                            <span class="image-placeholder-desc">Area Chart - Incidents Over Time</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 2: Mine and ERW incidents by year (2005-2013)</p>
-                </div>
+            <h3 class="subsection-title">ERW: The Scattered Legacy</h3>
+            <p class="text-content">
+                Unlike landmines, Explosive Remnants of War (ERW) are scattered across the <span class="highlight">entire country</span>. 
+                This pattern reflects the extensive U.S. bombing campaigns of the 1970s. <span class="highlight">Operation Freedom Deal</span> 
+                targeted eastern provinces, while <span class="highlight">Operation Menu</span> focused on border areas. Decades later, 
+                unexploded bombs continue to surface in farmers' fields and children's playgrounds.
+            </p>
+
+            <div class="insight-box warning">
+                <span class="insight-label">Critical Finding</span>
+                <p class="insight-text">
+                    The eastern province of <span class="highlight">Kampong Cham</span> shows particularly high ERW incidents — 
+                    a direct result of the relentless bombing campaigns that targeted this region during Operation Freedom Deal 
+                    from 1970 to 1973.
+                </p>
             </div>
         </div>
     </section>
@@ -1251,67 +1170,188 @@
                 </div>
             </div>
 
-            <div class="image-full">
-                <div class="image-frame">
-                    <div class="image-placeholder" style="aspect-ratio: 16/9;">
-                        <i class="fas fa-chart-bar"></i>
-                        <span class="image-placeholder-label">[IMAGE_03]</span>
-                        <span class="image-placeholder-desc">Victim Statistics by Province</span>
-                    </div>
-                </div>
-                <p class="image-caption">Figure 3: Breakdown of victims by province — killed, amputated, and injured</p>
-            </div>
+            <h3 class="subsection-title">Victims by Province</h3>
+            <p class="text-content">
+                <span class="highlight-danger">Batdâmbâng</span>, <span class="highlight-danger">Otdar Mean Chey</span>, and 
+                <span class="highlight-danger">Bântéay Méanchey</span> are the top 3 provinces with highest victims.
+            </p>
+
+            <img src="ANL501-ECA/Picture7.jpg" alt="Figure 7: Victims by Province For Total, Amputation, Injured, and Killed Victims">
+
+            <p class="text-content">
+                One observation for Bântéay Méanchey is despite having slightly lesser injured victims than Preah Vihéar, 
+                it has higher victims suffering from <span class="highlight-danger">amputations</span> and 
+                <span class="highlight-danger">killed</span> from mines and ERW. Thus, pushing it to the top 3 provinces with highest victims.
+            </p>
 
             <div class="comparison-grid">
                 <div class="comparison-item danger">
                     <h4 class="comparison-title"><i class="fas fa-skull-crossbones"></i> Killed</h4>
-                    <p class="comparison-text">
+                    <p class="text-content">
                         Fatalities occur most frequently when victims encounter anti-personnel mines 
                         or large ERW. Children and farmers are disproportionately represented in these statistics.
                     </p>
                 </div>
                 <div class="comparison-item danger">
                     <h4 class="comparison-title"><i class="fas fa-wheelchair"></i> Amputated</h4>
-                    <p class="comparison-text">
+                    <p class="text-content">
                         Many survivors face life-altering injuries. Cambodia has one of the highest 
                         per-capita rates of amputees in the world — a visible reminder of the war's lasting impact.
                     </p>
                 </div>
             </div>
 
-            <div class="image-grid">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                            <span class="image-placeholder-label">[IMAGE_04]</span>
-                            <span class="image-placeholder-desc">Victims Over Time</span>
-                        </div>
+            <h3 class="subsection-title">Device Type Analysis</h3>
+            <p class="text-content">
+                Most provinces suffer from mines and ERW but there are also some provinces like <span class="highlight">Kâmpôt</span> 
+                and <span class="highlight">Prey Vêng</span> that have purely ERW incidents.
+            </p>
+
+            <img src="ANL501-ECA/Picture8.jpg" alt="Figure 8: Breakdown of Victims by Device Type in Each Province">
+            <img src="ANL501-ECA/Picture9.jpg" alt="Figure 9: Percentage breakdown of victims by Device Type & Province">
+
+            <div class="analysis-block">
+                <h4 class="analysis-block-title">An Interesting Case: Kâmpôt</h4>
+                <p>
+                    There is a visible mine incident registered in Kâmpôt province but that incident did not have any victims affected. 
+                    This could imply that a mine was possibly discovered early and avoided any claiming of victims.
+                </p>
+                <p>
+                    The closer the provinces are to Thailand, the higher rate of mine incidents.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Breakdown of ERW & Mine Types</h3>
+            <p class="text-content">
+                <span class="highlight-danger">Anti-Personnel mines</span>, <span class="highlight-danger">fuses</span>, and 
+                <span class="highlight-danger">Anti-Vehicle mines</span> are the top 3 explosives found from incident reports. 
+                Not trailing far behind is <span class="highlight">Mortar at 15.2%</span>.
+            </p>
+
+            <img src="ANL501-ECA/Picture10.jpg" alt="Figure 10: Breakdown of ERW & Mine Type from Incidents">
+
+            <div class="content-card">
+                <h4 class="content-card-title">Device Type Glossary</h4>
+                <p><strong>Fuses:</strong> A trigger used to arm an explosive device.</p>
+                <p><strong>RPG:</strong> Rocket-propelled grenade, used to destroy armored vehicles.</p>
+                <p><strong>CBU Sub munition:</strong> Cluster Bomb Unit or cluster bombs — particularly dangerous as they scatter over wide areas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== THE K5 PLAN ==================== -->
+    <section class="section section-surface" id="k5-plan">
+        <div class="container fade-in">
+            <span class="section-eyebrow">Why Thailand, Not Vietnam?</span>
+            <h2 class="section-title">The K5 Defense Plan</h2>
+            <p class="section-intro">
+                From the geographic analysis, it is observed that provinces bordering Thailand have higher incident 
+                and victim numbers, particularly with mines. In comparison, ERW are scattered in a more evenly-distributed way than mines.
+            </p>
+
+            <img src="ANL501-ECA/Picture11.jpg" alt="Figure 11: Mine & ERW Incidents in Selected Provinces">
+            <img src="ANL501-ECA/Picture12.jpg" alt="Figure 12: District boundaries of Selected Provinces">
+
+            <div class="pull-quote">
+                <p class="pull-quote-text">
+                    "Why are there so many mine incidents facing Thailand and not Vietnam? Was Cambodia at war with Thailand?"
+                </p>
+            </div>
+
+            <p class="text-content">
+                To address this question, it can be explained by Cambodia's history during the <span class="highlight">Khmer Rouge Insurgency</span>, 
+                also known as the Cambodian-Vietnamese war. It started in 1978 after Khmer Rouge's military personnel opened fire at Vietnamese 
+                civilians near the border facing Vietnam, leaving more than 3,000 dead.
+            </p>
+
+            <p class="text-content">
+                This followed an attempted invasion by Khmer Rouge forces into Vietnam, triggering a full-scale war retaliation by Vietnam, 
+                leading to toppling of Pol Pot's government. <span class="highlight">Khmer Rouge forces retreated to Thailand</span> and used it 
+                as a platform to launch further attacks against Vietnamese forces who occupied Cambodia, turning it into a satellite state 
+                called People's Republic of Kampuchea (PRK).
+            </p>
+
+            <div class="insight-box warning">
+                <span class="insight-label">The K5 Plan</span>
+                <p class="insight-text">
+                    To deter attacks from Khmer Rouge resistance forces, PRK began installing the K5 plan in 1984 along the Cambodian-Thailand Border. 
+                    It is a long defense belt containing wire fences, trenches, and a mix of anti-personnel and tank mines with density reaching 
+                    <span class="highlight">3,000 mines per kilometer</span> of frontage.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Why the K5 Plan Failed</h3>
+            <p class="text-content">
+                In reality, the K5 plan was deemed mostly a failure for a few main reasons:
+            </p>
+
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-tree"></i>
                     </div>
-                    <p class="image-caption">Figure 4: Victim trends by year</p>
+                    <h4 class="finding-title">Tropical Climate</h4>
+                    <p class="finding-text">
+                        South-East-Asia's tropical climate meant that forests cleared for the K5 plan would regrow rapidly, 
+                        making it difficult to maintain.
+                    </p>
                 </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-pie"></i>
-                            <span class="image-placeholder-label">[IMAGE_05]</span>
-                            <span class="image-placeholder-desc">Device Type Distribution</span>
-                        </div>
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-crosshairs"></i>
                     </div>
-                    <p class="image-caption">Figure 5: Incidents by device type</p>
+                    <h4 class="finding-title">Continued Incursions</h4>
+                    <p class="finding-text">
+                        Khmer Rouge forces continued their incursions despite such a massive defense line.
+                    </p>
                 </div>
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h4 class="finding-title">Deprived Farmland</h4>
+                    <p class="finding-text">
+                        The lands used for K5 plan deprived land from Cambodian farmers who cultivate crops for a living.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">The Lasting Negative Legacy</h3>
+            <p class="text-content">
+                The combination of reasons have a lasting negative legacy on Cambodians today in these provinces near Thailand.
+            </p>
+
+            <p class="text-content">
+                <span class="highlight">Environmentally</span>, the clearing of forests led to deforestation. For Cambodians who engage in 
+                primarily agricultural economic activities, it increases the risk exposure of potentially suffering permanent disability or death. 
+                Yet, absolute avoidance is impossible. For society to develop, it has to progressively start from engaging in agriculture before 
+                pivoting to manufacturing and eventually services. Agriculture is the bedrock of any economy to grow.
+            </p>
+
+            <p class="text-content">
+                <span class="highlight">Socially</span>, Cambodians, particularly children fall victim as their curiosity imposes a sense of fear 
+                and paranoia of being the next possible target of unexploded landmines and ERW.
+            </p>
+
+            <div class="insight-box warning">
+                <span class="insight-label">Tragic Case</span>
+                <p class="insight-text">
+                    In 2016, <span class="highlight-danger">2 children were killed</span> by an exploded grenade they found when hunting for birds — 
+                    a stark reminder that the war's legacy continues to claim innocent lives decades after the conflict ended.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- ==================== RURAL VS URBAN ==================== -->
-    <section class="section section-surface" id="rural-urban">
+    <section class="section section-dark" id="rural-urban">
         <div class="container fade-in">
             <span class="section-eyebrow">Rural vs Urban</span>
             <h2 class="section-title">The Countryside Bears the Burden</h2>
             <p class="section-intro">
-                The impact of landmines and ERW is not evenly distributed. Rural communities, 
-                where agriculture drives the economy, face far greater exposure to danger than urban areas.
+                It is universally agreed rural areas are more dangerous than urban areas for Cambodian communities with respect 
+                to location of mines and ERW. The question is to what extent is the difference in fear level among Cambodian 
+                communities in urban as compared to the countryside?
             </p>
 
             <div class="pull-quote">
@@ -1321,345 +1361,275 @@
                 </p>
             </div>
 
+            <h3 class="subsection-title">Land Use Classification</h3>
+            <p class="text-content">
+                The types of land are broadly aggregated into categories. <span class="highlight">Rural areas</span> contain land used in 
+                Crop field, Rice Field, Orchard/Plantation, Foraging Area, Riverbank, Without Specific Human Use, and Pastureland. 
+                <span class="highlight">Urban areas</span> refer to village or built-up area where there is significant human activity.
+            </p>
+
+            <img src="ANL501-ECA/Picture13.jpg" alt="Figure 13: Incident Numbers Over Time by Land Use Classification">
+            <img src="ANL501-ECA/Picture14.jpg" alt="Figure 14: Land used by Cambodians where Mine & ERW incidents occured">
+
+            <div class="analysis-block">
+                <h4 class="analysis-block-title">Key Finding: Rural Dominance</h4>
+                <p>
+                    Rural areas constitute majority of the incident numbers, peaking to almost <span class="highlight-danger">300</span>. 
+                    This is followed by urban with incident numbers slightly above <span class="highlight">100</span>. Throughout the timeframe 
+                    from 2005 to 2013, rural incidents consistently top the incident numbers, showing evidence that rural areas are more dangerous than urban areas.
+                </p>
+            </div>
+
             <div class="comparison-grid">
                 <div class="comparison-item danger">
                     <h4 class="comparison-title"><i class="fas fa-tractor"></i> Rural Areas</h4>
-                    <p class="comparison-text">
+                    <p class="text-content">
                         Farmers clearing land, children herding livestock, families collecting firewood — 
                         daily activities in the countryside carry inherent risk. Most incidents occur in 
                         agricultural settings where ordnances lie hidden just beneath the soil.
                     </p>
-                    <div class="image-frame" style="margin-top: 20px;">
-                        <div class="image-placeholder" style="aspect-ratio: 4/3;">
-                            <i class="fas fa-chart-bar"></i>
-                            <span class="image-placeholder-label">[IMAGE_06]</span>
-                            <span class="image-placeholder-desc">Rural Incident Analysis</span>
-                        </div>
-                    </div>
+                    <p class="text-content">
+                        Foraging area and rice field are leading categories in rural incidents due to Cambodia's 
+                        agricultural economy and historical practices from the Khmer Rouge era.
+                    </p>
                 </div>
                 <div class="comparison-item hope">
                     <h4 class="comparison-title"><i class="fas fa-city"></i> Urban Areas</h4>
-                    <p class="comparison-text">
-                        Urban centers like Phnom Penh have been largely cleared of ordnances. 
-                        However, even in the capital, occasional discoveries remind residents 
-                        that the war's legacy touches every corner of Cambodia.
-                    </p>
-                    <div class="image-frame" style="margin-top: 20px;">
-                        <div class="image-placeholder" style="aspect-ratio: 4/3;">
-                            <i class="fas fa-chart-bar"></i>
-                            <span class="image-placeholder-label">[IMAGE_07]</span>
-                            <span class="image-placeholder-desc">Urban Incident Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="image-full">
-                <div class="image-frame">
-                    <div class="image-placeholder" style="aspect-ratio: 16/9;">
-                        <i class="fas fa-map"></i>
-                        <span class="image-placeholder-label">[IMAGE_08]</span>
-                        <span class="image-placeholder-desc">Rural vs Urban Comparison Map</span>
-                    </div>
-                </div>
-                <p class="image-caption">Figure 8: Comparison of incident density in rural vs urban areas</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== LIVING WITH FEAR - SCROLLYTELLING ==================== -->
-    <section class="section section-dark scrolly-section" id="fear">
-        <div class="container-narrow fade-in" style="margin-bottom: 80px;">
-            <span class="section-eyebrow">Living with Fear</span>
-            <h2 class="section-title">The Psychological Burden</h2>
-            <p class="section-intro">
-                Beyond physical danger, landmines and ERW create a pervasive atmosphere of fear. 
-                Survey data from 2009-2014 reveals how proximity to ordnances shapes the daily anxiety 
-                of Cambodian communities.
-            </p>
-        </div>
-
-        <div class="scrolly-container">
-            <div class="scrolly-content-right">
-                <div class="text-step">
-                    <span class="step-number">Fear by Province</span>
-                    <h3 class="step-title">Not All Provinces Fear Equally</h3>
-                    <p class="step-text">
-                        Provinces along the <span class="highlight">Thai border</span> — Battambang, 
-                        Banteay Meanchey, and Pailin — report the highest fear levels. These areas 
-                        were most heavily mined during the K5 plan.
-                    </p>
-                    <p class="step-text">
-                        Meanwhile, central and southern provinces show lower anxiety levels, 
-                        correlating with reduced mine presence in these regions.
-                    </p>
-                </div>
-
-                <div class="text-step">
-                    <span class="step-number">Proximity Matters</span>
-                    <h3 class="step-title">The Closer the Threat, the Greater the Fear?</h3>
-                    <p class="step-text">
-                        Surprisingly, the relationship between proximity and fear is <span class="highlight">not absolute</span>. 
-                        While communities living "very near" to known ordnances report higher fear, 
-                        many provinces maintain <span class="highlight">medium fear levels</span> 
-                        even when proximity is far.
-                    </p>
-                    <div class="insight-box neutral">
-                        <span class="insight-label">Interesting Finding</span>
-                        <p class="insight-text">
-                            Preah Vihear registers higher counts of medium fear level even when proximity 
-                            is far — reaching close to 300 respondents. This suggests fear is shaped by 
-                            historical memory, not just current proximity.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="text-step">
-                    <span class="step-number">The Battambang Case</span>
-                    <h3 class="step-title">High Fear in the K5 Zone</h3>
-                    <p class="step-text">
-                        Battambang consistently shows <span class="highlight-danger">high fear levels</span> 
-                        for very near, near, and even far proximity to ordnances. 
-                        Its location near the K5 defense line produces understandable paranoia 
-                        among communities there.
-                    </p>
-                    <p class="step-text">
-                        Nearby <span class="highlight">Pailin</span>, however, shows lower fear levels 
-                        despite similar geography — likely due to inconsistent survey coverage 
-                        rather than actual reduced danger.
-                    </p>
-                </div>
-
-                <div class="text-step">
-                    <span class="step-number">Eastern Cambodia</span>
-                    <h3 class="step-title">The Bombing Campaign's Echo</h3>
-                    <p class="step-text">
-                        <span class="highlight">Kampong Cham</span> shows notably high fear levels 
-                        when proximity is very near or near. This eastern province bore the brunt 
-                        of U.S. bombing campaigns, and communities remain worried about encountering 
-                        unexploded ordnance.
-                    </p>
-                    <p class="step-text">
-                        High fear counts in this region are higher than medium fear — 
-                        a pattern distinct from western provinces, suggesting different sources of trauma.
+                    <p class="text-content">
+                        When examined closer, urban areas top the incident numbers due to higher human activity density. 
+                        Given that urban areas have the highest human activity, there is greater likelihood of an individual 
+                        encountering a possible landmine and ERW explosive. Cambodia was relentlessly bombed by the US.
                     </p>
                 </div>
             </div>
-            <div class="scrolly-sticky-right">
-                <div class="image-placeholder" style="aspect-ratio: 3/4;">
-                    <i class="fas fa-chart-bar"></i>
-                    <span class="image-placeholder-label">[IMAGE_09]</span>
-                    <span class="image-placeholder-desc">Fear Levels by Province</span>
-                </div>
-                <p class="image-caption">Figure 9: Fear levels by proximity and province</p>
-            </div>
-        </div>
 
-        <!-- Additional Fear Analysis Images -->
-        <div class="container" style="margin-top: 80px;">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--text-primary); margin-bottom: 30px;">
-                Provincial Fear Analysis
-            </h3>
-            <div class="image-grid">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-bar"></i>
-                            <span class="image-placeholder-label">[IMAGE_10]</span>
-                            <span class="image-placeholder-desc">Fear - Group 1</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 10: Fear levels - Banteay Meanchey, Ratanak Kiri, Kampot, Oddar Meanchey</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-bar"></i>
-                            <span class="image-placeholder-label">[IMAGE_11]</span>
-                            <span class="image-placeholder-desc">Fear - Group 2</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 11: Fear levels - Battambang, Kandal, Pailin, Siem Reap</p>
-                </div>
+            <h3 class="subsection-title">Why Rice Fields and Foraging Areas?</h3>
+
+            <div class="content-card">
+                <h4 class="content-card-title">Rice: The Staple of Cambodia</h4>
+                <p>
+                    Rice is the main staple food Cambodians grow to eat. It accounts for up to <span class="highlight">eighty percent</span> 
+                    of the total caloric intake and up to <span class="highlight">seventy percent</span> of the protein intake of the average Cambodian.
+                </p>
             </div>
-            <div class="image-grid">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-bar"></i>
-                            <span class="image-placeholder-label">[IMAGE_12]</span>
-                            <span class="image-placeholder-desc">Fear - Group 3</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 12: Fear levels - Kampong Cham, Kep, Phnom Penh, Sihanoukville</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-bar"></i>
-                            <span class="image-placeholder-label">[IMAGE_13]</span>
-                            <span class="image-placeholder-desc">Fear - Group 4</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 13: Fear levels - Kampong Chhnang, Koh Kong, Preah Vihear, Stung Treng</p>
-                </div>
+
+            <div class="content-card">
+                <h4 class="content-card-title">The Legacy of Foraging</h4>
+                <p>
+                    Pol Pot was heavily influenced by <span class="highlight">Ultra-Maoism</span> and absolute egalitarianism, 
+                    which called for absolute social equality. His promotion of farm collectivization, confiscating contraband, 
+                    and issuing rationing forced Cambodians to adopt foraging — which was actually <span class="highlight-danger">illegal</span> under Pol Pot's rule.
+                </p>
+                <p>
+                    This practice continues today and has become part of Cambodian food cuisine, exposing foragers to unexploded ordnances.
+                </p>
             </div>
-            <div class="image-grid">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-bar"></i>
-                            <span class="image-placeholder-label">[IMAGE_14]</span>
-                            <span class="image-placeholder-desc">Fear - Group 5</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 14: Fear levels - Kampong Speu, Kratie, Prey Veng, Svay Rieng</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-bar"></i>
-                            <span class="image-placeholder-label">[IMAGE_15]</span>
-                            <span class="image-placeholder-desc">Fear - Group 6</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 15: Fear levels - Kampong Thom, Mondulkiri, Pursat, Takeo</p>
-                </div>
+
+            <div class="insight-box neutral">
+                <span class="insight-label">Agricultural Exposure</span>
+                <p class="insight-text">
+                    For rice fields, it is possible that as farmers return to their lands and engage in rice agriculture, 
+                    they might have unintentionally encountered an unexploded mine or ERW, resulting in an incident. 
+                    This is especially true for areas near the K5 plan defense zones.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- ==================== ADDITIONAL VISUALIZATIONS ==================== -->
-    <section class="section section-surface">
+    <!-- ==================== FEAR LEVELS BY YEAR ==================== -->
+    <section class="section section-surface" id="fear">
         <div class="container fade-in">
-            <span class="section-eyebrow">Supporting Analysis</span>
-            <h2 class="section-title">Additional Visualizations</h2>
+            <span class="section-eyebrow">Fear Analysis</span>
+            <h2 class="section-title">Living with Fear: By Year and Province</h2>
             <p class="section-intro">
-                The following visualizations provide deeper context and supporting evidence 
-                for the patterns identified in this analysis.
+                Survey data from 2009-2014 reveals how fear levels among Cambodian communities vary significantly by province 
+                and have changed over time. The charts measure counts of fear level subdivided by province and year.
             </p>
 
-            <div class="image-grid image-grid-3">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_16]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 16: [Caption]</p>
+            <img src="ANL501-ECA/Picture15.jpg" alt="Figure 15: Fear Levels by Year and Province - Banteay Meanchey, Ratanak Kiri, Kampot, Oddar Meanchey">
+            <img src="ANL501-ECA/Picture16.jpg" alt="Figure 16: Fear Levels by Year and Province - Battambang, Kandal, Pailin, Siemreap">
+            <img src="ANL501-ECA/Picture17.jpg" alt="Figure 17: Fear Levels by Year and Province - Kampong Cham, Kep, Phnom Penh, Sihanoukville">
+            <img src="ANL501-ECA/Picture18.jpg" alt="Figure 18: Fear Levels by Year and Province - Kampong Chhnang, Koh Kong, Preah Vihear, Stung Treng">
+            <img src="ANL501-ECA/Picture19.jpg" alt="Figure 19: Fear Levels by Year and Province - Kampong Speu, Kratie, Prey Veng, Svay Rieng">
+            <img src="ANL501-ECA/Picture20.jpg" alt="Figure 20: Fear Levels by Year and Province - Kampong Thom, Mondul Kiri, Pursat, Takeo">
+
+            <div class="insight-box">
+                <span class="insight-label">Overall Trend</span>
+                <p class="insight-text">
+                    Overall, there has been a <span class="highlight-hope">decreasing trend</span> in fear levels surveyed from Cambodians — 
+                    a testament to local and international community efforts in their work to demine former war-torn areas and make Cambodian communities safer.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Urban vs Rural Fear: The Numbers</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-item hope">
+                    <h4 class="comparison-title"><i class="fas fa-city"></i> Phnom Penh (Urban)</h4>
+                    <p class="text-content">
+                        Phnom Penh fear level counts were very minimal. The highest was for medium fear level reaching 
+                        <span class="highlight">42 counts</span> in 2012. For high and low fear level, it is mostly registered at 2.
+                    </p>
                 </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_17]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 17: [Caption]</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_18]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 18: [Caption]</p>
+                <div class="comparison-item danger">
+                    <h4 class="comparison-title"><i class="fas fa-tractor"></i> Batdâmbâng & Otdar Mean Chey (Rural)</h4>
+                    <p class="text-content">
+                        Rural areas bordering Thailand saw much higher figures: <span class="highlight-danger">227 records</span> of high fear level 
+                        in Batdâmbâng and <span class="highlight-danger">93</span> in Otdar Mean Chey. Medium fear level was recorded for Batdâmbâng 
+                        at its highest at <span class="highlight">174 in 2011</span> while in Otdar Mean Chey it registered at <span class="highlight">377</span>.
+                    </p>
                 </div>
             </div>
 
-            <div class="image-grid image-grid-3">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_19]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 19: [Caption]</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_20]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 20: [Caption]</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_21]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 21: [Caption]</p>
-                </div>
+            <h3 class="subsection-title">Unexpected High Fear Levels</h3>
+            <p class="text-content">
+                What is interesting is some provinces register surprisingly high levels of medium and above fear, 
+                even when not located near Thailand and the K5 plan minefield belt.
+            </p>
+
+            <div class="analysis-block">
+                <h4 class="analysis-block-title">Case Study: Kratie</h4>
+                <p>
+                    In Kratie, fear levels were <span class="highlight-danger">126</span> and <span class="highlight-danger">206</span> for high and medium in 2005. 
+                    In 2006, high levels registered was 19 but medium levels increased to 215.
+                </p>
+                <p>
+                    Kratie is not located near provinces facing Thailand and the K5 plan minefield belt. Rather, it is located in 
+                    <span class="highlight">East Cambodia facing Vietnam</span>.
+                </p>
             </div>
 
-            <div class="image-grid">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_22]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 22: [Caption]</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_23]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 23: [Caption]</p>
-                </div>
+            <div class="analysis-block">
+                <h4 class="analysis-block-title">Case Study: Kampong Cham</h4>
+                <p>
+                    Kampong Cham is located close to Phnom Penh at the center of Cambodia but has fear levels registered higher than normal.
+                </p>
+                <p>
+                    A possible explanation could be the close proximity to Vietnam which during the Vietnam war, was relentlessly bombed 
+                    during <span class="highlight">Operation Freedom Deal</span>, a controversial air raid campaign by US 7th Airforce to bomb 
+                    East Cambodia from 1970 to 1973.
+                </p>
             </div>
 
-            <div class="image-grid">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_24]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 24: [Caption]</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_25]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 25: [Caption]</p>
-                </div>
+            <div class="insight-box warning">
+                <span class="insight-label">Key Insight</span>
+                <p class="insight-text">
+                    These results show the extent of how dangerous Cambodian communities live in rural areas as compared to urban areas. 
+                    Coupled with Cambodia's main economic activities stemming from agriculture, these activities increase risk exposure 
+                    to Cambodians in encountering mines and ERW from the civil war. The legacy of US air raid campaigns plays an influential 
+                    role in raising fear levels in provinces not close to the K5 plan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROXIMITY IMPACT ==================== -->
+    <section class="section section-darker" id="proximity">
+        <div class="container fade-in">
+            <span class="section-eyebrow">Proximity Analysis</span>
+            <h2 class="section-title">Does Proximity to Mines & ERW Affect Fear Level?</h2>
+            <p class="section-intro">
+                Naturally, fear levels should rise if the proximity of unexploded explosives is nearer to an individual or community. 
+                But is it the case universally? Can it differ by province?
+            </p>
+
+            <img src="ANL501-ECA/Picture21.jpg" alt="Figure 21: Fear Levels by Proximity and Province - Kampong Thom, Mondul Kiri, Pursat, Takeo">
+            <img src="ANL501-ECA/Picture22.jpg" alt="Figure 22: Fear Levels by Proximity and Province - Banteay Meanchey, Ratanak Kiri, Kampot, Oddar Meanchey">
+            <img src="ANL501-ECA/Picture23.jpg" alt="Figure 23: Fear Levels by Proximity and Province - Battambang, Kandal, Pailin, Siemreap">
+            <img src="ANL501-ECA/Picture24.jpg" alt="Figure 24: Fear Levels by Proximity and Province - Kampong Cham, Kep, Phnom Penh, Sihanoukville">
+            <img src="ANL501-ECA/Picture25.jpg" alt="Figure 25: Fear Levels by Proximity and Province - Kampong Chhnang, Koh Kong, Preah Vihear, Stung Treng">
+            <img src="ANL501-ECA/Picture26.jpg" alt="Figure 26: Fear Levels by Proximity and Province - Kampong Speu, Kratie, Prey Veng, Svay Rieng">
+
+            <div class="insight-box neutral">
+                <span class="insight-label">Surprising Finding</span>
+                <p class="insight-text">
+                    The relationship between proximity and fear is <span class="highlight">not absolute</span>. 
+                    While communities living "very near" to known ordnances report higher fear, many provinces maintain 
+                    medium fear levels even when proximity is far. Fear is shaped by <span class="highlight">historical memory</span>, not just current proximity.
+                </p>
             </div>
 
-            <div class="image-grid image-grid-3">
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_26]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 26: [Caption]</p>
-                </div>
-                <div class="image-grid-item">
-                    <div class="image-frame">
-                        <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                            <i class="fas fa-image"></i>
-                            <span class="image-placeholder-label">[IMAGE_27]</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Figure 27: [Caption]</p>
-                </div>
+            <h3 class="subsection-title">Provincial Analysis</h3>
+
+            <div class="content-card">
+                <h4 class="content-card-title">Kampong Thom, Mondul Kiri, Pursat, Takeo</h4>
+                <p>
+                    Results show that fear levels are majority at <span class="highlight">medium level</span>. Interestingly, medium levels 
+                    continue to remain the highest even when proximity to mines and ERW were far, especially for Kampong Thom and Pursat.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h4 class="content-card-title">Banteay Meanchey, Ratanak Kiri, Kampot, Oddar Meanchey</h4>
+                <p>
+                    <span class="highlight-danger">Banteay Meanchey</span> registers the largest counts of high and medium level fear for very near 
+                    and near proximity to unexploded ordnance. This is likely due to its location facing Thailand and being part of the K5 plan 
+                    where it is heavily mined.
+                </p>
+                <p>
+                    On the flip side, Otdar Mean Chey is also part of the K5 plan and facing Thailand but has lesser counts than Banteay Meanchey. 
+                    This is due to inconsistent numbers being surveyed which produce such discrepancies.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h4 class="content-card-title">Battambang, Kandal, Pailin, Siemreap</h4>
+                <p>
+                    <span class="highlight-danger">Battambang</span> has higher counts of high fear level for very near, near, and far proximity 
+                    to landmines and ERW due to its location near the K5 plan, which understandably produces higher fear and paranoia to Cambodian communities there.
+                </p>
+                <p>
+                    <span class="highlight">Krong Pailin</span> province strangely has lower fear levels across all proximities to landmines and ERW 
+                    despite locating beside Battambang facing Thailand. A likely explanation is inconsistent numbers surveyed every year, 
+                    cumulating to lesser numbers than Battambang even though they are beside each other.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h4 class="content-card-title">Kampong Cham, Kep, Phnom Penh, Sihanoukville</h4>
+                <p>
+                    <span class="highlight-danger">Kampong Cham</span> shows high fear levels when proximity is very near and near to unexploded explosives. 
+                    High fear level counts are <span class="highlight">higher than medium level fear</span> — a possible explanation could be the relentless 
+                    US air bombing campaign in the 1970s during Operation Freedom Deal which bombed East Cambodia.
+                </p>
+                <p>
+                    <span class="highlight">Phnom Penh</span> meanwhile only has 3 incidents of encountering unexploded ordnance but still registers 
+                    medium fear level as it is Cambodia's capital where human activity and population density is very high.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h4 class="content-card-title">Kampong Chhnang, Koh Kong, Preah Vihear, Stung Treng</h4>
+                <p>
+                    Interesting part is <span class="highlight">Preah Vihear</span> because it registers higher counts of medium fear level even though 
+                    proximity is far, reaching close to <span class="highlight-danger">300</span>. When it comes to very near and near proximity, 
+                    the numbers dropped to below 100. It is strange because it is located beside Thailand and part of the K5 defense plan.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h4 class="content-card-title">Kampong Speu, Kratie, Prey Veng, Svay Rieng</h4>
+                <p>
+                    Kampong Speu and Kratie register close to <span class="highlight">50</span> and <span class="highlight">100</span> counts of high fear level 
+                    for very near proximity to unexploded ordnance respectively. <span class="highlight">Svay Rieng</span> registers slightly more than 100 
+                    for high fear level for near proximity. This is likely due to the aftermath legacy of US air raids where bombs continue to lurk today undiscovered.
+                </p>
+            </div>
+
+            <div class="pull-quote">
+                <p class="pull-quote-text">
+                    "Proximity to landmines and ERW affects fear level, however, it differs by province. North, East, and West Cambodia provinces 
+                    have higher fear levels because of their history with Khmer Rouge resistance and US air raid campaigns."
+                </p>
+            </div>
+
+            <div class="insight-box warning">
+                <span class="insight-label">Living with the Legacy</span>
+                <p class="insight-text">
+                    The impact on Cambodian communities is likely to continue affecting their daily lives and they will have to live with it 
+                    unless international and local efforts clear all explosives. The people will live with it but <span class="highlight-danger">complacency might develop overtime</span> 
+                    which can trigger incidents that either produce permanent injuries or worst case, death.
+                </p>
             </div>
         </div>
     </section>
@@ -1671,7 +1641,7 @@
             <h2 class="section-title">A Legacy That Demands Action</h2>
             <p class="section-intro">
                 The Cambodian Civil War's legacy of landmines and ERW continues to impact communities 
-                to a large extent. This analysis reveals three key findings that underscore 
+                to a large extent. This analysis addresses three key questions that underscore 
                 the ongoing humanitarian challenge.
             </p>
 
@@ -1680,30 +1650,30 @@
                     <div class="finding-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h4 class="finding-title">Geographic Concentration</h4>
+                    <h4 class="finding-title">Question 1: Geographic Concentration</h4>
                     <p class="finding-text">
-                        Mines cluster along the Thai border (K5 legacy), while ERW scatter nationwide 
-                        from U.S. bombing campaigns.
+                        Why are there so many mine incidents facing Thailand and not Vietnam? Due to Vietnamese occupation 
+                        and the K5 defense plan. ERW scattered across the country is attributed to US air raids and Vietnamese invasion.
                     </p>
                 </div>
                 <div class="finding-card">
                     <div class="finding-icon">
                         <i class="fas fa-seedling"></i>
                     </div>
-                    <h4 class="finding-title">Rural Vulnerability</h4>
+                    <h4 class="finding-title">Question 2: Rural Vulnerability</h4>
                     <p class="finding-text">
-                        Agricultural communities face the greatest danger, with daily activities 
-                        putting farmers and families at constant risk.
+                        What extent is the difference in fear level in urban vs countryside? Cambodian communities in rural areas 
+                        are more exposed to dangers as their main economic activities are in agriculture.
                     </p>
                 </div>
                 <div class="finding-card">
                     <div class="finding-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h4 class="finding-title">Psychological Impact</h4>
+                    <h4 class="finding-title">Question 3: Proximity Impact</h4>
                     <p class="finding-text">
-                        Fear levels vary by province and are shaped by historical memory, 
-                        not just current proximity to ordnances.
+                        Does proximity affect fear level? Yes, but it differs by province. There are also inconsistent numbers 
+                        surveyed which make assessment inconsistent — a follow-up is recommended.
                     </p>
                 </div>
             </div>
@@ -1719,7 +1689,7 @@
             <div class="insight-box">
                 <span class="insight-label">Path Forward</span>
                 <p class="insight-text">
-                    Education and supervision are key — particularly for children, who are the most vulnerable group. 
+                    <span class="highlight">Education and supervision is key</span> — particularly for children, who are the most vulnerable group. 
                     Preventing complacency among communities as they live with landmines and ERW 
                     requires sustained awareness and international support.
                 </p>
@@ -1745,6 +1715,22 @@
                             <li><i class="fas fa-code"></i> RColorBrewer, ggthemes</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+
+            <!-- References -->
+            <div class="methodology" style="margin-top: 30px;">
+                <h3 class="methodology-title">References</h3>
+                <div class="methodology-item">
+                    <ul>
+                        <li><i class="fas fa-link"></i> UN Chronicle - The Spectre of Khmer Rouge over Cambodia</li>
+                        <li><i class="fas fa-link"></i> Cambodia LPJ - Justice and Starvation in Cambodia</li>
+                        <li><i class="fas fa-link"></i> Time - Cambodia Land Mine Found at School (2023)</li>
+                        <li><i class="fas fa-link"></i> Wikipedia - Cambodian–Vietnamese War</li>
+                        <li><i class="fas fa-link"></i> Wikipedia - K5 Plan</li>
+                        <li><i class="fas fa-link"></i> Wikipedia - Operation Freedom Deal</li>
+                        <li><i class="fas fa-link"></i> Vietnam War 50th - Operation Menu</li>
+                    </ul>
                 </div>
             </div>
 
