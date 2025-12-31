@@ -392,41 +392,15 @@
         }
 
         .image-frame img {
-        width: 100%;
-        height: auto;
-        display: block;
-        max-width: 100%;      /* Ensures it never exceeds container */
-        max-height: 70vh;     /* Max 70% of viewport height */
-        object-fit: contain;
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
         }
 
-        /* Placeholder for images */
-        .image-placeholder {
-            background: linear-gradient(135deg, var(--pixel-deep) 0%, var(--pixel-purple) 100%);
-            border: 3px dashed var(--pixel-mid);
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--pixel-mid);
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.5rem;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .image-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--pixel-pink);
-            opacity: 0.5;
-        }
-
-        .image-placeholder-name {
-            color: var(--pixel-sunset);
-            margin-bottom: 10px;
-        }
+        
 
         .image-caption {
             font-family: 'Press Start 2P', cursive;
@@ -712,6 +686,21 @@
             cursor: pointer;
         }
 
+        /* Subheading */
+        .subheading {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: var(--pixel-pink);
+            margin: 40px 0 25px;
+        }
+
+        .country-label {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--pixel-sunset);
+            margin: 30px 0 15px;
+        }
+
         /* Footer */
         footer {
             background: var(--pixel-dark);
@@ -906,9 +895,9 @@
     <div class="progress-bar" id="progressBar"></div>
 
     <!-- Back Button -->
-    <a href="works.html" class="back-button">
+    <a href="projects.html" class="back-button">
         <i class="fas fa-arrow-left"></i>
-        <span>Back to Works</span>
+        <span>Back to Projects</span>
     </a>
 
     <!-- Sidebar Navigation -->
@@ -916,6 +905,10 @@
         <a href="#hero" class="sidebar-nav-item active" data-section="hero">
             <span class="sidebar-nav-dot"></span>
             <span class="sidebar-nav-label">Introduction</span>
+        </a>
+        <a href="#results-overview" class="sidebar-nav-item" data-section="results-overview">
+            <span class="sidebar-nav-dot"></span>
+            <span class="sidebar-nav-label">Results Overview</span>
         </a>
         <a href="#finding-1" class="sidebar-nav-item" data-section="finding-1">
             <span class="sidebar-nav-dot"></span>
@@ -928,14 +921,6 @@
         <a href="#finding-3" class="sidebar-nav-item" data-section="finding-3">
             <span class="sidebar-nav-dot"></span>
             <span class="sidebar-nav-label">Finding 03: Conditions</span>
-        </a>
-        <a href="#regional" class="sidebar-nav-item" data-section="regional">
-            <span class="sidebar-nav-dot"></span>
-            <span class="sidebar-nav-label">Regional Analysis</span>
-        </a>
-        <a href="#visualizations" class="sidebar-nav-item" data-section="visualizations">
-            <span class="sidebar-nav-dot"></span>
-            <span class="sidebar-nav-label">Visualizations</span>
         </a>
         <a href="#conclusion" class="sidebar-nav-item" data-section="conclusion">
             <span class="sidebar-nav-dot"></span>
@@ -987,7 +972,7 @@
                     </p>
                     <p class="content-text">
                         Could better working conditions justify working longer? Could an economy with higher GDP per capita 
-                        provide a more advantageous starting point for happiness? is happiness dependent on the region economies 
+                        provide a more advantageous starting point for happiness? Is happiness dependent on the region economies 
                         are located due to differences in working culture? We investigate this complex relationship 
                         between work and happiness using data from OECD, World Bank, and the World Happiness Report.
                     </p>
@@ -1003,113 +988,289 @@
 
             <div class="divider"></div>
 
-            <!-- Finding 1: Money & Happiness -->
-            <section class="section fade-in" id="finding-1">
+            <!-- Results Overview -->
+            <section class="section fade-in" id="results-overview">
                 <div class="section-header">
-                    <span class="section-number">Finding 01</span>
-                    <h2 class="section-title">Wealthier Nations Tend to Be Happier</h2>
+                    <span class="section-number">Results Overview</span>
+                    <h2 class="section-title">45 Countries, 7 Years of Data</h2>
                 </div>
                 
                 <div class="content-card">
                     <p class="content-text">
-                        People living in economies with <span class="highlight">higher GDP per capita</span> tend to be happier 
-                        and have a more positive outlook in life. The data reveals a clear correlation between economic prosperity 
-                        and life satisfaction scores.
+                        45 countries participated in this analysis — 44 from OECD and Singapore (not part of OECD). 
+                        Annual average hours range from <span class="highlight">less than 30 hours to almost 50 hours</span>. 
+                        The size of dots in the visualizations is dependent on Annual Average hours — longer hours mean bigger dots.
                     </p>
 
-                    <!-- Image 1-2 -->
+                    <p class="content-text">
+                        Luxembourg has the highest GDP per capita among the 45 participant countries, achieving it with working hours 
+                        less than 40. Majority of the countries achieved excellent and good category rating for Positive emotions 
+                        with minor achieving bad category.
+                    </p>
+
+                    <!-- Figures 1-2 -->
                     <div class="image-grid">
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot32.jpeg" alt="GDP vs Positive Emotions & Annual Working Hours Bubble Plot">
+                                <img src="ANL501-TMA/Rplot42.jpeg" alt="Log GDP per capita, Positive Emotions and Annual Average Hours overtime">
                             </div>
-                        <p class="image-caption">Figure 1: Log GDP Per Capita against Life Ladder</p>
+                            <p class="image-caption">Figure 1: Log GDP per capita, Positive Emotions and Annual Average Hours overtime</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot41.jpeg" alt="Log GDP per capita, Negative Emotions and Annual Average Hours overtime">
+                            </div>
+                            <p class="image-caption">Figure 2: Log GDP per capita, Negative Emotions and Annual Average Hours overtime</p>
+                        </div>
                     </div>
-                    <div class="image-container">
-                    <div class="image-frame">
-                        <img src="ANL501-TMA/Rplot34.jpeg" alt="GDP vs Negative Emotions & Annual Average Hours Bubble Plot">
+
+                    <h3 class="subheading">Heatmap Analysis: Emotions Over Time</h3>
+
+                    <p class="content-text">
+                        The heatmaps show that most economies fare well for their positive and negative emotions from 2013 to 2019. 
+                        The colour spectrum ranges from <span class="highlight-green">green (positive/low negative)</span> to 
+                        <span class="highlight-red">red (negative/high negative)</span>. Grey indicates NA due to lack of data.
+                    </p>
+
+                    <div class="insight-box warning">
+                        <i class="fas fa-exclamation-triangle insight-icon"></i>
+                        <div class="insight-content">
+                            <p class="insight-title">Notable Red Zone Events</p>
+                            <p class="insight-text">
+                                <strong>Greece 2013:</strong> Government debt crisis from Great Recession — income declined, unemployment rose.<br>
+                                <strong>UK 2016:</strong> Brexit referendum — divisive economically, politically and socially.<br>
+                                <strong>Italy 2018:</strong> Political crisis of forming stable government and economic recession.
+                            </p>
+                        </div>
                     </div>
-                    <p class="image-caption">Figure 2: Log GDP Per Capita against Annual Average Hours</p>
+
+                    <!-- Heatmaps Figures 3-8 -->
+                    <div class="image-grid three-col">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot40.jpeg" alt="Heatmap of Negative Affect (2013-2015)">
+                            </div>
+                            <p class="image-caption">Figure 3: Heatmap of Negative Affect (2013-2015)</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot39.jpeg" alt="Heatmap of Negative Affect (2016-2017)">
+                            </div>
+                            <p class="image-caption">Figure 4: Heatmap of Negative Affect (2016-2017)</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot38.jpeg" alt="Heatmap of Negative Affect (2018-2019)">
+                            </div>
+                            <p class="image-caption">Figure 5: Heatmap of Negative Affect (2018-2019)</p>
+                        </div>
+                    </div>
+
+                    <div class="image-grid three-col">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot37.jpeg" alt="Heatmap of Positive Affect (2013-2015)">
+                            </div>
+                            <p class="image-caption">Figure 6: Heatmap of Positive Affect (2013-2015)</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot36.jpeg" alt="Heatmap of Positive Affect (2016-2017)">
+                            </div>
+                            <p class="image-caption">Figure 7: Heatmap of Positive Affect (2016-2017)</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot35.jpeg" alt="Heatmap of Positive Affect (2018-2019)">
+                            </div>
+                            <p class="image-caption">Figure 8: Heatmap of Positive Affect (2018-2019)</p>
+                        </div>
+                    </div>
+
+                    <p class="content-text">
+                        For positive emotions, the results fare better with majority of economies achieving relatively high positive emotions. 
+                        Notable is <span class="highlight-red">Turkey</span> which did not fare well since 2014. Some possible explanations include 
+                        economic challenges like unemployment and lack of opportunities to achieve better possible life. Turkey also has one 
+                        of the lowest satisfaction grades in the OECD according to the OECD Better Life Index.
+                    </p>
                 </div>
-            </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Finding 1: Money & Happiness -->
+            <section class="section fade-in" id="finding-1">
+                <div class="section-header">
+                    <span class="section-number">Finding 01</span>
+                    <h2 class="section-title">Does Economic Environment Affect Work & Happiness?</h2>
+                </div>
+                
+                <div class="content-card">
+                    <p class="content-text">
+                        There are 2 questions being asked. First, are people happier if they were in a country or economy with much 
+                        higher Gross Domestic Product (GDP) per capita than others? If so, would they be willing to work for longer 
+                        hours because they are in a better economic environment?
+                    </p>
+
+                    <p class="content-text">
+                        A country with higher GDP per capita implies <span class="highlight">better standard of living</span>, 
+                        better access to modern infrastructure and quality of life. With these conditions, an individual in a country 
+                        with higher GDP per capita would be happier. However, there is no free lunch — in exchange to enjoy these benefits, 
+                        would they work longer?
+                    </p>
+
+                    <h3 class="subheading">Observations: 5 Data Clusters</h3>
+
+                    <!-- Figure 9: Log GDP vs Annual Hours -->
+                    <div class="image-container image-full">
+                        <div class="image-frame">
+                            <img src="ANL501-TMA/Rplot34.jpeg" alt="Log GDP per Capita against Annual Average Working Hours">
+                        </div>
+                        <p class="image-caption">Figure 9: Log GDP per Capita against Annual Average Working Hours</p>
+                    </div>
+
+                    <p class="content-text">
+                        From Figure 9, there are <span class="highlight">5 data clusters</span>:
+                    </p>
+                    <p class="content-text">
+                        <strong>1. Netherlands:</strong> Less than 30 annual average working hours — lowest in dataset.<br>
+                        <strong>2. Main Cluster:</strong> Denmark, Ireland, Luxembourg, Chile and majority — above 30 to less than 45 hours.<br>
+                        <strong>3. Colombia:</strong> Distinct cluster with longer hours.<br>
+                        <strong>4. Turkey:</strong> Long hours with lower GDP per capita.<br>
+                        <strong>5. Singapore:</strong> High GDP per capita but with working hours above 40.
+                    </p>
+
+                    <p class="content-text">
+                        <span class="highlight-green">Netherlands</span> is notable for having the lowest annual average working hours but still 
+                        achieve higher log GDP per capita than others. On the other side, <span class="highlight">Singapore</span> achieves higher 
+                        log GDP per capita at a cost of much longer working hours above 40. At the extreme end, Turkey and Colombia worked a 
+                        range of more than 45 hours but less than 50 and achieve lower log GDP per capita than Netherlands and Singapore.
+                    </p>
+
+                    <!-- Figures 10-11 -->
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot33.jpeg" alt="Selected countries line chart of Log GDP per capita & Annual Average hours overtime">
+                            </div>
+                            <p class="image-caption">Figure 10: Selected countries line chart of Log GDP per capita & Annual Average hours overtime</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot32.jpeg" alt="Log GDP per capita against Life Ladder">
+                            </div>
+                            <p class="image-caption">Figure 11: Log GDP per capita against Life Ladder</p>
+                        </div>
+                    </div>
+
+                    <p class="content-text">
+                        First thing noticed in Figure 10 is for countries with high log GDP per capita, most of them have working hours 
+                        <span class="highlight">less than 40</span> and are from <span class="highlight-blue">Europe and Scandinavian regions</span>, 
+                        only Singapore is an exception from South-East Asia region. In comparison, Turkey from Middle East region, Chile and 
+                        Colombia from Latin America have longer working hours than countries like Luxembourg or Ireland and a much lower log GDP per capita.
+                    </p>
+
+                    <p class="content-text">
+                        In Figure 11, a <span class="highlight-green">positive correlation</span> can be spotted. The trend is the higher log GDP 
+                        per capita, the better life ladder ratings. South Africa was the lowest in 2013 while Luxembourg in 2019 and Finland 
+                        in 2018 for highest log GDP per capita and life ladder respectively.
+                    </p>
+
+                    <!-- Figures 12-16 -->
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot31.jpeg" alt="Top and bottom 3 Log GDP per capita countries & Positive Affect category overtime">
+                            </div>
+                            <p class="image-caption">Figure 12: Top and bottom 3 Log GDP per capita countries & Positive Affect category overtime</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot30.jpeg" alt="Top and bottom 3 Log GDP per capita countries & Negative Affect category overtime">
+                            </div>
+                            <p class="image-caption">Figure 13: Top and bottom 3 Log GDP per capita countries & Negative Affect category overtime</p>
+                        </div>
+                    </div>
+
+                    <p class="content-text">
+                        From Figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings. 
+                        Interestingly, the bottom 3 log GDP per capita countries also achieved excellent and good positive categorical ratings. 
+                        This indicates that people from different countries have their <span class="highlight">unique interpretations for what makes them happy</span>. 
+                        It could be better life opportunities or be contented with simple things in life like peace and stability, particularly 
+                        in countries with a dark history of conflicts like Colombia and South Africa.
+                    </p>
+
+                    <p class="content-text">
+                        Figure 13 swaps positive to negative affect category for the same top and bottom 3 log GDP per capita countries. 
+                        Top 3 all achieved low negative emotions with excellent category as expected. Brazil negative emotions rating category 
+                        worsened from excellent to good since 2015. Colombia and South Africa dipped in 2016 to good, but South Africa 
+                        rebounded to excellent in 2017 onwards.
+                    </p>
+
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot29.jpeg" alt="Life ladder & Positive Affect Category overtime">
+                            </div>
+                            <p class="image-caption">Figure 14: Life ladder & Positive Affect Category overtime</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot28.jpeg" alt="Life ladder & Negative Affect Category overtime">
+                            </div>
+                            <p class="image-caption">Figure 15: Life ladder & Negative Affect Category overtime</p>
+                        </div>
+                    </div>
+
+                    <div class="image-container image-full">
+                        <div class="image-frame">
+                            <img src="ANL501-TMA/Rplot27.jpeg" alt="Life ladder & Annual Average Hours overtime">
+                        </div>
+                        <p class="image-caption">Figure 16: Life ladder & Annual Average Hours overtime</p>
+                    </div>
+
+                    <h3 class="subheading">Insights</h3>
+
                     <div class="insight-box">
                         <i class="fas fa-lightbulb insight-icon"></i>
                         <div class="insight-content">
-                            <p class="insight-title">Fun Fact</p>
+                            <p class="insight-title">Key Finding</p>
                             <p class="insight-text">
-                                Luxembourg consistently ranks highest in both GDP per capita and life satisfaction, 
-                                demonstrating the strong positive correlation between economic prosperity and happiness.
+                                People living in countries with higher GDP per capita tend to be happier and have a more positive outlook in life. 
+                                Not only do they have better life ladder thinking they can achieve best possible outcome in life, but they also 
+                                achieve higher positive emotions rating and lower negative emotions rating.
                             </p>
                         </div>
                     </div>
 
                     <p class="content-text">
-                        The scatter plot analysis in figure 1 & 2 shows log GDP per capita of countries against life ladder and annual average working hours respectively.
-                        Figure 1 shows a positive correlation while figure 2 shows a negative correlation. From the scatter plots, we find countries with <span class="highlight-green">excellent log GDP category</span> 
-                        (above 11) consistently report life ladder scores between 6.0 and 7.0, with Luxembourg exceeding 7.0. Countries with 
-                        <span class="highlight-orange">average log GDP category</span> (between 10 and 11) report a diverse degree of li Countries with 
-                        <span class="highlight-red">poorer log GDP category</span> (below 10) report life ladder of around 4.0 to 5.0. However, there are
-                        exceptions like Mexico, which, despite a lower GDP per capita, reports higher life satisfaction.
+                        Interestingly, some countries like Luxembourg and Ireland can achieve this without needing to work for long hours 
+                        despite being a better economic environment. There are <span class="highlight">2 possible explanations</span>:
                     </p>
-
-                    <!-- Placeholder Images 3-4: GDP Categories -->
-                    <div class="image-grid">
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot41.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                            </div>
-                        <p class="image-caption">Figure 3: Log GDP Per Capita & Positive Emotions against Annual Working Hours</p>
-                    </div>
-                    <div class="image-container">
-                    <div class="image-frame">
-                        <img src="ANL501-TMA/Rplot42.jpeg" alt="GDP vs Working Hours Scatter Plot">
-                    </div>
-                    <p class="image-caption">Figure 4: Log GDP Per Capita & Negative Emotions against Annual Average Hours</p>
-                </div>
-            </div>
 
                     <p class="content-text">
-                        Wealthier societies provide more opportunities for individuals to pursue hobbies, passions, and 
-                        personal growth. Access to state-of-the-art facilities like prestigious universities produces 
-                        skilled human capital, allowing <span class="highlight">higher productivity per hour</span>.
+                        <strong>1. Access to Modern Educational Infrastructure:</strong> Luxembourg government makes public education 
+                        accessible to all by making it free. Singapore invests heavily in education to produce a skilled workforce 
+                        and maintain their global competitiveness in the global economy. This creates a skilled workforce, 
+                        improving productivity and income per capita.
                     </p>
 
-                    <!-- Placeholder Images 5-6 -->
-                    <div class="image-grid">
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot31.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                            </div>
-                            <p class="image-caption">Figure 5: Line plot of log GDP per capita overtime with Positive Affect Category between Top and Bottom 3 economies</p>
-                        </div>
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot30.jpeg" alt="GDP vs Working Hours Scatter Plot">
-                            </div>
-                            <p class="image-caption">Figure 6: Line plot of log GDP per capita overtime with Negative Affect Category between Top and Bottom 3 economies</p>
-                        </div>
-                    </div>
-
-                    <!-- Placeholer for Images 7-8-->
-                    <div class="image-grid">
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot29.jpeg" alt="GDP vs Positive Emotions & Annual Working Hours Line Plot">
-                            </div>
-                            <p class="image-caption">Figure 7: Life Ladder against Positive Affect Category for Top and Bottom 3 economies</p>
-                        </div>
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot28.jpeg" alt="GDP vs Negative Emotions & Annual Working Hours Line Plot">
-                            </div>
-                            <p class="image-caption">Figure 8: Negative Affect Distribution by GDP Category</p>
-                        </div>
-                    </div>
                     <p class="content-text">
-                        The scatter plot analysis shows that countries in the <span class="highlight-green">excellent GDP category</span> 
-                        (above $50,000) consistently report life ladder scores above 7.0, while countries in the 
-                        <span class="highlight-red">poor GDP category</span> (below $20,000) average around 5.1.
+                        <strong>2. European and Scandinavian Regional Welfare Culture:</strong> Many Scandinavian and European countries 
+                        have developed extensive welfare states, providing social safety nets and emphasising on work-life balance.
                     </p>
+
+                    <div class="insight-box info">
+                        <i class="fas fa-globe insight-icon"></i>
+                        <div class="insight-content">
+                            <p class="insight-title">Regional Differences</p>
+                            <p class="insight-text">
+                                Would people work longer hours in better economic environments? It is dependent on the region and culture. 
+                                European and Scandinavian regions work lesser hours despite being in a better economic environment. 
+                                Singapore continues to experience long working hours despite being one of the best economic environments in SEA region.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -1119,32 +1280,39 @@
             <section class="section fade-in" id="finding-2">
                 <div class="section-header">
                     <span class="section-number">Finding 02</span>
-                    <h2 class="section-title">Long Working Hours <i class="fas fa-not-equal" style="color: var(--pixel-pink); font-size: 0.9rem; margin: 0 5px;"></i> Unhappiness</h2>
+                    <h2 class="section-title">Long Working Hours <i class="fas fa-not-equal" style="color: var(--pixel-pink); font-size: 0.9rem; margin: 0 5px;"></i> Poor Happiness</h2>
                 </div>
                 
                 <div class="content-card">
                     <p class="content-text">
-                        Contrary to popular belief, <span class="highlight">not all hardworking countries are less happy</span>. 
-                        when it comes to first impressions of long working hours, people would associate with negative feelings or emotions. 
-                        However, is that the case universally across countries or economies with long working hours?  If not, how do countries 
-                        with long working hours achieve such high positive emotions rating?
+                        When it comes to first impressions of long working hours, people would associate with negative feelings or emotions. 
+                        However, is that the case universally across countries or economies with long working hours? 
+                        If not, <span class="highlight">how do countries with long working hours achieve such high positive emotions rating?</span>
                     </p>
 
-                    <div class="pull-quote">
-                        <p class="pull-quote-text">
-                            Singapore works 45+ hours per week yet maintains high positive emotions — 
-                            challenging the narrative that associates long hours with depression and low well-being.
-                        </p>
+                    <h3 class="subheading">Observations</h3>
+
+                    <!-- Figure 17-18 -->
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot26.jpeg" alt="Top 5 countries with longest working hours and positive affect category">
+                            </div>
+                            <p class="image-caption">Figure 17: Top 5 countries with longest working hours and positive affect category</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot25.jpeg" alt="Life ladder overtime for top 5 longest working hours countries">
+                            </div>
+                            <p class="image-caption">Figure 18: Life ladder overtime for top 5 longest working hours countries</p>
+                        </div>
                     </div>
 
-                    <!-- Placeholder Image 6: Singapore -->
-                    <div class="image-container image-full">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot26.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                            </div>
-                        </div>
-                        <p class="image-caption">Figure 6: Singapore's Positive Emotions Trend vs Working Hours (2013-2019) - Animated</p>
-                    </div>
+                    <p class="content-text">
+                        Interestingly, <span class="highlight-green">Mexico, Costa Rica, Colombia and Singapore</span> achieved Good and 
+                        Excellent Positive Emotions category across despite long working hours. Only <span class="highlight-red">Turkey</span> 
+                        achieved Bad category for working long hours.
+                    </p>
 
                     <div class="insight-box info">
                         <i class="fas fa-flag insight-icon"></i>
@@ -1152,133 +1320,153 @@
                             <p class="insight-title">Happy to Work</p>
                             <p class="insight-text">
                                 3 out of the 4 countries with longest working hours achieving good and excellent positive emotions rating were 
-                                from the Latin American continent while 1 is from South-East-Asia.
+                                from the <strong>Latin American continent</strong> while 1 is from <strong>South-East-Asia</strong>. 
+                                This begs how do these countries achieve such positive emotions despite long working hours.
                             </p>
                         </div>
                     </div>
 
-                    <p class="content-text">
-                        Interestingly, Mexico, Costa Rica, Colombia and Singapore achieved Good and Excellent Positive Emotions category 
-                        across despite long working hours. Only Turkey achieved Bad category for working long hours. This begs how do 
-                        these countries, particularly Latin America countries achieve such positive emotions despite long working hours. 
-                    </p>
-                    <strong style="font-size: 20px;">Insights</strong>
-                    <strong style="font-size: 14px;">Singapore</strong>
-                    <p class="content-text">
-                        Singapore achieved a respectable life ladder rating above 0.6, negative emotions rating less than 0.2 and positive emotions
-                        rating above 0.6. All these while having annual average working hours above 40. These results demonstrate Singaporeans are
-                        satisfied and contented.
+                    <!-- SINGAPORE SECTION -->
+                    <h3 class="subheading">Singapore</h3>
 
-                        A possible explanation is Singapore’s safe and secure environment, stable government and high quality of life. Efficient law
-                        enforcement keeps Singapore streets safe against crime.  With its particularly modern infrastructure and strong currency, 
-                        it makes it a very lucrative environment to settle down for foreigners. Furthermore, Singapore has political stability with a
-                        political party elected since 1959 that has made wise decisions that made the country prosperous that continues till today.
-
-                        While it fails to achieve a higher life ladder rating like Finland, the government has made attempts to improve work-life
-                        balance. One example is starting December 1, 2024, all employers must consider workers' requests for flexible work 
-                        arrangements under the new Tripartite Guidelines on Flexible Work Arrangement Requests (FWAs). 2024 National day rally
-                        saw the government increasing parental leave from 20 weeks of paid leave to 30 weeks with employers mandated to four weeks
-                        of government-paid paternity leave from two
+                    <p class="content-text">
+                        Singapore achieved a respectable life ladder rating above 0.6, negative emotions rating less than 0.2 and 
+                        positive emotions rating above 0.6. All these while having annual average working hours above 40. 
+                        These results demonstrate <span class="highlight">Singaporeans are satisfied and contented</span>.
                     </p>
 
+                    <p class="content-text">
+                        A possible explanation is Singapore's <span class="highlight-green">safe and secure environment</span>, 
+                        stable government and high quality of life. Efficient law enforcement keeps Singapore streets safe against crime. 
+                        With its particularly modern infrastructure and strong currency, it makes it a very lucrative environment to settle 
+                        down for foreigners. Furthermore, Singapore has political stability with a political party elected since 1959 
+                        that has made wise decisions that made the country prosperous that continues till today.
+                    </p>
 
-                    <!-- Placeholder Images 7-9: Working Hours Analysis -->
+                    <div class="insight-box">
+                        <i class="fas fa-balance-scale insight-icon"></i>
+                        <div class="insight-content">
+                            <p class="insight-title">Recent Policy Changes</p>
+                            <p class="insight-text">
+                                While Singapore fails to achieve a higher life ladder rating like Finland, the government has made attempts 
+                                to improve work-life balance. Starting <strong>December 1, 2024</strong>, all employers must consider workers' 
+                                requests for flexible work arrangements under the new Tripartite Guidelines on FWAs. The 2024 National Day Rally 
+                                saw the government increasing parental leave from <strong>20 weeks to 30 weeks</strong> with employers mandated 
+                                to four weeks of government-paid paternity leave (up from two).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Singapore Charts -->
                     <div class="image-grid three-col">
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot21.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot23.jpeg" alt="Singapore Annual Average hours overtime">
                             </div>
-                            <p class="image-caption">Figure 7: Average Weekly Working Hours by Region</p>
+                            <p class="image-caption">Figure 19a: Singapore Annual Average hours overtime</p>
                         </div>
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot22.jpeg" alt="Regional Life Ladder Comparison">
+                                <img src="ANL501-TMA/Rplot22.jpeg" alt="Singapore Positive emotions overtime">
                             </div>
-                            <p class="image-caption">Figure 8: Life Ladder by Region (Asia vs Europe vs Latin America)</p>
+                            <p class="image-caption">Figure 19b: Singapore Positive emotions overtime</p>
                         </div>
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot23.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot21.jpeg" alt="Singapore Negative emotions overtime">
                             </div>
-                            <p class="image-caption">Figure 7: Average Weekly Working Hours by Region</p>
+                            <p class="image-caption">Figure 19c: Singapore Negative emotions overtime</p>
                         </div>
                     </div>
 
-                    <!-- Placeholder Image 10: GDP vs Working Hours Animation -->
-                    <strong style="font-size: 14px;">Colombia</strong>
+                    <!-- COLOMBIA / LATIN AMERICA SECTION -->
+                    <h3 class="subheading">Latin America: Colombia, Mexico & Costa Rica</h3>
+
                     <p class="content-text">
-                        For these 3 Latin American countries, the fact these countries achieve higher annual average working hours while achieving 
-                        high levels of happiness can be attributed to 3 common factors. First, strong social connections and family values, which is 
-                        part of Latin America culture. Second, presence of government legislations in the form of either labour law or code to provide
-                        work-life balance and lastly, a positive and resilient outlook in life, moulded by their shared experience. 
-                        Latin America historically has struggled and overcame multiple economic, political crises and hardships like the 1980s debt 
-                        crisis which has widened society inequality.
-                        
-                        Longer working hours can be attributed to the need to provide economic necessity for families to avoid future hardships and unlock more
-                        opportunities to climb up the life ladder. One such example from World Economic Forum on Costa Rica is investing in education to produce
-                        human talent, which improves human well-being as providing better education unlocks better job opportunities and increases income
+                        For these 3 Latin American countries, the fact these countries achieve higher annual average working hours while 
+                        achieving high levels of happiness can be attributed to <span class="highlight">3 common factors</span>:
                     </p>
-                    
+
+                    <p class="content-text">
+                        <strong>1. Strong Social Connections and Family Values:</strong> This is part of Latin America culture. 
+                        Family bonds provide emotional support that buffers against work stress.<br><br>
+                        <strong>2. Government Legislations:</strong> Presence of labour laws or codes to provide work-life balance.<br><br>
+                        <strong>3. Positive and Resilient Outlook:</strong> Latin America historically has struggled and overcame multiple 
+                        economic, political crises and hardships like the 1980s debt crisis which widened society inequality. 
+                        This shared experience has moulded resilience.
+                    </p>
+
+                    <p class="content-text">
+                        Longer working hours can be attributed to the need to provide <span class="highlight">economic necessity for families</span> 
+                        to avoid future hardships and unlock more opportunities to climb up the life ladder. One example from the World Economic Forum 
+                        on Costa Rica is investing in education to produce human talent, which improves human well-being as providing better education 
+                        unlocks better job opportunities and increases income.
+                    </p>
+
+                    <!-- Colombia Charts -->
                     <div class="image-grid three-col">
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot18.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot20.jpeg" alt="Colombia Life Ladder overtime">
+                            </div>
+                            <p class="image-caption">Figure 20a: Colombia Life Ladder overtime</p>
                         </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot19.jpeg" alt="Colombia Positive and Negative emotions rating overtime">
+                            </div>
+                            <p class="image-caption">Figure 20b: Colombia Positive emotions rating overtime</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot18.jpeg" alt="Colombia Negative emotions overtime">
+                            </div>
+                            <p class="image-caption">Figure 20c: Colombia Negative emotions overtime</p>
+                        </div>
                     </div>
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot19.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+
+                    <!-- Mexico Charts -->
+                    <div class="image-grid three-col">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot17.jpeg" alt="Mexico Life Ladder overtime">
+                            </div>
+                            <p class="image-caption">Figure 21a: Mexico Life Ladder overtime</p>
                         </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot16.jpeg" alt="Mexico Positive emotions overtime">
+                            </div>
+                            <p class="image-caption">Figure 21b: Mexico Positive emotions overtime</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot15.jpeg" alt="Mexico Negative emotions overtime">
+                            </div>
+                            <p class="image-caption">Figure 21c: Mexico Negative emotions overtime</p>
+                        </div>
                     </div>
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot20.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+
+                    <!-- Costa Rica Charts -->
+                    <div class="image-grid three-col">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot14.jpeg" alt="Costa Rica Life Ladder overtime">
+                            </div>
+                            <p class="image-caption">Figure 22a: Costa Rica Life Ladder overtime</p>
                         </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
-                    </div>
-                </div>
-                
-                <div class="image-grid three-col">
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot15.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot13.jpeg" alt="Costa Rica Positive emotions overtime">
+                            </div>
+                            <p class="image-caption">Figure 22b: Costa Rica Positive emotions overtime</p>
                         </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
-                    </div>
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot16.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot12.jpeg" alt="Costa Rica Negative emotions overtime">
+                            </div>
+                            <p class="image-caption">Figure 22c: Costa Rica Negative emotions overtime</p>
                         </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
-                    </div>
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot17.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                        </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
-                    </div>
-                </div>
-                
-                <div class="image-grid three-col">
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot12.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                        </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
-                    </div>
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot13.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                        </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
-                    </div>
-                    <div class="image-container">
-                        <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot14.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                        </div>
-                        <p class="image-caption">Figure 9: Distribution of Countries by Log GDP per Capita vs Annual Working Hours (2013-2019)</p>
                     </div>
                 </div>
             </section>
@@ -1289,234 +1477,265 @@
             <section class="section fade-in" id="finding-3">
                 <div class="section-header">
                     <span class="section-number">Finding 03</span>
-                    <h2 class="section-title">Working Conditions Matter More Than Hours</h2>
+                    <h2 class="section-title">Working Conditions Matter Towards Happiness</h2>
                 </div>
                 
                 <div class="content-card">
                     <p class="content-text">
-                        While working hours alone don't determine happiness, <span class="highlight">working conditions</span> 
-                        play a crucial role. Improved working conditions can be an improvement to paid annual leaves, better severance pay 
-                        in cases of dismissal or both. Paid annual leave means time off from work for employees and are entitled to receive 
-                        pay from their employers during time off. Severance pay is financial compensation that an employer provides to employees
-                        upon employee termination from work to help transit to either a new future job or unemployment. The compensation is a 
-                        one-time offer.
-
-                        Based on the data provided, the top and bottom 3 countries based on their paid annual leaves and severance pay are 
-                        plotted from 1-, 5- and 10-year tenure using bar and being compared using line charts. Distribution of severance pay 
-                        among countries from 2013 to 2019 will also be plotted from 1-, 5- and 10-year tenure.
+                        On the other hand, improved working conditions improve happiness. Improved working conditions can be an improvement to 
+                        <span class="highlight">paid annual leaves</span>, better <span class="highlight">severance pay</span> in cases of dismissal, or both.
                     </p>
-
-                    <div class="insight-box">
-                        <i class="fas fa-umbrella-beach insight-icon"></i>
-                        <div class="insight-content">
-                            <p class="insight-title">Paid Leave Analysis</p>
-                            <p class="insight-text">
-                                Countries with generous paid annual leave (30+ days) like Finland and France 
-                                consistently show higher life ladder scores, while the US with no mandated paid 
-                                leave presents an interesting exception.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Placeholder Images 10-11: Paid Leave Comparison -->
-                        <div class="image-grid three-col">
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot11.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                            </div>
-                            <p class="image-caption">Figure 10: Paid Annual Leave Comparison - 1 Year Tenure</p>
-                        </div>
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot10.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                            </div>
-                            <p class="image-caption">Figure 11: Paid Annual Leave Comparison - 5 Year Tenure</p>
-                        </div>
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot09.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                            </div>
-                            <p class="image-caption">Figure 12: Paid Annual Leave Comparison - 10 Year Tenure</p>
-                        </div>
-                    </div>
 
                     <p class="content-text">
-                        The comparison between top and bottom countries for paid annual leave reveals interesting patterns. 
-                        <span class="highlight-green">Finland and UK</span> maintain their lead with better life ladders, 
-                        while <span class="highlight-red">Singapore with limited employee protection</span> shows lower ratings.
+                        <strong>Paid Annual Leave:</strong> Time off from work where employees are entitled to receive pay from their employers during time off.<br><br>
+                        <strong>Severance Pay:</strong> Financial compensation that an employer provides to employees upon employee termination from work 
+                        to help transit to either a new future job or unemployment. The compensation is a one-time offer.
                     </p>
 
-                    <!-- Placeholder Images 12-13: Life Ladder vs Paid Leave -->
-                        <div class="image-grid three-col">
+                    <!-- SEVERANCE PAY SECTION -->
+                    <h3 class="subheading">Severance Pay Analysis</h3>
+
+                    <!-- Figures 24-25: Severance Pay Histograms -->
+                    <div class="image-grid three-col">
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot08.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot11.jpeg" alt="Histogram for severance pay at 1 year tenure">
                             </div>
-                            <p class="image-caption">Figure 10: Paid Annual Leave Comparison - 1 Year Tenure</p>
+                            <p class="image-caption">Figure 23: Histogram for severance pay at 1 year tenure</p>
                         </div>
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot07.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot10.jpeg" alt="Histogram for severance pay at 5 year tenure">
                             </div>
-                            <p class="image-caption">Figure 11: Paid Annual Leave Comparison - 5 Year Tenure</p>
+                            <p class="image-caption">Figure 24: Histogram for severance pay at 5 tenure</p>
                         </div>
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot06.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot09.jpeg" alt="Histogram for severance pay at 10 year tenure">
                             </div>
-                            <p class="image-caption">Figure 12: Paid Annual Leave Comparison - 10 Year Tenure</p>
+                            <p class="image-caption">Figure 25: Histogram for severance pay at 10 tenure</p>
                         </div>
                     </div>
 
                     <div class="insight-box warning">
-                        <i class="fas fa-exclamation-triangle insight-icon"></i>
+                        <i class="fas fa-exclamation-circle insight-icon"></i>
                         <div class="insight-content">
-                            <p class="insight-title">The US Exception</p>
+                            <p class="insight-title">Majority Have No Severance Pay</p>
                             <p class="insight-text">
-                                Despite having no mandated paid annual leave, the US achieves higher life ladder scores 
-                                than France (known for generous benefits). The American work ethic emphasizes that hard work 
-                                leads to greater accomplishments, unlocking future opportunities and entrepreneurship.
+                                From the histogram chart, most economies do not have severance pay for their employees. 
+                                <strong>23 out of 45 (51%)</strong> do not have severance pay at 1-year tenure. 
+                                For 5- and 10-year tenure, the data is slightly better with reduction to 17 out of 45 (~38%).
                             </p>
                         </div>
                     </div>
 
-                    <!-- Placeholder Images 14-15: Negative Affect Heatmaps -->
-                    <h3 style="font-family: 'Press Start 2P', cursive; font-size: 0.7rem; color: var(--pixel-pink); margin: 40px 0 25px;">Negative Affect Analysis</h3>
-                    
+                    <p class="content-text">
+                        Majority of countries not having severance pay for employees is largely attributed to a <span class="highlight">lack of government legislation</span> 
+                        mandating need for employers to provide severance pay in event of employee termination.
+                    </p>
+
+                    <p class="content-text">
+                        In Singapore's case, laws are more friendly towards employers than employees and workers who work continuously for 
+                        less than 2 years with an employer are not entitled to any retrenchment benefit. According to Channel News Asia (CNA), 
+                        unions like NTUC and SNEF have no legal force on employers to pressure them to issue severance package in event of 
+                        employee termination.
+                    </p>
+
+                    <!-- Figures 26-28: Countries with Severance Pay -->
                     <div class="image-grid three-col">
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot05.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot08.jpeg" alt="Countries with severance pay at 1-year tenure">
                             </div>
-                            <p class="image-caption">Figure 14: Heatmap of Economy with Negative Affect (2016-2017)</p>
+                            <p class="image-caption">Figure 26: Countries with severance pay at 1-year tenure</p>
                         </div>
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot04.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot07.jpeg" alt="Countries with severance pay at 5-year tenure">
                             </div>
-                            <p class="image-caption">Figure 15: Heatmap of Economy with Negative Affect (2018-2019)</p>
+                            <p class="image-caption">Figure 27: Countries with severance pay at 5-year tenure</p>
                         </div>
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot03.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot06.jpeg" alt="Countries with severance pay at 10-year tenure">
                             </div>
-                            <p class="image-caption">Figure 15: Heatmap of Economy with Negative Affect (2018-2019)</p>
+                            <p class="image-caption">Figure 28: Countries with severance pay at 10-year tenure</p>
                         </div>
                     </div>
 
                     <p class="content-text">
-                        The heatmaps reveal that <span class="highlight-green">Singapore maintains one of the lowest 
-                        negative affect scores</span> (shown in green), despite long working hours. Meanwhile, 
-                        <span class="highlight-red">Turkey and Greece</span> show consistently high negative affect, 
-                        influenced by economic and political instability.
+                        Plotting countries with severance pay, <span class="highlight">Mexico has the highest</span> at approximately 14.6, 
+                        followed by Lithuania and Greece. Interestingly, Brazil does not have a universal severance pay across the country — 
+                        Sao Paulo is 1.7 while Rio de Janeiro is 1.6. For France, the graph shows 2 values due to an increase in severance pay 
+                        in 2019 from 0.9 to 1.1.
                     </p>
 
-                    <!-- Placeholder Image 16: Life Ladder vs Negative Affect -->
-                        <div class="image-grid three-col">
+                    <p class="content-text">
+                        At 5-year tenure, Lithuania saw reduction of severance pay from 17.3 to 8.7 in 2019. France saw reduction from 10.8 to 8.7 in 2019. 
+                        Slovenia saw reduction from 2014 onwards from 5.4 to 4.3. Portugal as well from 14.3 to 8.6.
+                    </p>
+
+                    <p class="content-text">
+                        At 10-year tenure, Lithuania severance pay dropped in 2019 from 21.7 to 8.7. Portugal dropped from 28.6 to 17.1 from 2013 onwards 
+                        while France dropped from 10.8 to 8.7 in 2019.
+                    </p>
+
+                    <!-- PAID ANNUAL LEAVE SECTION -->
+                    <h3 class="subheading">Paid Annual Leave Analysis</h3>
+
+                    <!-- Figures 29-34: Paid Annual Leave -->
+                    <div class="image-grid">
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot02.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot02.jpeg" alt="3 Economies with lowest 1-year tenure paid annual leave">
                             </div>
-                            <p class="image-caption">Figure 16: Life Ladder against Negative Affect Category for Top & Bottom 3 Economies (2013-2019)</p>
+                            <p class="image-caption">Figure 29: 3 Economies with lowest 1-year tenure paid annual leave</p>
                         </div>
                         <div class="image-container">
                             <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot01.jpeg" alt="GDP vs Life Ladder Scatter Plot">
+                                <img src="ANL501-TMA/Rplot05.jpeg" alt="Top 3 Economies with highest 1-year tenure paid annual leave">
                             </div>
-                            <p class="image-caption">Figure 15: Heatmap of Economy with Negative Affect (2018-2019)</p>
-                        </div>
-                        <div class="image-container">
-                            <div class="image-frame">
-                                <img src="ANL501-TMA/Rplot.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                            </div>
-                            <p class="image-caption">Figure 15: Heatmap of Economy with Negative Affect (2018-2019)</p>
+                            <p class="image-caption">Figure 30: Top 3 Economies with highest 1-year tenure paid annual leave</p>
                         </div>
                     </div>
+
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot04.jpeg" alt="3 Economies with lowest 5-year tenure paid annual leave">
+                            </div>
+                            <p class="image-caption">Figure 31: 3 Economies with lowest 5-year tenure paid annual leave</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot.jpeg" alt="Top 3 Economies with highest 5-year tenure paid annual leave">
+                            </div>
+                            <p class="image-caption">Figure 32: Top 3 Economies with highest 5-year tenure paid annual leave</p>
+                        </div>
+                    </div>
+
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot03.jpeg" alt="3 Economies with lowest 10-year tenure paid annual leave">
+                            </div>
+                            <p class="image-caption">Figure 33: 3 Economies with lowest 10-year tenure paid annual leave</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot01.jpeg" alt="Top 3 Economies with highest 10-year tenure paid annual leave">
+                            </div>
+                            <p class="image-caption">Figure 34: Top 3 Economies with highest 10-year tenure paid annual leave</p>
+                        </div>
+                    </div>
+
+                    <p class="content-text">
+                        For Paid annual leave at <strong>1-year tenure</strong>: <span class="highlight-red">US has the lowest at 0</span>, 
+                        followed by Singapore and Mexico at 6 and 7 respectively. In comparison, <span class="highlight-green">Finland and France achieve 30</span> 
+                        for paid annual leave, while UK trails at 28.
+                    </p>
+
+                    <p class="content-text">
+                        At <strong>5-year tenure</strong>: US remains at 0, Singapore at 11 and Costa Rica replaces Mexico for the lowest 3 at 12.
+                    </p>
+
+                    <p class="content-text">
+                        At <strong>10-year tenure</strong>: US still remains 0, Singapore overtakes Costa Rica with paid annual leave of 14 
+                        while Costa Rica is at 12. France beats Finland with paid annual leave of 31 while the latter trails closely at 30. 
+                        UK remains unchanged at 28.
+                    </p>
+
+                    <!-- LIFE LADDER VS PAID LEAVE -->
+                    <h3 class="subheading">How Do These Economies Fare on Life Ladder?</h3>
+
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot43.png" alt="Life ladder overtime with paid annual leave for 1-year tenure (top and bottom 3)">
+                            </div>
+                            <p class="image-caption">Figure 35: Life ladder overtime with paid annual leave for 1-year tenure (top and bottom 3)</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="ANL501-TMA/Rplot44.png" alt="Life ladder overtime with paid annual leave for 5-year tenure (top and bottom 3)">
+                            </div>
+                            <p class="image-caption">Figure 36: Life ladder overtime with paid annual leave for 5-year tenure (top and bottom 3)</p>
+                        </div>
+                    </div>
+
+                    <p class="content-text">
+                        Does improvements to working conditions, in this case, paid annual leaves improve achieving the best possible life? 
+                        A higher paid annual leave offers range of benefits that can improve quality of life personally and professionally — 
+                        reduced stress, improved productivity and more exploration opportunities for personal growth.
+                    </p>
+
+                    <p class="content-text">
+                        For top 3 countries with highest paid annual leave for 1-year tenure, there is an <span class="highlight-green">upward trend improvement in Life Ladder</span>, 
+                        even though France life ladder lacks behind Finland and UK.
+                    </p>
+
+                    <p class="content-text">
+                        In comparison, Mexico and Singapore falls behind with poorer life ladder. This is attributed to their long working hours 
+                        and lower paid annual leave. Despite suffering from <span class="highlight-red">no paid annual leave, US surprisingly does well</span> for its life ladder, 
+                        indicating other factors that help contribute to the final life ladder result.
+                    </p>
+
+                    <p class="content-text">
+                        At the 5 and 10-year tenure, Costa Rica replaces Mexico for one of the lowest paid annual leave. Singapore continues 
+                        as one of the worst performing for its life ladder. Costa Rica saw better life ladder than Singapore even though they 
+                        have very similar paid annual leave. <span class="highlight">US continues to show resilience</span> with a better life ladder than Singapore 
+                        and even France despite having no paid annual leave. Surprisingly, France lacks behind in life ladder, performing worse 
+                        than the US and Costa Rica despite having much higher paid leave than them.
+                    </p>
+
+                    <h3 class="subheading">Insights</h3>
+
+                    <div class="insight-box">
+                        <i class="fas fa-umbrella-beach insight-icon"></i>
+                        <div class="insight-content">
+                            <p class="insight-title">Paid Leave Helps</p>
+                            <p class="insight-text">
+                                Improved working conditions like having paid annual leave can improve employees' chances of achieving best life 
+                                possible for themselves like Finland. Singapore with its long working hours and limited employee protection 
+                                lowers life ladder rating.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="insight-box warning">
+                        <i class="fas fa-flag-usa insight-icon"></i>
+                        <div class="insight-content">
+                            <p class="insight-title">The US Exception</p>
+                            <p class="insight-text">
+                                However, US with poor employee benefits can achieve higher life ladder than France, known for generous employee 
+                                benefits and compensation. A possible explanation is the US <strong>work ethic</strong>, which places emphasis on 
+                                hard work leading to greater accomplishments and unlocking future opportunities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="content-text">
+                        This means longer working hours than other countries but as workers in America hone their skills more, they gain better proficiency, 
+                        increase their wages, generating higher income levels. This translates to unlocking more opportunities to pursue side hustles 
+                        or hobbies and increase likelihood of achieving best life possible. This is particularly for businesses, specifically small 
+                        businesses who enjoy <span class="highlight">tax breaks</span> from the US government.
+                    </p>
+
+                    <p class="content-text">
+                        Furthermore, US work culture emphasises on <span class="highlight">entrepreneurship and innovation</span>. Entrepreneurship is 
+                        an individual who has an idea, acts on it, usually to disrupt the current market with a new product or service. 
+                        An individual can take advantage of their personal interests, innovate and make money from it, generating income — 
+                        which is another possible reason why life ladder is high even though employee benefits are poor.
+                    </p>
+
+                    <p class="content-text">
+                        Regarding employee benefits like paid leaves, there is <span class="highlight-red">no mandated legislation</span> by the 
+                        state or federal government on employers to pay for staff even when on leave.
+                    </p>
+                </div>
             </section>
 
             <div class="divider"></div>
-
-            <!-- Regional Analysis -->
-            <section class="section fade-in" id="regional">
-                <div class="section-header">
-                    <span class="section-number">Regional Analysis</span>
-                    <h2 class="section-title">Culture Shapes the Work-Happiness Relationship</h2>
-                </div>
-                
-                <div class="content-card">
-                    <p class="content-text">
-                        Happiness is dependent on region due to <span class="highlight">differences in working culture</span>, 
-                        making it a subjective topic. Europe and Scandinavian regions can have lower working hours while 
-                        Latin America and Asia regions work longer — yet each finds its own path to well-being.
-                    </p>
-
-                    <div class="comparison-container">
-                        <div class="comparison-item">
-                            <h4 class="comparison-title"><i class="fas fa-globe-europe"></i> Europe & Scandinavia</h4>
-                            <!-- Placeholder Image 17 -->
-                            <div class="image-frame">
-                                <div class="image-placeholder" style="min-height: 200px;">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <span class="image-placeholder-name">[IMAGE_17]</span>
-                                    <span>Europe Region Analysis</span>
-                                </div>
-                            </div>
-                            <p class="content-text" style="margin-top: 20px; font-size: 1.1rem;">
-                                Lower working hours, strong social safety nets, generous paid leave. 
-                                High life satisfaction driven by work-life balance policies.
-                            </p>
-                        </div>
-                        <div class="comparison-item">
-                            <h4 class="comparison-title"><i class="fas fa-globe-asia"></i> Asia</h4>
-                            <!-- Placeholder Image 18 -->
-                            <div class="image-frame">
-                                <div class="image-placeholder" style="min-height: 200px;">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <span class="image-placeholder-name">[IMAGE_18]</span>
-                                    <span>Asia Region Analysis</span>
-                                </div>
-                            </div>
-                            <p class="content-text" style="margin-top: 20px; font-size: 1.1rem;">
-                                Longer working hours but strong family values and economic growth. 
-                                Happiness tied to achievement and financial security.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="comparison-container">
-                        <div class="comparison-item">
-                            <h4 class="comparison-title"><i class="fas fa-globe-americas"></i> Latin America</h4>
-                            <!-- Placeholder Image 19 -->
-                            <div class="image-frame">
-                            <img src="ANL501-TMA/Rplot02.jpeg" alt="GDP vs Life Ladder Scatter Plot">
-                        </div>
-                        <p class="image-caption">Figure 16: Life Ladder against Negative Affect Category for Top & Bottom 3 Economies (2013-2019)</p>
-                            </div>
-                            <p class="content-text" style="margin-top: 20px; font-size: 1.1rem;">
-                                Strong family bonds and community ties. Costa Rica's "Pura Vida" philosophy 
-                                demonstrates happiness beyond economic measures.
-                            </p>
-                        </div>
-                        <div class="comparison-item">
-                            <h4 class="comparison-title"><i class="fas fa-flag-usa"></i> United States</h4>
-                            <!-- Placeholder Image 20 -->
-                            <div class="image-frame">
-                                <div class="image-placeholder" style="min-height: 200px;">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <span class="image-placeholder-name">[IMAGE_20]</span>
-                                    <span>US Analysis</span>
-                                </div>
-                            </div>
-                            <p class="content-text" style="margin-top: 20px; font-size: 1.1rem;">
-                                Entrepreneurship-driven culture. Work ethic emphasizes accomplishment 
-                                and opportunity over leisure time.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="divider"></div>            
 
             <!-- Conclusion -->
             <section class="section fade-in" id="conclusion">
@@ -1560,19 +1779,60 @@
 
                 <div class="content-card">
                     <p class="content-text">
-                        The relationship between work and happiness is <span class="highlight">not significant to a large extent</span>. 
-                        Better working conditions do not necessarily justify workers working longer, as shown from results 
-                        in Europe and Scandinavian regions.
+                        Relationship between work and happiness is <span class="highlight">not significant</span>. Better working conditions 
+                        does not necessarily justify to workers working longer as shown from results in Europe and Scandinavian regions. 
+                        Countries with better GDP per capita have better life ladder ratings, higher positive emotions and lower negative emotions.
                     </p>
+                    
                     <p class="content-text">
-                        People living in poorer economic environments are less likely to pursue their passions and more 
-                        inclined to work longer to make ends meet. In comparison, people in wealthier societies have more 
-                        opportunities to pursue hobbies or passions that make them happy.
+                        Furthermore, happiness is dependent on the region due to difference in region culture, making it a 
+                        <span class="highlight">subjective topic</span> to discuss since there is a different interpretation from every 
+                        individual what is happiness. Thus, highlighting limitations of improved working conditions and emphasise complex 
+                        nature of happiness and well-being.
                     </p>
+
                     <p class="content-text">
-                        Ultimately, happiness is a <span class="highlight">subjective and culturally-dependent</span> concept. 
-                        The data highlights the limitations of improved working conditions and emphasizes the complex nature 
-                        of happiness and well-being.
+                        People living in poorer economic environments are less likely to pursue their passions and more inclined to work 
+                        longer to make ends meet. In comparison, people in wealthier societies have more opportunities to pursue hobbies 
+                        or passions that make them happy.
+                    </p>
+
+                    <p class="content-text">
+                        Region is also a fundamental factor in determining working hours, culture and happiness. That is why Europe or 
+                        Scandinavian regions can have lower working hours while Latin America and Asia regions work longer. Importantly, 
+                        access to state-of-the-art facilities like prestigious universities produces skilled human capital, allowing 
+                        <span class="highlight">higher productivity per hour</span> per headcount in wealthier societies. Hence, lower working hours required.
+                    </p>
+
+                    <!-- Animated Visualizations -->
+                    <h3 class="subheading">Animated Visualizations (GGanimate)</h3>
+
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="" alt="">
+                            </div>
+                            <p class="image-caption">Animation: Distribution of countries by Log GDP per capita vs Annual Working Hours (2013-2019)</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="" alt="">
+                            </div>
+                            <p class="image-caption">Animation: Singapore's Positive Emotions and Working Hours (2013-2019)</p>
+                        </div>
+                    </div>
+
+                    <p class="content-text">
+                        The first animation showcases distribution of countries based on their log GDP per capita against the annual average 
+                        working hours they worked per year from 2013 to 2019. The main objective is to determine whether GDP per capita 
+                        affects the annual average working hours, allowing for better work-life balance.
+                    </p>
+
+                    <p class="content-text">
+                        The second animation showcases Singapore's positive emotions and corresponding working hours from 2013 to 2019. 
+                        The main objective is to <span class="highlight">challenge the narrative</span> of associating countries with long working hours 
+                        with negativity like depression and low subjective well-being, as Singapore shows high positive emotions rating 
+                        despite long working hours.
                     </p>
                 </div>
             </section>
@@ -1621,9 +1881,9 @@
                     <i class="fab fa-github"></i>
                     <span>View on GitHub</span>
                 </a>
-                <a href="works.html" class="project-link">
+                <a href="projects.html" class="project-link">
                     <i class="fas fa-arrow-left"></i>
-                    <span>Back to All Works</span>
+                    <span>Back to All Projects</span>
                 </a>
             </div>
 
@@ -1714,7 +1974,7 @@
                         counter.textContent = Math.floor(current);
                         requestAnimationFrame(updateCounter);
                     } else {
-                        counter.textContent = target + '+';
+                        counter.textContent = target;
                     }
                 };
                 
