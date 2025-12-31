@@ -826,6 +826,71 @@
             }
         }
 
+        /* ==================== IMAGE GRID ==================== */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .image-grid.three-col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Single Image Centering */
+        .image-single {
+            display: block;
+            margin: 40px auto;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* Wider Conclusion Container */
+        .container-wide {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Side by Side Methodology & References */
+        .methodology-references-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .methodology-references-row .methodology {
+            margin-top: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .image-grid.three-col {
+                grid-template-columns: 1fr 1fr;
+            }
+            .methodology-references-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            .image-grid.three-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ==================== ANIMATIONS ==================== */
         .fade-in {
             opacity: 0;
@@ -844,9 +909,9 @@
     <div class="progress-bar" id="progressBar"></div>
 
     <!-- Back Button -->
-    <a href="projects.html" class="back-button">
+    <a href="works.html" class="back-button">
         <i class="fas fa-arrow-left"></i>
-        <span>Back to Projects</span>
+        <span>Back to Works</span>
     </a>
 
     <!-- Sidebar Navigation -->
@@ -1044,8 +1109,10 @@
                 and <span class="highlight">Norwegian People Aid (NPA)</span>.
             </p>
 
-            <img src="ANL501-ECA/Picture1.jpg" alt="Figure 1: Survey numbers by Operator from 2009-2014">
-            <img src="ANL501-ECA/Picture2.jpg" alt="Figure 2: Incidents Numbers by Device Type from 2005 to 2013">
+            <div class="image-grid">
+                <img src="ANL501-ECA/Picture1.jpg" alt="Figure 1: Survey numbers by Operator from 2009-2014">
+                <img src="ANL501-ECA/Picture2.jpg" alt="Figure 2: Incidents Numbers by Device Type from 2005 to 2013">
+            </div>
 
             <h3 class="subsection-title">Incident Trends Over Time</h3>
             <p class="text-content">
@@ -1066,9 +1133,11 @@
                 </p>
             </div>
 
-            <img src="ANL501-ECA/Picture4.jpg" alt="Figure 4: Mine & ERW Incidents Over Time">
-            <img src="ANL501-ECA/Picture5.jpg" alt="Figure 5: Mine Incidents Over Time">
-            <img src="ANL501-ECA/Picture6.jpg" alt="Figure 6: Number of ERW Incidents Over Time">
+            <div class="image-grid three-col">
+                <img src="ANL501-ECA/Picture4.jpg" alt="Figure 4: Mine & ERW Incidents Over Time">
+                <img src="ANL501-ECA/Picture5.jpg" alt="Figure 5: Mine Incidents Over Time">
+                <img src="ANL501-ECA/Picture6.jpg" alt="Figure 6: Number of ERW Incidents Over Time">
+            </div>
         </div>
     </section>
 
@@ -1083,7 +1152,7 @@
                 from the West and North direction.
             </p>
 
-            <img src="ANL501-ECA/Picture3.jpg" alt="Figure 3: Mine & ERW Incidents in Cambodia">
+            <img src="ANL501-ECA/Picture3.jpg" alt="Figure 3: Mine & ERW Incidents in Cambodia" class="image-single">
 
             <div class="insight-box warning">
                 <span class="insight-label">Key Pattern</span>
@@ -1176,7 +1245,7 @@
                 <span class="highlight-danger">Bântéay Méanchey</span> are the top 3 provinces with highest victims.
             </p>
 
-            <img src="ANL501-ECA/Picture7.jpg" alt="Figure 7: Victims by Province For Total, Amputation, Injured, and Killed Victims">
+            <img src="ANL501-ECA/Picture7.jpg" alt="Figure 7: Victims by Province For Total, Amputation, Injured, and Killed Victims" class="image-single">
 
             <p class="text-content">
                 One observation for Bântéay Méanchey is despite having slightly lesser injured victims than Preah Vihéar, 
@@ -1207,8 +1276,10 @@
                 and <span class="highlight">Prey Vêng</span> that have purely ERW incidents.
             </p>
 
-            <img src="ANL501-ECA/Picture8.jpg" alt="Figure 8: Breakdown of Victims by Device Type in Each Province">
-            <img src="ANL501-ECA/Picture9.jpg" alt="Figure 9: Percentage breakdown of victims by Device Type & Province">
+            <div class="image-grid">
+                <img src="ANL501-ECA/Picture8.jpg" alt="Figure 8: Breakdown of Victims by Device Type in Each Province">
+                <img src="ANL501-ECA/Picture9.jpg" alt="Figure 9: Percentage breakdown of victims by Device Type & Province">
+            </div>
 
             <div class="analysis-block">
                 <h4 class="analysis-block-title">An Interesting Case: Kâmpôt</h4>
@@ -1228,7 +1299,7 @@
                 Not trailing far behind is <span class="highlight">Mortar at 15.2%</span>.
             </p>
 
-            <img src="ANL501-ECA/Picture10.jpg" alt="Figure 10: Breakdown of ERW & Mine Type from Incidents">
+            <img src="ANL501-ECA/Picture10.jpg" alt="Figure 10: Breakdown of ERW & Mine Type from Incidents" class="image-single">
 
             <div class="content-card">
                 <h4 class="content-card-title">Device Type Glossary</h4>
@@ -1249,8 +1320,10 @@
                 and victim numbers, particularly with mines. In comparison, ERW are scattered in a more evenly-distributed way than mines.
             </p>
 
-            <img src="ANL501-ECA/Picture11.jpg" alt="Figure 11: Mine & ERW Incidents in Selected Provinces">
-            <img src="ANL501-ECA/Picture12.jpg" alt="Figure 12: District boundaries of Selected Provinces">
+            <div class="image-grid">
+                <img src="ANL501-ECA/Picture11.jpg" alt="Figure 11: Mine & ERW Incidents in Selected Provinces">
+                <img src="ANL501-ECA/Picture12.jpg" alt="Figure 12: District boundaries of Selected Provinces">
+            </div>
 
             <div class="pull-quote">
                 <p class="pull-quote-text">
@@ -1368,8 +1441,10 @@
                 <span class="highlight">Urban areas</span> refer to village or built-up area where there is significant human activity.
             </p>
 
-            <img src="ANL501-ECA/Picture13.jpg" alt="Figure 13: Incident Numbers Over Time by Land Use Classification">
-            <img src="ANL501-ECA/Picture14.jpg" alt="Figure 14: Land used by Cambodians where Mine & ERW incidents occured">
+            <div class="image-grid">
+                <img src="ANL501-ECA/Picture13.jpg" alt="Figure 13: Incident Numbers Over Time by Land Use Classification">
+                <img src="ANL501-ECA/Picture14.jpg" alt="Figure 14: Land used by Cambodians where Mine & ERW incidents occured">
+            </div>
 
             <div class="analysis-block">
                 <h4 class="analysis-block-title">Key Finding: Rural Dominance</h4>
@@ -1446,12 +1521,14 @@
                 and have changed over time. The charts measure counts of fear level subdivided by province and year.
             </p>
 
-            <img src="ANL501-ECA/Picture15.jpg" alt="Figure 15: Fear Levels by Year and Province - Banteay Meanchey, Ratanak Kiri, Kampot, Oddar Meanchey">
-            <img src="ANL501-ECA/Picture16.jpg" alt="Figure 16: Fear Levels by Year and Province - Battambang, Kandal, Pailin, Siemreap">
-            <img src="ANL501-ECA/Picture17.jpg" alt="Figure 17: Fear Levels by Year and Province - Kampong Cham, Kep, Phnom Penh, Sihanoukville">
-            <img src="ANL501-ECA/Picture18.jpg" alt="Figure 18: Fear Levels by Year and Province - Kampong Chhnang, Koh Kong, Preah Vihear, Stung Treng">
-            <img src="ANL501-ECA/Picture19.jpg" alt="Figure 19: Fear Levels by Year and Province - Kampong Speu, Kratie, Prey Veng, Svay Rieng">
-            <img src="ANL501-ECA/Picture20.jpg" alt="Figure 20: Fear Levels by Year and Province - Kampong Thom, Mondul Kiri, Pursat, Takeo">
+            <div class="image-grid three-col">
+                <img src="ANL501-ECA/Picture15.jpg" alt="Figure 15: Fear Levels by Year and Province - Banteay Meanchey, Ratanak Kiri, Kampot, Oddar Meanchey">
+                <img src="ANL501-ECA/Picture16.jpg" alt="Figure 16: Fear Levels by Year and Province - Battambang, Kandal, Pailin, Siemreap">
+                <img src="ANL501-ECA/Picture17.jpg" alt="Figure 17: Fear Levels by Year and Province - Kampong Cham, Kep, Phnom Penh, Sihanoukville">
+                <img src="ANL501-ECA/Picture18.jpg" alt="Figure 18: Fear Levels by Year and Province - Kampong Chhnang, Koh Kong, Preah Vihear, Stung Treng">
+                <img src="ANL501-ECA/Picture19.jpg" alt="Figure 19: Fear Levels by Year and Province - Kampong Speu, Kratie, Prey Veng, Svay Rieng">
+                <img src="ANL501-ECA/Picture20.jpg" alt="Figure 20: Fear Levels by Year and Province - Kampong Thom, Mondul Kiri, Pursat, Takeo">
+            </div>
 
             <div class="insight-box">
                 <span class="insight-label">Overall Trend</span>
@@ -1533,12 +1610,14 @@
                 But is it the case universally? Can it differ by province?
             </p>
 
-            <img src="ANL501-ECA/Picture21.jpg" alt="Figure 21: Fear Levels by Proximity and Province - Kampong Thom, Mondul Kiri, Pursat, Takeo">
-            <img src="ANL501-ECA/Picture22.jpg" alt="Figure 22: Fear Levels by Proximity and Province - Banteay Meanchey, Ratanak Kiri, Kampot, Oddar Meanchey">
-            <img src="ANL501-ECA/Picture23.jpg" alt="Figure 23: Fear Levels by Proximity and Province - Battambang, Kandal, Pailin, Siemreap">
-            <img src="ANL501-ECA/Picture24.jpg" alt="Figure 24: Fear Levels by Proximity and Province - Kampong Cham, Kep, Phnom Penh, Sihanoukville">
-            <img src="ANL501-ECA/Picture25.jpg" alt="Figure 25: Fear Levels by Proximity and Province - Kampong Chhnang, Koh Kong, Preah Vihear, Stung Treng">
-            <img src="ANL501-ECA/Picture26.jpg" alt="Figure 26: Fear Levels by Proximity and Province - Kampong Speu, Kratie, Prey Veng, Svay Rieng">
+            <div class="image-grid three-col">
+                <img src="ANL501-ECA/Picture21.jpg" alt="Figure 21: Fear Levels by Proximity and Province - Kampong Thom, Mondul Kiri, Pursat, Takeo">
+                <img src="ANL501-ECA/Picture22.jpg" alt="Figure 22: Fear Levels by Proximity and Province - Banteay Meanchey, Ratanak Kiri, Kampot, Oddar Meanchey">
+                <img src="ANL501-ECA/Picture23.jpg" alt="Figure 23: Fear Levels by Proximity and Province - Battambang, Kandal, Pailin, Siemreap">
+                <img src="ANL501-ECA/Picture24.jpg" alt="Figure 24: Fear Levels by Proximity and Province - Kampong Cham, Kep, Phnom Penh, Sihanoukville">
+                <img src="ANL501-ECA/Picture25.jpg" alt="Figure 25: Fear Levels by Proximity and Province - Kampong Chhnang, Koh Kong, Preah Vihear, Stung Treng">
+                <img src="ANL501-ECA/Picture26.jpg" alt="Figure 26: Fear Levels by Proximity and Province - Kampong Speu, Kratie, Prey Veng, Svay Rieng">
+            </div>
 
             <div class="insight-box neutral">
                 <span class="insight-label">Surprising Finding</span>
@@ -1636,7 +1715,7 @@
 
     <!-- ==================== CONCLUSION ==================== -->
     <section class="section section-dark" id="conclusion">
-        <div class="container-narrow fade-in">
+        <div class="container-wide fade-in">
             <span class="section-eyebrow">Conclusion</span>
             <h2 class="section-title">A Legacy That Demands Action</h2>
             <p class="section-intro">
@@ -1695,10 +1774,11 @@
                 </p>
             </div>
 
-            <!-- Methodology -->
-            <div class="methodology">
-                <h3 class="methodology-title">Methodology & Data Sources</h3>
-                <div class="methodology-grid">
+            <!-- Methodology & References Side by Side -->
+            <div class="methodology-references-row">
+                <!-- Methodology -->
+                <div class="methodology">
+                    <h3 class="methodology-title">Methodology & Data Sources</h3>
                     <div class="methodology-item">
                         <h4>Data Sources</h4>
                         <ul>
@@ -1716,21 +1796,21 @@
                         </ul>
                     </div>
                 </div>
-            </div>
 
-            <!-- References -->
-            <div class="methodology" style="margin-top: 30px;">
-                <h3 class="methodology-title">References</h3>
-                <div class="methodology-item">
-                    <ul>
-                        <li><i class="fas fa-link"></i> UN Chronicle - The Spectre of Khmer Rouge over Cambodia</li>
-                        <li><i class="fas fa-link"></i> Cambodia LPJ - Justice and Starvation in Cambodia</li>
-                        <li><i class="fas fa-link"></i> Time - Cambodia Land Mine Found at School (2023)</li>
-                        <li><i class="fas fa-link"></i> Wikipedia - Cambodian–Vietnamese War</li>
-                        <li><i class="fas fa-link"></i> Wikipedia - K5 Plan</li>
-                        <li><i class="fas fa-link"></i> Wikipedia - Operation Freedom Deal</li>
-                        <li><i class="fas fa-link"></i> Vietnam War 50th - Operation Menu</li>
-                    </ul>
+                <!-- References -->
+                <div class="methodology">
+                    <h3 class="methodology-title">References</h3>
+                    <div class="methodology-item">
+                        <ul>
+                            <li><i class="fas fa-link"></i> UN Chronicle - The Spectre of Khmer Rouge over Cambodia</li>
+                            <li><i class="fas fa-link"></i> Cambodia LPJ - Justice and Starvation in Cambodia</li>
+                            <li><i class="fas fa-link"></i> Time - Cambodia Land Mine Found at School (2023)</li>
+                            <li><i class="fas fa-link"></i> Wikipedia - Cambodian–Vietnamese War</li>
+                            <li><i class="fas fa-link"></i> Wikipedia - K5 Plan</li>
+                            <li><i class="fas fa-link"></i> Wikipedia - Operation Freedom Deal</li>
+                            <li><i class="fas fa-link"></i> Vietnam War 50th - Operation Menu</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -1740,9 +1820,9 @@
                     <i class="fab fa-github"></i>
                     <span>View on GitHub</span>
                 </a>
-                <a href="projects.html" class="project-link">
+                <a href="works.html" class="project-link">
                     <i class="fas fa-arrow-left"></i>
-                    <span>Back to All Projects</span>
+                    <span>Back to All Works</span>
                 </a>
             </div>
         </div>
