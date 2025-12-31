@@ -852,6 +852,89 @@
             max-width: 100%;
             height: auto;
             border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .image-single:hover {
+            border-color: var(--accent-earth);
+            box-shadow: 0 0 20px rgba(212, 165, 90, 0.3);
+            transform: scale(1.02);
+        }
+
+        /* Clickable images in grid */
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            border-color: var(--accent-earth);
+            box-shadow: 0 0 20px rgba(212, 165, 90, 0.3);
+            transform: scale(1.02);
+        }
+
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 13, 10, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .image-modal-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border: 3px solid var(--accent-earth);
+            background: #ffffff;
+            box-shadow: 0 0 40px rgba(212, 165, 90, 0.4);
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: var(--accent-earth);
+            border: none;
+            color: var(--bg-dark);
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .image-modal-close:hover {
+            background: var(--text-primary);
+            transform: scale(1.1);
+        }
+
+        .image-modal-caption {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95rem;
         }
 
         /* Wider Conclusion Container */
@@ -1828,6 +1911,17 @@
         </div>
     </section>
 
+    <!-- ==================== IMAGE MODAL ==================== -->
+    <div class="image-modal" id="imageModal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" onclick="closeImageModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="Enlarged image">
+            <p class="image-modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
     <!-- ==================== FOOTER ==================== -->
     <footer>
         <p>© 2025 Wei Kiat Tan | Built with passion for data</p>
@@ -1898,6 +1992,45 @@
         }, { threshold: 0.1 });
 
         fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // Image Modal Functions
+        function openImageModal(imageSrc, caption) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            modal.classList.add('active');
+            modalImg.src = imageSrc;
+            modalCaption.textContent = caption || '';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+
+        // Add click handlers to all images
+        document.querySelectorAll('.image-grid img, .image-single').forEach(img => {
+            img.addEventListener('click', function() {
+                openImageModal(this.src, this.alt);
+            });
+        });
     </script>
 </body>
 </html>
